@@ -1,4 +1,8 @@
 import type { Metadata } from "next";
+import AnnouncementBar from "@/components/AnnouncementBar/AnnouncementBar";
+import Navbar from "@/components/Navbar/Navbar";
+import Footer from "@/components/Footer/Footer";
+import WhatsAppButton from "@/components/WhatsAppButton/WhatsAppButton";
 import "./globals.css";
 
 export const metadata: Metadata = {
@@ -33,7 +37,13 @@ export default function RootLayout({
 }) {
   return (
     <html lang="tr">
-      <body>{children}</body>
+      <body>
+        <AnnouncementBar />
+        <Navbar />
+        {children}
+        <Footer />
+        <WhatsAppButton />
+      </body>
     </html>
   );
 }

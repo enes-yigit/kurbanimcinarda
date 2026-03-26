@@ -1,0 +1,113 @@
+.pageContainer {
+  background-color: var(--color-background-alt);
+  min-height: calc(100vh - 400px);
+  padding: calc(var(--navbar-height) + var(--space-12)) 0 var(--space-20);
+}
+
+.header {
+  text-align: center;
+  margin-bottom: var(--space-16);
+  padding: 0 var(--space-4);
+}
+
+.title {
+  color: var(--color-text);
+  font-size: var(--text-4xl);
+  font-weight: 800;
+  margin-bottom: var(--space-6);
+  line-height: 1.2;
+}
+
+@media (min-width: 768px) {
+  .title {
+    font-size: var(--text-5xl);
+  }
+}
+
+.description {
+  color: var(--color-text-light);
+  font-size: var(--text-lg);
+  max-width: 800px;
+  margin: 0 auto;
+  line-height: 1.6;
+}
+
+.contentWrapper {
+  max-width: 900px;
+  margin: 0 auto;
+  background-color: var(--color-white);
+  padding: var(--space-8);
+  border-radius: var(--radius-xl);
+  box-shadow: var(--shadow-sm);
+  line-height: 1.8;
+  color: var(--color-text);
+}
+
+@media (min-width: 768px) {
+  .contentWrapper {
+    padding: var(--space-12);
+  }
+}
+
+.contentWrapper h2 {
+  color: #1e2c5a;
+  font-size: var(--text-2xl);
+  font-weight: 800;
+  margin-top: var(--space-8);
+  margin-bottom: var(--space-4);
+}
+
+.contentWrapper p {
+  margin-bottom: var(--space-4);
+}
+
+.contentWrapper ul {
+  list-style-type: disc;
+  padding-left: var(--space-6);
+  margin-bottom: var(--space-4);
+}
+
+.contentWrapper li {
+  margin-bottom: var(--space-2);
+}
+
+/* Sayfa Altı Aksiyon */
+.bottomAction {
+  margin-top: var(--space-16);
+  text-align: center;
+  padding: var(--space-10) var(--space-6);
+  background-color: var(--color-white);
+  border-radius: var(--radius-xl);
+  box-shadow: var(--shadow-sm);
+  max-width: 800px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.bottomText {
+  font-size: var(--text-lg);
+  color: var(--color-text);
+  font-weight: 600;
+  margin-bottom: var(--space-2);
+}
+
+.bottomSubtext {
+  color: var(--color-text-light);
+  margin-bottom: var(--space-6);
+}
+
+.btn {
+  background-color: var(--color-accent);
+  color: var(--color-white);
+  padding: var(--space-3) var(--space-6);
+  border-radius: var(--radius-lg);
+  font-weight: 700;
+  text-decoration: none;
+  display: inline-block;
+}
+
+.btn:hover {
+  background-color: #d15112;
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-md);
+}

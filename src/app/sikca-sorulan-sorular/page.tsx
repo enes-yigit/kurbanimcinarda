@@ -2,9 +2,6 @@
 
 import { useState } from "react";
 import styles from "./page.module.css";
-import Navbar from "@/components/Navbar/Navbar";
-import Footer from "@/components/Footer/Footer";
-import WhatsAppButton from "@/components/WhatsAppButton/WhatsAppButton";
 import { Plus } from "lucide-react";
 import Link from "next/link";
 
@@ -100,9 +97,7 @@ export default function FAQPage() {
   };
 
   return (
-    <>
-      <Navbar />
-      <main className={styles.pageContainer}>
+    <main className={styles.pageContainer}>
         <div className="container">
           <div className={styles.header}>
             <h1 className={styles.title}>Sıkça Sorulan Sorular</h1>
@@ -157,8 +152,5 @@ export default function FAQPage() {
           </div>
         </div>
       </main>
-      <Footer />
-      <WhatsAppButton />
-    </>
   );
 }
