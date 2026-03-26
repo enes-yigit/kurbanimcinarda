@@ -40,7 +40,7 @@ export default function Navbar() {
             className={styles.logoIcon}
           />
           <span className={styles.logoText}>
-            Kurbanım Çınarda
+            Çınar Kurban
             <small>Çınar İstanbul</small>
           </span>
         </Link>

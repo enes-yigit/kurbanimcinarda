@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import "./globals.css";
 
 export const metadata: Metadata = {
-  title: "Kurbanım Çınarda | İstanbul Kurbanlık Satış ve Kesim Hizmeti",
+  title: "Çınar Kurban | İstanbul Kurbanlık Satış ve Kesim Hizmeti",
   description:
     "15 yıllık tecrübe ile İstanbul'da İslami usullere uygun kurbanlık satış, kesim ve teslimat hizmeti. Hisse kurbanlık, özel kasaplık işlemi ve frigolu araç ile teslimat.",
   keywords: [
@@ -16,11 +16,11 @@ export const metadata: Metadata = {
     "çınar istanbul",
   ],
   openGraph: {
-    title: "Kurbanım Çınarda | İstanbul Kurbanlık Satış ve Kesim",
+    title: "Çınar Kurban | İstanbul Kurbanlık Satış ve Kesim",
     description:
       "15 yıllık tecrübe ile İstanbul'da İslami usullere uygun kurbanlık satış, kesim ve teslimat hizmeti.",
-    url: "https://www.kurbanimcinarda.com",
-    siteName: "Kurbanım Çınarda",
+    url: "https://www.cinarkurban.com",
+    siteName: "Çınar Kurban",
     locale: "tr_TR",
     type: "website",
   },

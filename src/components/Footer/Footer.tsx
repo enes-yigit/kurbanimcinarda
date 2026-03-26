@@ -29,7 +29,7 @@ export default function Footer() {
                 alt="Çınar Logo"
                 className={styles.footerLogoImg}
               />
-              <span className={styles.footerLogoText}>Kurbanım Çınarda</span>
+              <span className={styles.footerLogoText}>Çınar Kurban</span>
             </div>
             <p className={styles.footerDesc}>
               15 yıllık tecrübe ile İstanbul&apos;da İslami usullere uygun kurbanlık
@@ -96,8 +96,8 @@ export default function Footer() {
                 <a href="tel:+905389694268">+90 538 969 42 68</a>
               </li>
               <li>
-                <a href="mailto:info@kurbanimcinarda.com">
-                  info@kurbanimcinarda.com
+                <a href="mailto:info@cinarkurban.com">
+                  info@cinarkurban.com
                 </a>
               </li>
               <li>
@@ -116,7 +116,7 @@ export default function Footer() {
         {/* Bottom */}
         <div className={styles.footerBottom}>
           <p className={styles.footerCopyright}>
-            © {currentYear} Kurbanım Çınarda — Çınar İstanbul. Tüm hakları saklıdır.
+            © {currentYear} Çınar Kurban — Çınar İstanbul. Tüm hakları saklıdır.
           </p>
           <div className={styles.footerBadges}>
             <span className={styles.footerBadge}>🕌 İslami Usul</span>
