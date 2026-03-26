@@ -1,0 +1,320 @@
+.section {
+  padding: var(--space-20) 0;
+  background-color: var(--color-background-alt);
+}
+
+.header {
+  text-align: center;
+  margin-bottom: var(--space-12);
+}
+
+.title {
+  color: var(--color-text);
+  font-size: var(--text-5xl);
+  font-weight: 800;
+  margin-bottom: var(--space-6);
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+  line-height: 1.1;
+}
+
+.promoBtn {
+  display: inline-flex;
+  flex-direction: column;
+  background-color: var(--color-accent);
+  color: var(--color-white);
+  padding: var(--space-4) var(--space-12);
+  border-radius: var(--radius-xl);
+  margin-bottom: var(--space-6);
+  box-shadow: 0 4px 14px rgba(232, 95, 28, 0.4);
+  transition: transform var(--transition-base), box-shadow var(--transition-base);
+  text-decoration: none;
+}
+
+.promoBtn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(232, 95, 28, 0.5);
+}
+
+.promoTitle {
+  font-size: var(--text-lg);
+  font-weight: 700;
+}
+
+.promoDesc {
+  font-size: var(--text-sm);
+  font-weight: 600;
+  opacity: 0.9;
+}
+
+.subtitle {
+  color: var(--color-text-light);
+  font-size: var(--text-sm);
+  max-width: 500px;
+  margin: 0 auto;
+}
+
+.cardsContainer {
+  display: flex;
+  overflow-x: auto;
+  gap: var(--space-4);
+  padding-bottom: var(--space-8);
+  /* Snap scroll for mobile */
+  scroll-snap-type: x mandatory;
+  -webkit-overflow-scrolling: touch;
+}
+
+.cardsContainer::-webkit-scrollbar {
+  height: 6px;
+}
+.cardsContainer::-webkit-scrollbar-thumb {
+  background: var(--color-border);
+  border-radius: var(--radius-full);
+}
+
+.card {
+  flex: 0 0 300px; /* Fixed width for scrolling on smaller screens, can flex grow on large */
+  position: relative;
+  background-color: var(--color-white);
+  border: 1px solid var(--color-border);
+  border-radius: 40px;
+  padding: var(--space-8) var(--space-5) var(--space-5);
+  display: flex;
+  flex-direction: column;
+  transition: box-shadow var(--transition-base), transform var(--transition-base);
+  scroll-snap-align: start;
+}
+
+.card:hover {
+  box-shadow: var(--shadow-lg);
+  transform: translateY(-4px);
+}
+
+/* Specific Card Themes */
+.themeOrange {
+  border: 2px solid rgba(232, 95, 28, 0.3);
+  box-shadow: 0 0 20px rgba(232, 95, 28, 0.05);
+}
+
+.themeDark {
+  background-color: #1e2c5a;
+  color: var(--color-white);
+  border-color: #1e2c5a;
+}
+.themeDark .cardTitle,
+.themeDark .specValue {
+  color: var(--color-white);
+}
+
+/* Top Badge */
+.topBadge {
+  position: absolute;
+  top: -12px;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: var(--color-accent);
+  color: var(--color-white);
+  font-size: 10px;
+  font-weight: 800;
+  padding: var(--space-1) var(--space-3);
+  border-radius: var(--radius-full);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  white-space: nowrap;
+}
+
+/* Icon Box */
+.iconBox {
+  width: 48px;
+  height: 48px;
+  border-radius: 14px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: var(--space-6);
+}
+
+/* Icon colors */
+.iconGray { background-color: #f0f2f5; color: #6b7280; }
+.iconBlue { background-color: #e0f2fe; color: #0284c7; }
+.iconOrange { background-color: #ffedd5; color: #ea580c; }
+.iconGreen { background-color: #dcfce7; color: #16a34a; }
+.iconDarkWhite { background-color: rgba(255, 255, 255, 0.1); color: #e5e7eb; }
+
+/* Texts */
+.cardTitle {
+  font-size: var(--text-2xl);
+  font-weight: 800;
+  color: #1e2c5a;
+  margin-bottom: var(--space-2);
+  line-height: 1.2;
+}
+
+.cardSubtitle {
+  font-size: 11px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  margin-bottom: var(--space-6);
+  color: #6b7280;
+}
+
+.themeDark .cardSubtitle {
+  color: var(--color-accent);
+}
+
+/* Specs */
+.specs {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+  margin-bottom: var(--space-6);
+  padding-bottom: var(--space-6);
+  /* border-bottom will be handled per spec unless it's dark card */
+}
+
+.specRow {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.specLabel {
+  font-size: var(--text-xs);
+  color: var(--color-text-muted);
+}
+
+.themeDark .specLabel {
+  color: rgba(255,255,255,0.6);
+}
+
+.specValue {
+  font-size: var(--text-sm);
+  font-weight: 700;
+  color: var(--color-text);
+}
+
+/* Features */
+.featuresList {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+  margin-bottom: var(--space-8);
+  flex-grow: 1;
+}
+
+.featureItem {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+  font-size: 13px;
+  font-weight: 600;
+}
+
+.featureIcon {
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.checkGreen { color: #10b981; }
+.checkOrange { color: var(--color-accent); }
+
+/* Status Box */
+.statusBox {
+  background-color: #f9fafb;
+  border-radius: var(--radius-lg);
+  padding: var(--space-4);
+  text-align: center;
+  margin-bottom: var(--space-4);
+}
+
+.themeDark .statusBox {
+  background-color: rgba(255,255,255,0.1);
+}
+
+.statusLabel {
+  font-size: 10px;
+  font-weight: 700;
+  color: var(--color-text-muted);
+  text-transform: uppercase;
+  margin-bottom: var(--space-1);
+}
+
+.themeDark .statusLabel {
+  color: rgba(255,255,255,0.5);
+}
+
+.statusValue {
+  font-size: var(--text-lg);
+  font-weight: 800;
+  color: #1e2c5a;
+  margin-bottom: var(--space-1);
+}
+
+.themeDark .statusValue {
+  color: var(--color-white);
+}
+.statusValueGreen { color: #16a34a; }
+.statusValueOrange { color: var(--color-accent); }
+
+.statusNote {
+  font-size: 11px;
+  font-style: italic;
+  color: var(--color-text-muted);
+}
+.themeDark .statusNote {
+  color: rgba(255,255,255,0.6);
+}
+
+/* Button */
+.ctaBtn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-2);
+  width: 100%;
+  padding: var(--space-4);
+  border-radius: var(--radius-xl);
+  font-size: var(--text-sm);
+  font-weight: 700;
+  text-decoration: none;
+  transition: all var(--transition-base);
+}
+
+.btnDarkBlue {
+  background-color: #1e2c5a;
+  color: var(--color-white);
+}
+.btnDarkBlue:hover {
+  background-color: #15224a;
+  color: var(--color-white);
+}
+
+.btnWhite {
+  background-color: var(--color-white);
+  color: #1e2c5a;
+}
+.btnWhite:hover {
+  background-color: #f1f5f9;
+  color: #1e2c5a;
+}
+
+.ctaBtn svg {
+  width: 18px;
+  height: 18px;
+}
+
+/* Layout for Tablet and Desktop */
+@media (min-width: 1024px) {
+  .cardsContainer {
+    justify-content: center;
+    overflow-x: visible;
+  }
+  .card {
+    flex: 1 1 0; /* equal width strategy */
+    max-width: 280px;
+  }
+}
