@@ -33,7 +33,7 @@ export default function OzelIslemPage() {
           <p className={styles.bottomSubtext}>
             Özel işlem kontenjanımız sınırlıdır. Kurban rezervasyonunuzu yaparken özel işlem istediğinizi belirtmeyi unutmayın.
           </p>
-          <a href="https://wa.me/905389694268" className={styles.btn}>
+          <a href="https://wa.me/902129099495" className={styles.btn}>
             WhatsApp Bilgi Hattı
           </a>
         </div>

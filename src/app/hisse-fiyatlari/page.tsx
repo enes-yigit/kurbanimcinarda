@@ -20,7 +20,7 @@ export default function HisseFiyatlariPage() {
           <p className={styles.bottomSubtext}>
             Müşteri temsilcilerimiz size en uygun kurban hissesini seçmenizde yardımcı olmaktan mutluluk duyacaktır.
           </p>
-          <a href="https://wa.me/905389694268" target="_blank" rel="noopener noreferrer" className={styles.btn}>
+          <a href="https://wa.me/902129099495" target="_blank" rel="noopener noreferrer" className={styles.btn}>
             WhatsApp'tan Ulaşın
           </a>
         </div>

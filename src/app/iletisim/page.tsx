@@ -14,7 +14,7 @@ export default function IletisimPage() {
 
         <div className={styles.contentWrapper} style={{ marginBottom: '2rem' }}>
           <h2>İletişim Bilgilerimiz</h2>
-          <p><strong>Telefon Hattı:</strong> <a href="tel:+905389694268" style={{ color: 'var(--color-accent)', fontWeight: 'bold' }}>0538 969 42 68</a></p>
+          <p><strong>Telefon Hattı:</strong> <a href="tel:+902129099495" style={{ color: 'var(--color-accent)', fontWeight: 'bold' }}>0 212 909 94 95</a></p>
           <p><strong>E-Posta:</strong> info@cinarkurban.com</p>
           <br/>
           <p><strong>Çalışma Saatlerimiz:</strong> Haftanın her günü 09:00 - 19:00</p>

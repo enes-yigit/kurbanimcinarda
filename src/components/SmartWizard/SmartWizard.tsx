@@ -118,7 +118,7 @@ export default function SmartWizard() {
   const handleFinish = () => {
     const message = buildWhatsAppMessage();
     window.open(
-      `https://wa.me/905389694268?text=${encodeURIComponent(message)}`,
+      `https://wa.me/902129099495?text=${encodeURIComponent(message)}`,
       "_blank"
     );
   };

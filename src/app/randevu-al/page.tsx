@@ -19,8 +19,8 @@ export default function RandevuAlPage() {
           <p className={styles.bottomSubtext}>
             Bizi arayarak ya da Merkez Mahallesi Ebubekir caddesi no:5 Bağcılar adresindeki tesisimizi ziyaret ederek yüz yüze randevu oluşturabilirsiniz.
           </p>
-          <a href="tel:+905389694268" className={styles.btn}>
-            Hemen Ara: 0538 969 42 68
+          <a href="tel:+902129099495" className={styles.btn}>
+            Hemen Ara: 0 212 909 94 95
           </a>
         </div>
       </div>

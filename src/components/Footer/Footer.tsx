@@ -37,7 +37,7 @@ export default function Footer() {
             </p>
             <div className={styles.footerSocials}>
               <a
-                href="https://wa.me/905389694268"
+                href="https://wa.me/902129099495"
                 target="_blank"
                 rel="noopener noreferrer"
                 className={styles.socialLink}
@@ -46,7 +46,7 @@ export default function Footer() {
                 💬
               </a>
               <a
-                href="tel:+905389694268"
+                href="tel:+902129099495"
                 className={styles.socialLink}
                 aria-label="Telefon"
               >
@@ -93,7 +93,7 @@ export default function Footer() {
             <h4>İletişim</h4>
             <ul>
               <li>
-                <a href="tel:+905389694268">+90 538 969 42 68</a>
+                <a href="tel:+902129099495">0 212 909 94 95</a>
               </li>
               <li>
                 <a href="mailto:info@cinarkurban.com">

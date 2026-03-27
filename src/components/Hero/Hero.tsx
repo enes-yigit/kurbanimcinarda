@@ -97,7 +97,7 @@ export default function Hero() {
             {/* Actions */}
             <div className={styles.actionBtns}>
               <a
-                href="https://wa.me/905389694268"
+                href="https://wa.me/902129099495"
                 target="_blank"
                 rel="noopener noreferrer"
                 className={styles.btnWhatsapp}

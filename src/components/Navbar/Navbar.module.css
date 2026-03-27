@@ -33,16 +33,15 @@
 }
 
 .logoIcon {
-  width: 44px;
-  height: 44px;
-  border-radius: var(--radius-md);
+  height: 56px;
+  width: auto;
   object-fit: contain;
 }
 
 .logoText {
   font-family: var(--font-heading);
-  font-size: var(--text-lg);
-  font-weight: 700;
+  font-size: 24px;
+  font-weight: 800;
   color: var(--color-primary);
   line-height: 1.1;
 }
