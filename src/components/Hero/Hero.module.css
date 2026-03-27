@@ -239,24 +239,26 @@
 .pillsContainer {
   width: 100%;
   max-width: 100%;
-  overflow-x: auto;
-  overflow-y: hidden;
-  padding-bottom: var(--space-4);
-  -ms-overflow-style: none;
-  scrollbar-width: none;
   position: relative;
   display: block;
-}
-
-.pillsContainer::-webkit-scrollbar {
-  display: none;
 }
 
 .pillsGrid {
   display: flex;
   gap: var(--space-3);
-  width: max-content;
   padding: var(--space-1) 0;
+  flex-wrap: wrap; /* Wrap on desktop by default */
+}
+
+@media (max-width: 900px) {
+  .pillsContainer {
+    overflow-x: auto;
+    width: 100%;
+  }
+  .pillsGrid {
+    width: max-content;
+    flex-wrap: nowrap; /* Keep scrolling only on mobile */
+  }
 }
 
 @media (max-width: 768px) {
