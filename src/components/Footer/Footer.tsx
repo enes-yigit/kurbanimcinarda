@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { Instagram, Phone, MessageCircle } from "lucide-react";
 import styles from "./Footer.module.css";
 
 const quickLinks = [
@@ -42,14 +43,14 @@ export default function Footer() {
                 className={styles.socialLink}
                 aria-label="WhatsApp"
               >
-                💬
+                <MessageCircle size={18} />
               </a>
               <a
                 href="tel:+902129099495"
                 className={styles.socialLink}
                 aria-label="Telefon"
               >
-                📞
+                <Phone size={18} />
               </a>
               <a
                 href="https://instagram.com"
@@ -58,7 +59,7 @@ export default function Footer() {
                 className={styles.socialLink}
                 aria-label="Instagram"
               >
-                📷
+                <Instagram size={18} />
               </a>
             </div>
           </div>
