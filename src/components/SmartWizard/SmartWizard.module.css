@@ -269,14 +269,25 @@
 /* Deals Section */
 /* Thin Marquee Banner (Matches Announcement Bar Style) */
 .campaignBannerThin {
+  display: none; /* Only show on mobile */
   background: #e85f1c; /* Brand Orange */
   color: white;
   height: 40px;
-  display: flex;
   align-items: center;
   overflow: hidden;
   position: relative;
   margin-bottom: var(--space-8);
+}
+
+@media (max-width: 900px) {
+  .campaignBannerThin {
+    display: flex; /* Mobile only */
+    height: 36px;
+  }
+  .marqueeItem {
+    font-size: 11px;
+    gap: var(--space-4);
+  }
 }
 
 .marqueeTrack {
@@ -306,16 +317,6 @@
 @keyframes wizardMarquee {
   0% { transform: translateX(0); }
   100% { transform: translateX(-33.33%); }
-}
-
-@media (max-width: 900px) {
-  .campaignBannerThin {
-    height: 36px;
-  }
-  .marqueeItem {
-    font-size: 11px;
-    gap: var(--space-4);
-  }
 }
 
 .dealsArea {

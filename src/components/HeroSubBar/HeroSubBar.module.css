@@ -30,13 +30,8 @@
   flex-shrink: 0;
 }
 
-@media (max-width: 768px) {
+@media (max-width: 900px) {
   .heroSubBar {
-    font-size: 11px;
-    padding: var(--space-3) var(--space-4);
-    flex-direction: column;
-    gap: var(--space-1);
+    display: none; /* Hide original on mobile as per request */
   }
-  /* The instruction was to ensure dots are visible on mobile,
-     so 'display: none;' for .dot on mobile is removed. */
 }
