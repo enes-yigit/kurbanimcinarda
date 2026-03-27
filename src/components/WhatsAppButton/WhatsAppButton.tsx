@@ -16,7 +16,8 @@ export default function WhatsAppButton({
   return (
     <div className={styles.whatsappFloat}>
       <div className={styles.whatsappTooltip}>
-        💬 Size nasıl yardımcı olabiliriz?
+        <img src="/whatsapp.png" alt="WhatsApp" style={{ width: 16, height: 16, display: 'inline-block', verticalAlign: 'middle', marginRight: 4 }} /> 
+        Size nasıl yardımcı olabiliriz?
       </div>
       <a
         href={whatsappUrl}
@@ -25,7 +26,7 @@ export default function WhatsAppButton({
         className={styles.whatsappBtn}
         aria-label="WhatsApp ile iletişime geç"
       >
-        💬
+        <img src="/whatsapp.png" alt="WhatsApp ile iletişime geç" style={{ width: '40px', height: '40px', objectFit: 'contain' }} />
       </a>
     </div>
   );
