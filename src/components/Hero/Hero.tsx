@@ -3,13 +3,13 @@
 import { useState, useEffect } from "react";
 import Link from "next/link";
 import styles from "./Hero.module.css";
-import { 
-  Truck, 
-  ShieldCheck, 
-  Scale, 
-  Video, 
-  Sun, 
-  CheckSquare, 
+import {
+  Truck,
+  ShieldCheck,
+  Scale,
+  Video,
+  Sun,
+  CheckSquare,
   Beef
 } from "lucide-react";
 
@@ -64,11 +64,10 @@ export default function Hero() {
     <section className={styles.hero} id="hero">
       {/* Slides */}
       {slides.map((slide, index) => (
-        <div 
-          key={slide.id} 
-          className={`${styles.slide} ${
-            index === currentSlide ? styles.slideActive : ""
-          }`}
+        <div
+          key={slide.id}
+          className={`${styles.slide} ${index === currentSlide ? styles.slideActive : ""
+            }`}
         >
           <img src={slide.image} alt="Çınar Kurban Banner" className={styles.slideImage} />
           <div className={styles.overlay} />
@@ -79,13 +78,13 @@ export default function Hero() {
       <div className={styles.contentWrapper}>
         <div className="container">
           <div className={styles.heroContent}>
-            
+
             {/* Slide Text */}
             <div className={styles.heroBadge}>
               <div className={styles.heroBadgeDot} />
               {slides[currentSlide].preTitle}
             </div>
-            
+
             <h1>
               <span className={styles.heroTitle1}>{slides[currentSlide].title1}</span>
               <span className={styles.heroTitle2}>{slides[currentSlide].title2}</span>
@@ -97,13 +96,25 @@ export default function Hero() {
 
             {/* Actions */}
             <div className={styles.actionBtns}>
-              <a 
-                href="https://wa.me/905389694268" 
-                target="_blank" 
-                rel="noopener noreferrer" 
+              <a
+                href="https://wa.me/905389694268"
+                target="_blank"
+                rel="noopener noreferrer"
                 className={styles.btnWhatsapp}
               >
-                <img src="/whatsapp.png" alt="WhatsApp" style={{ width: 24, height: 24, objectFit: 'contain' }} />
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="20"
+                  height="20"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  strokeWidth="2"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                >
+                  <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path>
+                </svg>
                 Bilgi Al & Kayıt
               </a>
             </div>
@@ -127,9 +138,8 @@ export default function Hero() {
         {slides.map((_, index) => (
           <button
             key={index}
-            className={`${styles.dot} ${
-              index === currentSlide ? styles.dotActive : ""
-            }`}
+            className={`${styles.dot} ${index === currentSlide ? styles.dotActive : ""
+              }`}
             onClick={() => setCurrentSlide(index)}
             aria-label={`Slide ${index + 1}`}
           />
