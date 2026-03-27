@@ -133,18 +133,19 @@ export default function SmartWizard() {
 
   return (
     <section className={styles.wizard} id="akilli-asistan">
-      {/* Marquee Campaign Banner */}
-      <div className={styles.campaignBanner}>
-        <div className={styles.bannerDot} />
-        <div className={styles.marqueeContainer}>
-          <div className={styles.marqueeTrack}>
-            <p className={styles.bannerText}>
-              Erken kayıt avantajlarıyla <span className={styles.pill}>14.000 ₺'ye kadar indirim</span> kazanmak için <span className={styles.pill}>acele edin!</span> Son tarih 5 Nisan! &nbsp;&nbsp; • &nbsp;&nbsp;
-              Erken kayıt avantajlarıyla <span className={styles.pill}>14.000 ₺'ye kadar indirim</span> kazanmak için <span className={styles.pill}>acele edin!</span> Son tarih 5 Nisan!
-            </p>
+      {/* Thin Marquee Campaign Banner */}
+      <div className={styles.campaignBannerThin}>
+        <div className={styles.marqueeTrack}>
+          <div className={styles.marqueeItem}>
+            Erken kayıt avantajlarıyla <span className={styles.pillSmall}>14.000 ₺'ye kadar indirim</span> kazanmak için acele edin! Son tarih 5 Nisan!
+          </div>
+          <div className={styles.marqueeItem}>
+            Erken kayıt avantajlarıyla <span className={styles.pillSmall}>14.000 ₺'ye kadar indirim</span> kazanmak için acele edin! Son tarih 5 Nisan!
+          </div>
+          <div className={styles.marqueeItem}>
+            Erken kayıt avantajlarıyla <span className={styles.pillSmall}>14.000 ₺'ye kadar indirim</span> kazanmak için acele edin! Son tarih 5 Nisan!
           </div>
         </div>
-        <div className={styles.bannerDot} />
       </div>
 
       <div className={styles.wizardInner}>
