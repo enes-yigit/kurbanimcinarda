@@ -1,3 +1,10 @@
+.navbarScrolled {
+  background: rgba(14, 26, 64, 0.98); /* Deep brand blue/green */
+  backdrop-filter: blur(10px);
+  height: 70px; /* Slimmer on scroll */
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
 .navbar {
   position: absolute; /* Stay at the top of the page */
   top: var(--announcement-height); /* Below announcement bar */
@@ -10,9 +17,6 @@
   border-bottom: 1px solid rgba(255, 255, 255, 0.05);
 }
 
-.navbarScrolled {
-  /* No background change on scroll as per user request */
-}
 
 .navInner {
   max-width: var(--container-max);
