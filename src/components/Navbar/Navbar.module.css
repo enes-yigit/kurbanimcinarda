@@ -201,6 +201,6 @@
     height: 50px;
   }
   .mobileMenu {
-    gap: var(--space-6); /* Adjusted for better touch interaction */
+    gap: var(--space-6);
   }
 }

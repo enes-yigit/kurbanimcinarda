@@ -110,6 +110,18 @@
   margin-bottom: var(--space-4);
 }
 
+@media (max-width: 768px) {
+  .heroTitle1 {
+    font-size: 26px;
+    line-height: 1.2;
+  }
+  .heroTitle2 {
+    font-size: 32px;
+    line-height: 1.1;
+    margin-bottom: var(--space-6);
+  }
+}
+
 @media (min-width: 768px) {
   .heroTitle1, .heroTitle2 {
     font-size: 64px;
@@ -220,12 +232,14 @@
 
 @media (max-width: 768px) {
   .pillItem {
-    padding: var(--space-2) var(--space-3);
-    font-size: 10px;
+    padding: var(--space-2) var(--space-4);
+    font-size: 9px;
+    letter-spacing: 0.02em;
+    gap: var(--space-1);
   }
   .pillItem svg {
-    width: 14px;
-    height: 14px;
+    width: 12px;
+    height: 12px;
   }
 }
 
