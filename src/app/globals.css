@@ -41,8 +41,8 @@
   --text-2xl: 1.5rem;
   --text-3xl: 1.875rem;
   --text-4xl: 2.25rem;
-  --text-5xl: 3rem;
-  --text-6xl: 3.75rem;
+  --text-5xl: 2.25rem;
+  --text-6xl: 3rem;
 
   /* — Spacing — */
   --space-1: 0.25rem;
@@ -82,8 +82,8 @@
   /* — Layout — */
   --container-max: 1200px;
   --container-narrow: 800px;
-  --navbar-height: 80px;
-  --announcement-height: 48px;
+  --navbar-height: 64px;
+  --announcement-height: 36px;
 }
 
 /* ===== CSS Reset ===== */

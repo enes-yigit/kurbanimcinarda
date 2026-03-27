@@ -62,8 +62,9 @@
 .heroContent {
   width: 100%;
   max-width: 800px;
-  padding: 0 var(--space-4);
-  text-align: left;
+  padding: 0 var(--space-6);
+  text-align: center;
+  margin: 0 auto;
 }
 
 @media (max-width: 900px) {
@@ -100,7 +101,7 @@
 .heroTitle1 {
   display: block;
   color: var(--color-white);
-  font-size: 48px;
+  font-size: 40px;
   font-weight: 800;
   line-height: 1.1;
 }
@@ -108,7 +109,7 @@
 .heroTitle2 {
   display: block;
   color: var(--color-accent);
-  font-size: 48px;
+  font-size: 40px;
   font-weight: 800;
   line-height: 1.1;
   margin-bottom: var(--space-4);
@@ -140,10 +141,12 @@
 
 .heroSubtitle {
   color: rgba(255, 255, 255, 0.85);
-  font-size: var(--text-lg);
+  font-size: var(--text-base);
   line-height: 1.6;
   margin-bottom: var(--space-8);
-  max-width: 650px;
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .actionBtns {
@@ -151,6 +154,7 @@
   flex-wrap: wrap;
   gap: var(--space-4);
   margin-bottom: var(--space-10);
+  justify-content: center;
 }
 
 @media (max-width: 900px) {
