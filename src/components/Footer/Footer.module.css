@@ -121,23 +121,38 @@
 }
 
 @media (max-width: 768px) {
+  .footer {
+    padding: var(--space-10) 0 var(--space-6);
+  }
   .footerGrid {
     grid-template-columns: 1fr 1fr;
-    gap: var(--space-12) var(--space-8);
+    gap: var(--space-8) var(--space-4);
   }
   .footerBrand {
     grid-column: 1 / -1;
     align-items: center;
     text-align: center;
+    margin-bottom: var(--space-4);
+  }
+  .footerDesc {
+    max-width: 100%;
   }
 }
 
-@media (max-width: 500px) {
+@media (max-width: 480px) {
   .footerGrid {
-    grid-template-columns: 1fr;
+    gap: var(--space-6) var(--space-4);
+  }
+  .footerColumn h4 {
+    margin-bottom: var(--space-3);
+    font-size: 12px;
+  }
+  .footerColumn ul {
+    gap: var(--space-2);
   }
   .footerBottom {
     flex-direction: column;
     text-align: center;
+    gap: var(--space-2);
   }
 }
