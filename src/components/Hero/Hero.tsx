@@ -118,10 +118,6 @@ export default function Hero() {
                 </svg>
                 Bilgi Al & Kayıt
               </a>
-              <Link href="/randevu-al" className={styles.btnOutlineWhite}>
-                <ShieldCheck size={20} />
-                e-Devlet Küpe Sorgula
-              </Link>
             </div>
 
             {/* Pills - Always showing same over slides */}

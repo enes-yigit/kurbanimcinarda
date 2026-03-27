@@ -58,8 +58,9 @@
 
 .heroContent {
   width: 100%;
-  max-width: 800px; /* Constraints left side */
+  max-width: 800px;
   padding-right: var(--space-4);
+  text-align: left;
 }
 
 .heroBadge {
