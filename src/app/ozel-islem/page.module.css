@@ -1,0 +1,417 @@
+.pageContainer {
+  background-color: var(--color-background-alt); /* White */
+  color: var(--color-text);
+  padding-bottom: 0;
+}
+
+/* 1. Hero / Video Section */
+.heroSection {
+  position: relative;
+  min-height: 85vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  padding-top: var(--navbar-height);
+  margin-top: calc(-1 * var(--navbar-height));
+}
+
+.videoBackground {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: 1;
+}
+
+.heroOverlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(to right, rgba(10, 31, 19, 0.9) 0%, rgba(10, 31, 19, 0.6) 50%, rgba(10, 31, 19, 0.3) 100%);
+  z-index: 2;
+}
+
+/* Subtle fade at the bottom to blend into the next mostly white section */
+.heroFadeBottom {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 150px;
+  background: linear-gradient(to bottom, transparent, var(--color-background-alt));
+  z-index: 3;
+}
+
+.heroContent {
+  position: relative;
+  z-index: 4;
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 var(--space-6);
+}
+
+.heroSub {
+  display: inline-block;
+  color: var(--color-accent);
+  font-size: var(--text-sm);
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+  margin-bottom: var(--space-4);
+  background: rgba(232, 95, 28, 0.15);
+  padding: var(--space-2) var(--space-4);
+  border-radius: var(--radius-full);
+}
+
+.heroTitle {
+  font-family: var(--font-heading);
+  font-size: var(--text-6xl);
+  font-weight: 900;
+  color: var(--color-white);
+  line-height: 1.1;
+  margin-bottom: var(--space-6);
+  max-width: 800px;
+  text-shadow: 0 4px 20px rgba(0,0,0,0.5);
+}
+
+.heroDesc {
+  font-size: var(--text-xl);
+  color: rgba(255, 255, 255, 0.9);
+  line-height: 1.6;
+  max-width: 600px;
+  margin-bottom: var(--space-8);
+}
+
+.heroBtn {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-2);
+  background: #10b981; /* WhatsApp Green style */
+  color: white;
+  padding: var(--space-4) var(--space-8);
+  border-radius: var(--radius-xl);
+  font-weight: 800;
+  font-size: var(--text-lg);
+  text-decoration: none;
+  transition: all 0.3s;
+  box-shadow: 0 10px 25px rgba(16, 185, 129, 0.4);
+}
+.heroBtn:hover {
+  transform: translateY(-3px);
+  background: #059669;
+  box-shadow: 0 15px 35px rgba(16, 185, 129, 0.5);
+}
+
+/* overlapping massive text */
+.heroOverlapText {
+  position: relative;
+  z-index: 5;
+  text-align: center;
+  margin-top: -60px;
+  font-family: var(--font-heading);
+  font-size: var(--text-4xl);
+  font-weight: 800;
+  color: var(--color-text); /* dark title */
+  opacity: 0.8;
+}
+
+/* Layout Containers */
+.section {
+  padding: var(--space-20) 0;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.sectionTitle {
+  font-family: var(--font-heading);
+  font-size: var(--text-3xl);
+  font-weight: 900;
+  color: var(--color-primary);
+  margin-bottom: var(--space-10);
+  position: relative;
+}
+
+/* 2. Neler Yapıyoruz? (Grid Split) */
+.nelerRow {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--space-16);
+  align-items: center;
+}
+
+.nelerLeft p {
+  font-size: var(--text-base);
+  color: var(--color-text-muted);
+  line-height: 1.7;
+  margin-bottom: var(--space-8);
+}
+
+.checkList {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-6);
+}
+.checkItem {
+  display: flex;
+  gap: var(--space-4);
+}
+.checkItemIcon {
+  flex-shrink: 0;
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  background: rgba(37, 99, 235, 0.1); /* blue tint */
+  color: #2563eb;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.checkItemContent h4 {
+  font-size: var(--text-base);
+  font-weight: 800;
+  color: var(--color-text);
+  margin-bottom: var(--space-1);
+}
+.checkItemContent p {
+  font-size: var(--text-sm);
+  color: var(--color-text-muted);
+  line-height: 1.5;
+  margin: 0;
+}
+
+.nelerRight {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr 1fr;
+  gap: var(--space-4);
+}
+.nTile {
+  aspect-ratio: 1;
+  border-radius: var(--radius-2xl);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: var(--space-6);
+  gap: var(--space-4);
+  font-weight: 800;
+  transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+.nTile:hover {
+  transform: translateY(-5px);
+}
+.nTileWhite {
+  background: var(--color-white);
+  border: 1px solid rgba(0,0,0,0.05);
+  box-shadow: 0 10px 30px rgba(0,0,0,0.03);
+  color: var(--color-text);
+}
+.nTileDark {
+  background: var(--color-text); /* Antrasit/Navy */
+  color: var(--color-white);
+  box-shadow: 0 10px 30px rgba(29, 43, 54, 0.2);
+}
+.nTileBlue {
+  background: #2563eb; /* Prominent Blue */
+  color: var(--color-white);
+  box-shadow: 0 10px 30px rgba(37, 99, 235, 0.3);
+}
+
+/* 3. Neden Özel Kasaplık? */
+.nedenGrid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: var(--space-8) var(--space-10);
+}
+.nedenItem {
+  display: flex;
+  gap: var(--space-4);
+}
+.nedenItemIcon {
+  flex-shrink: 0;
+  color: var(--color-accent);
+}
+.nedenItemContent h4 {
+  font-size: var(--text-lg);
+  font-weight: 800;
+  color: var(--color-text);
+  margin-bottom: var(--space-2);
+}
+.nedenItemContent p {
+  font-size: var(--text-sm);
+  color: var(--color-text-muted);
+  line-height: 1.6;
+}
+
+/* 4. Teslimat & Soğuk Zincir */
+.deliveryTop {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--space-6);
+  margin-bottom: var(--space-6);
+}
+.deliveryCard {
+  background: var(--color-white);
+  border: 1px solid rgba(0,0,0,0.06);
+  border-radius: var(--radius-xl);
+  padding: var(--space-8);
+  box-shadow: 0 4px 20px rgba(0,0,0,0.02);
+}
+.deliveryCardHead {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+  margin-bottom: var(--space-4);
+  font-family: var(--font-heading);
+  font-weight: 800;
+  font-size: var(--text-lg);
+}
+.deliveryCard p {
+  margin: 0;
+  font-size: var(--text-sm);
+  color: var(--color-text-muted);
+  line-height: 1.6;
+}
+.dlHighlight {
+  font-weight: 700;
+  color: var(--color-accent);
+}
+.deliveryBottomBanner {
+  background: rgba(37, 99, 235, 0.05); /* very light blue */
+  border: 1px solid rgba(37, 99, 235, 0.1);
+  border-radius: var(--radius-xl);
+  padding: var(--space-6) var(--space-8);
+  display: flex;
+  align-items: center;
+  gap: var(--space-4);
+  font-weight: 600;
+  color: var(--color-text);
+}
+
+/* 5. Hisse ve İşleme Detayı */
+.hisseGrid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--space-6);
+}
+.hisseCard {
+  background: var(--color-white);
+  border: 1px solid rgba(0,0,0,0.06);
+  border-radius: var(--radius-xl);
+  padding: var(--space-8);
+  text-align: center;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.02);
+  transition: transform 0.2s;
+}
+.hisseCard:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+}
+.hisseIconLabel {
+  font-family: var(--font-heading);
+  font-size: var(--text-2xl);
+  font-weight: 900;
+  color: var(--color-accent);
+  margin-bottom: var(--space-2);
+}
+.hisseCard h4 {
+  font-size: var(--text-lg);
+  font-weight: 800;
+  color: var(--color-text);
+  margin-bottom: var(--space-2);
+}
+.hisseCard p {
+  font-size: var(--text-sm);
+  color: var(--color-text-muted);
+  line-height: 1.5;
+  margin: 0;
+}
+
+/* 6. Bottom Call To Action */
+.ctaBanner {
+  background: linear-gradient(135deg, var(--color-primary), #11281b);
+  border-radius: var(--radius-2xl);
+  padding: var(--space-16) var(--space-8);
+  text-align: center;
+  margin-top: var(--space-10);
+  margin-bottom: var(--space-20);
+  box-shadow: 0 20px 50px rgba(23, 59, 41, 0.3);
+  color: var(--color-white);
+}
+.ctaBanner h2 {
+  font-family: var(--font-heading);
+  font-size: var(--text-4xl);
+  font-weight: 800;
+  margin-bottom: var(--space-6);
+  line-height: 1.3;
+  max-width: 800px;
+  margin-inline: auto;
+}
+.ctaBanner p {
+  font-size: var(--text-lg);
+  color: rgba(255, 255, 255, 0.8);
+  margin-bottom: var(--space-10);
+  max-width: 600px;
+  margin-inline: auto;
+}
+.ctaBtns {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-4);
+}
+.btnSolid {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-2);
+  background: #10b981;
+  color: white;
+  padding: var(--space-3) var(--space-8);
+  border-radius: var(--radius-lg);
+  font-weight: 800;
+  font-size: var(--text-base);
+  text-decoration: none;
+  transition: all 0.3s;
+  box-shadow: 0 4px 15px rgba(16, 185, 129, 0.3);
+}
+.btnSolid:hover {
+  transform: translateY(-2px);
+  background: #059669;
+  box-shadow: 0 8px 20px rgba(16, 185, 129, 0.4);
+}
+.btnOutline {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-2);
+  background: transparent;
+  color: white;
+  border: 2px solid rgba(255, 255, 255, 0.3);
+  padding: var(--space-3) var(--space-8);
+  border-radius: var(--radius-lg);
+  font-weight: 800;
+  font-size: var(--text-base);
+  text-decoration: none;
+  transition: all 0.3s;
+}
+.btnOutline:hover {
+  background: rgba(255, 255, 255, 0.1);
+  border-color: rgba(255, 255, 255, 0.6);
+}
+
+@media (max-width: 900px) {
+  .heroTitle { font-size: var(--text-4xl); }
+  .nelerRow { grid-template-columns: 1fr; }
+  .nedenGrid { grid-template-columns: 1fr; }
+  .deliveryTop { grid-template-columns: 1fr; }
+  .hisseGrid { grid-template-columns: 1fr; }
+  .heroOverlapText { display: none; }
+  .ctaBtns { flex-direction: column; }
+  .ctaBtns > a { width: 100%; justify-content: center; }
+}
