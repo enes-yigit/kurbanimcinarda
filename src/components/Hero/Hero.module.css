@@ -70,9 +70,14 @@
 
 @media (max-width: 900px) {
   .heroContent {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     text-align: center;
-    padding: var(--space-8) var(--space-6) 0;
+    padding: var(--space-8) var(--space-4) 0;
     margin: 0 auto;
+    width: 100%;
+    max-width: 100%;
   }
 }
 
@@ -121,13 +126,13 @@
 
 @media (max-width: 900px) {
   .heroTitle1 {
-    font-size: 24px;
+    font-size: 22px;
     line-height: 1.2;
   }
   .heroTitle2 {
-    font-size: 28px;
+    font-size: 26px;
     line-height: 1.1;
-    margin-bottom: var(--space-6);
+    margin-bottom: var(--space-4);
   }
 }
 
@@ -145,10 +150,10 @@
 
 .heroSubtitle {
   color: rgba(255, 255, 255, 0.85);
-  font-size: var(--text-base);
-  line-height: 1.6;
+  font-size: 14px;
+  line-height: 1.5;
   margin-bottom: var(--space-8);
-  max-width: 600px;
+  max-width: 500px;
   margin-left: auto;
   margin-right: auto;
 }
