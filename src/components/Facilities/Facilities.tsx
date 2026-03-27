@@ -32,24 +32,26 @@ export default function Facilities() {
           <div className={styles.sideImageRow}>
             <div className={`${styles.imageWrap} ${styles.sideImage}`}>
                <img 
-                 src="https://images.unsplash.com/photo-1572025442646-866d16c84a54?w=500&q=80" 
-                 alt="İç Mekan Ofis" 
+                 src="/banner_image/terazi.webp" 
+                 alt="Hassas Tartı" 
                />
+               <div className={styles.imgBadge}>HASSAS TARTI</div>
             </div>
             <div className={`${styles.imageWrap} ${styles.sideImage}`}>
                <img 
-                 src="https://images.unsplash.com/photo-1595166649736-de6d12389af2?w=500&q=80" 
-                 alt="Veteriner Kontrolü ve Hayvanlar" 
+                 src="/banner_image/kesim.webp" 
+                 alt="Profesyonel Kesim" 
                />
+               <div className={styles.imgBadge}>HİJYENİK KESİM</div>
             </div>
           </div>
 
           {/* Bottom Side Image */}
           <div className={`${styles.imageWrap} ${styles.bottomImage}`}>
-            <div className={styles.imgBadge}>MODERN TESİSLERİMİZ</div>
+            <div className={styles.imgBadge}>SOĞUK ZİNCİR TESLİMAT</div>
              <img 
-                 src="https://images.unsplash.com/photo-1621245781308-f9b60d0e6593?w=800&q=80" 
-                 alt="Kurban 365 Dağıtım Aracı ve Tesis" 
+                 src="/banner_image/frigoarac.png" 
+                 alt="Frigolu Dağıtım Aracı" 
              />
           </div>
         </div>

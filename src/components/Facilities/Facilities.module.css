@@ -67,7 +67,7 @@
 
 /* Specific Grid Items */
 .mainImage {
-  aspect-ratio: 16/9;
+  aspect-ratio: 1/1;
 }
 
 .sideImageRow {
@@ -110,7 +110,7 @@
   
   .mainImage {
     grid-row: 1 / 3;
-    aspect-ratio: auto; /* fills the entire vertical space of side items */
+    aspect-ratio: 1/1; /* Enforced square aspect ratio */
   }
 }
 
