@@ -257,7 +257,7 @@ export default function Packages() {
 
                 {/* CTA Button */}
                 <Link 
-                  href="https://wa.me/905555555555" 
+                  href="https://wa.me/902129099495" 
                   target="_blank"
                   className={`${styles.ctaBtn} ${pkg.theme === 'dark' ? styles.btnWhite : styles.btnDarkBlue}`}
                 >
