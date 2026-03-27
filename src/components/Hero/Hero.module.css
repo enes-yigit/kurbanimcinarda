@@ -1,8 +1,8 @@
 .hero {
   position: relative;
   width: 100vw;
-  height: calc(100vh - var(--navbar-height));
-  min-height: 700px;
+  height: calc(100vh - var(--navbar-height) - 48px); /* Banners take approx 48px */
+  min-height: 550px;
   overflow: hidden;
   background-color: var(--color-background);
 }

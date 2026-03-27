@@ -1,5 +1,5 @@
 .announcementBar {
-  background: var(--color-accent); /* Turuncu */
+  background: var(--color-text); /* Antrasit Premium Gri */
   color: var(--color-white);
   height: var(--announcement-height);
   display: flex;

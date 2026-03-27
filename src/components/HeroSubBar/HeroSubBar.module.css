@@ -1,5 +1,5 @@
 .heroSubBar {
-  background-color: var(--color-primary); /* Yeşil */
+  background-color: var(--color-accent); /* Turuncu Alert */
   color: var(--color-white);
   text-align: center;
   padding: var(--space-3) var(--space-4);
