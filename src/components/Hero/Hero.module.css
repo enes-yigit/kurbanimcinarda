@@ -65,6 +65,7 @@
   padding: 0 var(--space-6);
   text-align: center;
   margin: 0 auto;
+  overflow: hidden; /* Prevent child overflow from affecting parent */
 }
 
 @media (max-width: 900px) {
@@ -89,6 +90,9 @@
   text-transform: uppercase;
   letter-spacing: 0.1em;
   margin-bottom: var(--space-6);
+  max-width: 100%;
+  white-space: normal;
+  text-align: center;
 }
 
 .heroBadgeDot {
@@ -233,10 +237,12 @@
   width: 100%;
   max-width: 100%;
   overflow-x: auto;
+  overflow-y: hidden;
   padding-bottom: var(--space-4);
   -ms-overflow-style: none;
   scrollbar-width: none;
   position: relative;
+  display: block;
 }
 
 .pillsContainer::-webkit-scrollbar {
