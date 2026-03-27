@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import styles from "./SmartWizard.module.css";
+import { Gift, UserPlus, Users } from "lucide-react";
 
 /* ---- Step data ---- */
 interface WizardOption {
@@ -215,7 +216,9 @@ export default function SmartWizard() {
           <div className={styles.dealsLabel}>2026 ERKEN KAYIT FIRSATLARI</div>
           <div className={styles.mainDeal}>
             <div className={styles.mainDealLeft}>
-              <div className={styles.mainDealIcon}>🎁</div>
+              <div className={styles.mainDealIcon}>
+                <Gift size={28} className={styles.mainDealSVG} />
+              </div>
               <div>
                 <div className={styles.mainDealTitle}>Erken Kayıt Fırsatı</div>
                 <p className={styles.mainDealSub}>Bütün müşterilerimize özel</p>
@@ -230,7 +233,9 @@ export default function SmartWizard() {
             <div className={styles.subDealCard}>
               <span className={styles.subDealBadge}>EK FIRSAT</span>
               <div className={styles.subDealTop}>
-                <div className={styles.subDealIcon}>👤</div>
+                <div className={styles.subDealIcon}>
+                  <UserPlus size={24} className={styles.subDealSVG} />
+                </div>
                 <div>
                   <div className={styles.subDealTitle}>İlk Kayıt Avantajı</div>
                   <p className={styles.subDealSub}>Yeni müşterilerimize özel</p>
@@ -244,7 +249,9 @@ export default function SmartWizard() {
             <div className={styles.subDealCard}>
               <span className={styles.subDealBadge}>EK FIRSAT</span>
               <div className={styles.subDealTop}>
-                <div className={styles.subDealIcon}>👥</div>
+                <div className={styles.subDealIcon}>
+                  <Users size={24} className={styles.subDealSVG} />
+                </div>
                 <div>
                   <div className={styles.subDealTitle}>Grup Bereketi</div>
                   <p className={styles.subDealSub}>7 Hissedar beraber kayıt</p>
