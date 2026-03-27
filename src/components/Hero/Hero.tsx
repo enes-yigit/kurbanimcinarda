@@ -32,7 +32,7 @@ const slides = [
   },
   {
     id: 3,
-    image: "/banner_image/section_1.png", // Will be section_3.png when added
+    image: "/banner_image/paket.png",
     preTitle: "PROFESYONEL EKİP",
     title1: "Özel Kasaplık",
     title2: "Hizmeti Sizi Bekliyor",
@@ -56,7 +56,7 @@ export default function Hero() {
   useEffect(() => {
     const timer = setInterval(() => {
       setCurrentSlide((prev) => (prev + 1) % slides.length);
-    }, 6000); // Change slide every 6s
+    }, 8000); // Change slide every 8s
     return () => clearInterval(timer);
   }, []);
 
