@@ -118,10 +118,11 @@ export default function Footer() {
           <p className={styles.footerCopyright}>
             © {currentYear} Çınar Kurban — Çınar İstanbul. Tüm hakları saklıdır.
           </p>
-          <div className={styles.footerBadges}>
-            <span className={styles.footerBadge}>🕌 İslami Usul</span>
-            <span className={styles.footerBadge}>🛡️ Güvenli Hizmet</span>
-          </div>
+          <p className={styles.footerCopyright} style={{ marginTop: '8px', opacity: 0.7, fontSize: '11px' }}>
+            <a href="https://morekod.com/" target="_blank" rel="noopener noreferrer" style={{ textDecoration: 'underline', color: 'inherit' }}>
+              MoreKod
+            </a> tarafından geliştirildi.
+          </p>
         </div>
       </div>
     </footer>
