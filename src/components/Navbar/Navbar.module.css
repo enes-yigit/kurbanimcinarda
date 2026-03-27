@@ -1,5 +1,5 @@
 .navbar {
-  position: fixed; /* Overlay on top of Hero */
+  position: absolute; /* Stay at the top of the page */
   top: var(--announcement-height); /* Below announcement bar */
   left: 0;
   right: 0;
@@ -11,11 +11,7 @@
 }
 
 .navbarScrolled {
-  background: rgba(23, 59, 41, 0.9); /* Opaque brand green */
-  backdrop-filter: blur(16px);
-  -webkit-backdrop-filter: blur(16px);
-  box-shadow: 0 10px 30px rgba(0,0,0,0.1);
-  border-bottom-color: rgba(255, 255, 255, 0.1);
+  /* No background change on scroll as per user request */
 }
 
 .navInner {
