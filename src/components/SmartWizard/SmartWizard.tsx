@@ -133,6 +133,16 @@ export default function SmartWizard() {
 
   return (
     <section className={styles.wizard} id="akilli-asistan">
+      {/* Premium Campaign Banner */}
+      <div className={styles.campaignBanner}>
+        <div className={styles.bannerDot} />
+        <div className={styles.bannerContent}>
+          <p className={styles.bannerText}>
+            Erken kayıt avantajlarıyla <span className={styles.pill}>14.000 ₺'ye kadar indirim</span> kazanmak için <span className={styles.pill}>acele edin!</span> Son tarih 5 Nisan!
+          </p>
+        </div>
+        <div className={styles.bannerDot} />
+      </div>
 
       <div className={styles.wizardInner}>
         {/* Badge */}
@@ -220,7 +230,66 @@ export default function SmartWizard() {
           )}
         </div>
 
-        {/* Removed redundant deals to keep only the top marquee banner */}
+        {/* Deals */}
+        <div className={styles.dealsArea}>
+          <div className={styles.dealsLabelWrapper}>
+            <div className={styles.dealsLine} />
+            <div className={styles.dealsLabel}>2026 ERKEN KAYIT FIRSATLARI</div>
+            <div className={styles.dealsLine} />
+          </div>
+
+          <div className={styles.mainDealCard}>
+            <div className={styles.mainDealLeft}>
+              <div className={styles.mainDealIcon}>
+                <Gift size={24} />
+              </div>
+              <div className={styles.mainDealInfo}>
+                <div className={styles.mainDealTitle}>Erken Kayıt Fırsatı</div>
+                <p className={styles.mainDealSub}>Bütün müşterilerimize özel</p>
+              </div>
+            </div>
+            <div className={styles.mainDealRight}>
+              <div className={styles.mainDealPrice}>1.000 ₺</div>
+              <div className={styles.mainDealUnit}>HİSSE BAŞI İNDİRİM</div>
+            </div>
+          </div>
+
+          <div className={styles.subDealsGrid}>
+            <div className={styles.subDealCard}>
+              <div className={styles.subDealBadge}>EK FIRSAT</div>
+              <div className={styles.subDealContent}>
+                <div className={styles.subDealLeft}>
+                  <div className={styles.subDealIcon}><UserPlus size={20} /></div>
+                  <div className={styles.subDealInfo}>
+                    <div className={styles.subDealTitle}>İlk Kayıt Avantajı</div>
+                    <p className={styles.subDealSub}>Yeni müşterilerimize özel</p>
+                  </div>
+                </div>
+                <div className={styles.subDealRight}>
+                  <div className={styles.subDealUnit}>HİSSE BAŞI</div>
+                  <div className={styles.subDealPrice}>500 ₺</div>
+                </div>
+              </div>
+            </div>
+
+            <div className={styles.subDealCard}>
+              <div className={styles.subDealBadge}>EK FIRSAT</div>
+              <div className={styles.subDealContent}>
+                <div className={styles.subDealLeft}>
+                  <div className={styles.subDealIcon}><Users size={20} /></div>
+                  <div className={styles.subDealInfo}>
+                    <div className={styles.subDealTitle}>Grup Bereketi</div>
+                    <p className={styles.subDealSub}>7 Hissedar beraber kayıt</p>
+                  </div>
+                </div>
+                <div className={styles.subDealRight}>
+                  <div className={styles.subDealUnit}>HİSSE BAŞI</div>
+                  <div className={styles.subDealPrice}>500 ₺</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
     </section>
   );

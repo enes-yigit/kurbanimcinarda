@@ -267,60 +267,55 @@
 }
 
 /* Deals Section */
-/* Thin Marquee Banner (Matches Announcement Bar Style) */
-.campaignBannerThin {
-  display: none; /* Only show on mobile */
+/* Premium Campaign Banner (As per user screenshot) */
+.campaignBanner {
   background: #e85f1c; /* Brand Orange */
-  color: white;
-  height: 40px;
+  padding: var(--space-6) var(--space-4);
+  display: flex;
+  flex-direction: column;
   align-items: center;
-  overflow: hidden;
-  position: relative;
+  gap: var(--space-3);
   margin-bottom: var(--space-8);
+  text-align: center;
+}
+
+.bannerDot {
+  width: 12px;
+  height: 12px;
+  background: white;
+  border-radius: 50%;
+}
+
+.bannerText {
+  color: white;
+  font-size: 18px;
+  font-weight: 700;
+  line-height: 1.8;
+  max-width: 500px;
+  margin: 0;
+}
+
+.pill {
+  background: rgba(255, 255, 255, 0.2); /* Translucent highlight from screenshot */
+  padding: 4px 16px;
+  border-radius: 30px;
+  display: inline-block;
+  white-space: nowrap;
+  margin: 2px 0;
 }
 
 @media (max-width: 900px) {
-  .campaignBannerThin {
-    display: flex; /* Mobile only */
-    height: 36px;
+  .bannerText {
+    font-size: 15px;
+    line-height: 2.2; /* Better spacing for pills on wrap */
   }
-  .marqueeItem {
-    font-size: 11px;
-    gap: var(--space-4);
+  .pill {
+    padding: 2px 12px;
   }
-}
-
-.marqueeTrack {
-  display: flex;
-  animation: wizardMarquee 40s linear infinite;
-  white-space: nowrap;
-}
-
-.marqueeItem {
-  display: flex;
-  align-items: center;
-  gap: var(--space-6);
-  padding: 0 var(--space-6);
-  font-size: 13px;
-  font-weight: 700;
-  white-space: nowrap;
-}
-
-.pillSmall {
-  background: rgba(255, 255, 255, 0.2);
-  padding: 2px 10px;
-  border-radius: 20px;
-  font-weight: 800;
-  margin: 0 4px;
-}
-
-@keyframes wizardMarquee {
-  0% { transform: translateX(0); }
-  100% { transform: translateX(-33.33%); }
-}
-
-.dealsArea {
-  margin-top: var(--space-12);
+  .bannerDot {
+    width: 10px;
+    height: 10px;
+  }
 }
 
 .dealsLabel {
