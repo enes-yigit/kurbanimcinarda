@@ -51,7 +51,7 @@ export default function Navbar() {
         </div>
 
         {/* CTA */}
-        <Link href="/randevu-al" className={`btn btn--accent btn--lg ${styles.navCta}`}>
+        <Link href="/randevu-al" className={`btn btn--accent ${styles.navCta}`}>
           Hemen Kayıt Ol
         </Link>
 
