@@ -336,7 +336,7 @@
 }
 
 .mainDealCard {
-  background: #1e293b;
+  background: var(--color-primary);
   border-radius: 40px; /* Large radius like reference */
   padding: var(--space-8);
   display: flex;
