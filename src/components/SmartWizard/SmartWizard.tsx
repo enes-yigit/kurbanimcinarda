@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 import styles from "./SmartWizard.module.css";
-import { Gift, UserPlus, Users } from "lucide-react";
+import { Gift, UserPlus, Users, Sparkles } from "lucide-react";
 
 /* ---- Step data ---- */
 interface WizardOption {
@@ -137,7 +137,7 @@ export default function SmartWizard() {
       <div className={styles.wizardInner}>
         {/* Badge */}
         <div className={styles.wizardBadge}>
-          <span className={styles.wizardBadgeIcon}>✦</span>
+          <span className={styles.wizardBadgeIcon}><Sparkles size={16} /></span>
           <span className={styles.wizardBadgeInner}>AKILLI SEÇİM ASİSTANI</span>
         </div>
 
