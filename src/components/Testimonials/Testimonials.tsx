@@ -15,7 +15,7 @@ interface Review {
 const reviews: Review[] = [
   {
     id: 1,
-    text: "Kurban ibadetimizi 3 yıldır burada ifa ediyoruz. Tesis temizliği, personelin güler yüzlü olması ve işlemlerin tamamen İslami hassasiyetlerle yürütülmesi bizi çok memnun etti. Randevu sistemiyle çalıştığımız için hiç beklemden etlerimizi teslim alıyoruz.",
+    text: "Kurban ibadetimizi 3 yıldır burada ifa ediyoruz. Tesis temizliği, personelin güler yüzlü olması ve işlemlerin tamamen İslami hassasiyetlerle yürütülmesi bizi çok memnun etti. Randevu sistemiyle çalıştığımız için hiç beklemeden etlerimizi teslim alıyoruz.",
     author: "M. Yılmaz",
     location: "Kartal / İstanbul",
     initial: "M"
@@ -28,11 +28,32 @@ const reviews: Review[] = [
     initial: "A"
   },
   {
+    id: 4,
+    text: "7 kefeli terazi sistemi gerçekten devrim niteliğinde. Hissedarlar arasında 'kimin parçası daha büyük' tartışması bitti, herkesin hakkı milimetrik pay ediliyor. Çınar Kurban ekibine bu şeffaflık için teşekkür ederiz.",
+    author: "E. Sertel",
+    location: "Ataşehir / İstanbul",
+    initial: "E"
+  },
+  {
+    id: 5,
+    text: "Tesis o kadar büyük ve ferah ki, bayram sabahı kahvaltımızı yaparken kurbanımızın kesilmesini beklemek çok keyifliydi. Çocuklar için oyun alanları bile düşünülmüş. Bir aile işletmesi sıcaklığında profesyonel hizmet.",
+    author: "Z. Aktaş",
+    location: "Pendik / İstanbul",
+    initial: "Z"
+  },
+  {
     id: 3,
     text: "Kesimi bu kadar hijyenik ortamda yaptıkları için şükran doluyuz. Evde saatlerce et pay etme derdinden kurtulduk, paylarınıza ayrılmış, paketlenmiş halde direkt dolaba koymalık olarak geliyor. Gerçekten de tam kusursuz bir hizmet.",
     author: "S. Aydın",
     location: "Kadıköy / İstanbul",
     initial: "S"
+  },
+  {
+    id: 6,
+    text: "Sadece profesyonel bir kesimhane değil, aynı zamanda manevi havayı da hissettiğiniz bir yer. Kesim anında ismimizin zikredilmesi ve tekbirlerle sürecin yürütülmesi bizi çok duygulandırdı. Allah razı olsun.",
+    author: "B. Ersoy",
+    location: "Ümraniye / İstanbul",
+    initial: "B"
   }
 ];
 
