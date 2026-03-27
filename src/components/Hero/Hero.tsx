@@ -24,7 +24,7 @@ const slides = [
   },
   {
     id: 2,
-    image: "/banner_image/section_1.png", // Will be section_2.png when added
+    image: "/banner_image/frigoarac.png",
     preTitle: "KESİNTİSİZ SOĞUK ZİNCİR",
     title1: "Frigolu Araçlarla",
     title2: "Evinize Kadar Teslimat",
