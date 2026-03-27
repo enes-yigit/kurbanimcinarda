@@ -5,7 +5,7 @@
   height: calc(100vh - var(--announcement-height));
   min-height: 600px;
   overflow: hidden;
-  background-color: var(--color-background);
+  background-color: #0e1a40; /* Dark solid base to prevent ghosting */
 }
 
 .slide {
