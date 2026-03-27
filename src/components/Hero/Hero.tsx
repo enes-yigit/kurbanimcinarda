@@ -1,82 +1,155 @@
+"use client";
+
+import { useState, useEffect } from "react";
 import Link from "next/link";
 import styles from "./Hero.module.css";
+import { 
+  Truck, 
+  ShieldCheck, 
+  Scale, 
+  Video, 
+  Sun, 
+  CheckSquare, 
+  Beef
+} from "lucide-react";
+
+const slides = [
+  {
+    id: 1,
+    image: "/banner_image/section_1.png",
+    preTitle: "İSTANBUL'UN EN KÖKLÜ ADRESİ",
+    title1: "İstanbul",
+    title2: "Kurbanlık Satış ve Kesim",
+    subtitle: "2026 kurban kayıtlarımız başlamıştır. Modern tesislerimizde, aynı güven ve aynı huzurla ibadetinizi yerine getirmeniz için hizmetinizdeyiz.",
+  },
+  {
+    id: 2,
+    image: "/banner_image/section_1.png", // Will be section_2.png when added
+    preTitle: "KESİNTİSİZ SOĞUK ZİNCİR",
+    title1: "Frigolu Araçlarla",
+    title2: "Evinize Kadar Teslimat",
+    subtitle: "Bayramın 1. günü, İstanbul'un her iki yakasına da hisse paylarınızı soğuk zincir bozulmadan özel kapılarımızda dondurarak teslim ediyoruz.",
+  },
+  {
+    id: 3,
+    image: "/banner_image/section_1.png", // Will be section_3.png when added
+    preTitle: "PROFESYONEL EKİP",
+    title1: "Özel Kasaplık",
+    title2: "Hizmeti Sizi Bekliyor",
+    subtitle: "Kurbanlık etlerinizi istediğiniz ölçülerde; kuşbaşı, kıyma, kavurmalık olarak ayırıp vakumlu paketlerde ailenize sunuyoruz.",
+  }
+];
+
+const pills = [
+  { icon: <Truck size={16} />, text: "1. GÜN RANDEVULU TESLİMAT" },
+  { icon: <CheckSquare size={16} />, text: "E-DEVLET KÜPE KONTROL" },
+  { icon: <ShieldCheck size={16} />, text: "KAPAK ATMA GARANTİSİ" },
+  { icon: <Scale size={16} />, text: "7 KEFELİ HASSAS TARTI" },
+  { icon: <Beef size={16} />, text: "YERLİ BESİ" },
+  { icon: <Video size={16} />, text: "CANLI YAYIN" },
+  { icon: <Sun size={16} />, text: "TAM İBADET" },
+];
 
 export default function Hero() {
+  const [currentSlide, setCurrentSlide] = useState(0);
+
+  useEffect(() => {
+    const timer = setInterval(() => {
+      setCurrentSlide((prev) => (prev + 1) % slides.length);
+    }, 6000); // Change slide every 6s
+    return () => clearInterval(timer);
+  }, []);
+
   return (
     <section className={styles.hero} id="hero">
-      {/* Background decoration */}
-      <div className={styles.heroBg}>
-        <div className={`${styles.heroCircle} ${styles.heroCircle1}`} />
-        <div className={`${styles.heroCircle} ${styles.heroCircle2}`} />
+      {/* Slides */}
+      {slides.map((slide, index) => (
+        <div 
+          key={slide.id} 
+          className={`${styles.slide} ${
+            index === currentSlide ? styles.slideActive : ""
+          }`}
+        >
+          <img src={slide.image} alt="Çınar Kurban Banner" className={styles.slideImage} />
+          <div className={styles.overlay} />
+        </div>
+      ))}
+
+      {/* Content strictly over slides */}
+      <div className={styles.contentWrapper}>
+        <div className="container">
+          <div className={styles.heroContent}>
+            
+            {/* Slide Text */}
+            <div className={styles.heroBadge}>
+              <div className={styles.heroBadgeDot} />
+              {slides[currentSlide].preTitle}
+            </div>
+            
+            <h1>
+              <span className={styles.heroTitle1}>{slides[currentSlide].title1}</span>
+              <span className={styles.heroTitle2}>{slides[currentSlide].title2}</span>
+            </h1>
+
+            <p className={styles.heroSubtitle}>
+              {slides[currentSlide].subtitle}
+            </p>
+
+            {/* Actions */}
+            <div className={styles.actionBtns}>
+              <a 
+                href="https://wa.me/905389694268" 
+                target="_blank" 
+                rel="noopener noreferrer" 
+                className={styles.btnWhatsapp}
+              >
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="20"
+                  height="20"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  strokeWidth="2"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                >
+                  <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path>
+                </svg>
+                Bilgi Al & Kayıt
+              </a>
+              <Link href="/randevu-al" className={styles.btnOutlineWhite}>
+                <ShieldCheck size={20} />
+                e-Devlet Küpe Sorgula
+              </Link>
+            </div>
+
+            {/* Pills - Always showing same over slides */}
+            <div className={styles.pillsGrid}>
+              {pills.map((pill, i) => (
+                <div key={i} className={styles.pillItem}>
+                  {pill.icon}
+                  {pill.text}
+                </div>
+              ))}
+            </div>
+
+          </div>
+        </div>
       </div>
 
-      <div className={styles.heroInner}>
-        {/* Left: Content */}
-        <div className={styles.heroContent}>
-          <div className={styles.heroBadge}>
-            ✨ 15 Yıllık Tecrübe <span>• Ön Kayıtlar Başladı</span>
-          </div>
-
-          <h1 className={styles.heroTitle}>
-            İstanbul Kurbanlık
-            <span className={styles.heroTitleAccent}>Satış ve Kesim</span>
-          </h1>
-
-          <p className={styles.heroSubtitle}>
-            Rabbimizin emri olan kurban ibadetinizi, İslami usullere tam
-            uygunluk ve hassas terazi ile tartım güvencesiyle gerçekleştiriyoruz.
-          </p>
-
-          <div className={styles.heroActions}>
-            <Link href="/randevu-al" className="btn btn--accent btn--lg">
-              Hemen Kayıt Ol
-            </Link>
-            <Link href="/hisse-fiyatlari" className="btn btn--outline btn--lg">
-              Fiyatları İncele
-            </Link>
-          </div>
-
-          <div className={styles.heroStats}>
-            <div className={styles.heroStat}>
-              <span className={styles.heroStatValue}>15+</span>
-              <span className={styles.heroStatLabel}>Yıllık Tecrübe</span>
-            </div>
-            <div className={styles.heroStat}>
-              <span className={styles.heroStatValue}>10.000+</span>
-              <span className={styles.heroStatLabel}>Mutlu Müşteri</span>
-            </div>
-            <div className={styles.heroStat}>
-              <span className={styles.heroStatValue}>1. Gün</span>
-              <span className={styles.heroStatLabel}>Teslimat Garantisi</span>
-            </div>
-          </div>
-        </div>
-
-        {/* Right: Visual */}
-        <div className={styles.heroVisual}>
-          <div className={styles.heroImageWrapper}>
-            <img
-              src="https://images.unsplash.com/photo-1596040033229-a9821ebd058d?w=800&q=80"
-              alt="Kurbanlık hayvanlar"
-              className={styles.heroImage}
-            />
-          </div>
-
-          {/* Floating card: trust */}
-          <div className={styles.heroFloatingCard}>
-            <div className={styles.floatingIcon}>🕌</div>
-            <div>
-              <div className={styles.floatingLabel}>İbadet Hassasiyeti</div>
-              <div className={styles.floatingValue}>%100 Uygun</div>
-            </div>
-          </div>
-
-          {/* Floating badge */}
-          <div className={styles.heroFloatingCard2}>
-            <div className={styles.floatingBadgeText}>🚚 Frigolu Teslimat</div>
-            <div className={styles.floatingBadgeSmall}>1. Gün Kapınızda</div>
-          </div>
-        </div>
+      {/* Manual Slide Controls */}
+      <div className={styles.sliderControls}>
+        {slides.map((_, index) => (
+          <button
+            key={index}
+            className={`${styles.dot} ${
+              index === currentSlide ? styles.dotActive : ""
+            }`}
+            onClick={() => setCurrentSlide(index)}
+            aria-label={`Slide ${index + 1}`}
+          />
+        ))}
       </div>
     </section>
   );
