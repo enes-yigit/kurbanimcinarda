@@ -16,14 +16,23 @@ export default function Hero5() {
   return (
     <section className="relative w-full min-h-[100dvh] flex flex-col justify-center md:items-center pt-[170px] sm:pt-[190px] md:pt-[200px] pb-16 overflow-hidden">
       
-      {/* ── IMAGE BACKGROUND (Replaced Video) ── */}
-      <div className="absolute inset-0 w-full h-full z-0 overflow-hidden">
+      {/* ── IMAGE BACKGROUND ── */}
+      <div className="absolute inset-0 w-full h-full z-0 overflow-hidden bg-[#0c1a12]">
+        {/* Mobile Background (AI Generated Cinematic) */}
         <Image 
           src="/banner_image/produced_bg_cinematic.png" 
           alt="Çınar Kurban Özel Üretim Tesisleri" 
           fill 
           priority
-          className="object-cover object-center scale-105 sm:scale-100 transition-all duration-700"
+          className="object-cover object-center sm:hidden transition-all duration-700"
+        />
+        {/* Desktop Background (Original) */}
+        <Image 
+          src="/banner_image/section_1.png" 
+          alt="Çınar Kurban Tesisleri" 
+          fill 
+          priority
+          className="object-cover object-center hidden sm:block transition-all duration-700"
         />
       </div>
 
