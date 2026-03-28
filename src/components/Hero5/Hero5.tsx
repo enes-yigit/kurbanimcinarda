@@ -59,7 +59,7 @@ export default function Hero5() {
             className={`${outfit.className} flex flex-col items-center text-4xl sm:text-6xl md:text-7xl lg:text-[5rem] font-bold text-white leading-[1.1] tracking-tight max-w-4xl drop-shadow-lg`}
           >
             <motion.span layout>Aileniz İçin</motion.span>
-            <motion.div layout className="flex flex-wrap items-center justify-center gap-x-2 sm:gap-x-4 mt-1 sm:mt-2">
+            <motion.div layout className="flex flex-wrap items-baseline justify-center gap-x-2 sm:gap-x-4 mt-1 sm:mt-2">
               <TextRotate
                 texts={[
                   "En Kaliteli",
@@ -68,7 +68,7 @@ export default function Hero5() {
                   "En Sağlıklı",
                   "En Hızlı"
                 ]}
-                mainClassName="text-orange-500 overflow-hidden"
+                mainClassName="text-orange-500 overflow-visible"
                 staggerFrom="last"
                 initial={{ y: "100%" }}
                 animate={{ y: 0 }}
@@ -78,7 +78,7 @@ export default function Hero5() {
                 transition={{ type: "spring", damping: 30, stiffness: 400 }}
                 rotationInterval={3000}
               />
-              <motion.span layout>Seçim</motion.span>
+              <motion.span layout className="pb-1 sm:pb-2">Seçim</motion.span>
             </motion.div>
           </motion.h1>
         </LayoutGroup>
