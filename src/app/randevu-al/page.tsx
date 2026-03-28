@@ -179,7 +179,7 @@ export default function RandevuAlPage() {
                 <div className={styles.infoIcon}><MapPin size={18} /></div>
                 <div className={styles.infoItemContent}>
                   <h4>Yüz Yüze Görüşme</h4>
-                  <p>Dilerseniz Merkez Mahallesi Ebubekir Caddesi No:5 Bağcılar / İstanbul adresindeki tesisimizde çayımızı içebilir ve güvenle kaydınızı oluşturabilirsiniz.</p>
+                  <p>Dilerseniz Çınar Mah., 843. Sok., No: 4A, Bağcılar / İstanbul adresindeki tesisimizde çayımızı içebilir ve güvenle kaydınızı oluşturabilirsiniz.</p>
                 </div>
               </div>
             </div>

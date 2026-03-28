@@ -50,7 +50,7 @@ export default function IletisimPage() {
               <div className={styles.iconBox}><MapPin size={24} /></div>
               <div className={styles.infoContent}>
                 <h3>Merkez Tesisimiz</h3>
-                <p>Merkez Mahallesi Ebubekir Caddesi No: 5</p>
+                <p>Çınar Mah., 843. Sok., No: 4A</p>
                 <p>Bağcılar / İstanbul</p>
               </div>
             </div>

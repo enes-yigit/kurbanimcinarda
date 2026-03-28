@@ -1,4 +1,4 @@
-import Hero from "@/components/Hero/Hero";
+import Hero from "@/components/Hero5/Hero5";
 import HeroSubBar from "@/components/HeroSubBar/HeroSubBar";
 import SmartWizard from "@/components/SmartWizard/SmartWizard";
 import Packages from "@/components/Packages/Packages";
@@ -10,7 +10,7 @@ export default function HomePage() {
   return (
     <main>
       <Hero />
-      <HeroSubBar />
+      {/* <HeroSubBar /> */}
       <SmartWizard />
         <Packages />
         <Testimonials />

@@ -54,7 +54,7 @@ export default function ServicesBlocks() {
             <h3 className={styles.cardTitle}>Kapak Atma Garantili Yerli Besi — Neden Biz?</h3>
             <div className={styles.cardText}>
               <p>
-                <strong>İstanbul kurban pazarı</strong>nda 50 yılı aşkın süredir faaliyet gösteren ailemiz, İstanbul'un en köklü ve güvenilir kurbanlık satış merkezidir. On binlerce ailenin kurban ibadetini şeffaf koşullarda yerine getirmesine vesile olduk. Tüm büyükbaş kurbanlıklarımız <strong>kapak atma garantili</strong>, %100 Yerli Besi Erkek Danaları olup, Anadolu pazarlarından özenle seçilir.
+                <strong>İstanbul kurban pazarı</strong>nda 16 yılı aşkın süredir faaliyet gösteren ailemiz, İstanbul'un en köklü ve güvenilir kurbanlık satış merkezidir. On binlerce ailenin kurban ibadetini şeffaf koşullarda yerine getirmesine vesile olduk. Tüm büyükbaş kurbanlıklarımız <strong>kapak atma garantili</strong>, %100 Yerli Besi Erkek Danaları olup, Anadolu pazarlarından özenle seçilir.
               </p>
               <p>
                 <strong>Hisseli kurban</strong> modelimizde bir büyükbaş, İslami kurallara uygun olarak en fazla 7 kişi arasında paylaştırılır. Her hisse sahibi için ayrı ayrı vekalet alınır ve kesim anında isim zikredilerek ibadet yerine getirilir. Tesiste bizzat kesim izlenebileceği gibi, <strong>4K canlı yayın</strong> üzerinden uzaktan takip de mümkündür.

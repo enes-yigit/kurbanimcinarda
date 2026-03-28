@@ -1,48 +1,49 @@
 "use client";
 
 import Image from "next/image";
+import { motion } from "framer-motion";
 
-// Placeholder for user's logos in public/logos.
-// Duplicated here so the marquee looks full even with 2 logos.
+// Unique logos only
 const defaultLogos = [
   { src: "/logos/dinery_logo.png", alt: "Dinery" },
   { src: "/logos/morekod_logo.png", alt: "Morekod" },
   { src: "/logos/safelogger_logo.png", alt: "SafeLogger" },
   { src: "/logos/tansesuar_png-logo.png", alt: "Tansesuar" },
-  // Duplicate to ensure seamless marquee looping on very wide screens
-  { src: "/logos/dinery_logo.png", alt: "Dinery Partner" },
-  { src: "/logos/morekod_logo.png", alt: "Morekod Partner" },
-  { src: "/logos/safelogger_logo.png", alt: "SafeLogger Partner" },
-  { src: "/logos/tansesuar_png-logo.png", alt: "Tansesuar Partner" },
+  { src: "/logos/dinery_logo.png", alt: "Dinery Partner" }, // Extra filler for grid balance if needed
 ];
 
 export default function HeroSubBar() {
   return (
-    <div className="w-full bg-white border-y border-gray-100 py-8 overflow-hidden flex flex-col items-center relative z-10">
+    <div className="w-full bg-white border-y border-gray-100 py-16 flex flex-col items-center relative z-10">
       
       {/* Title and Subtitle matching reference image */}
-      <div className="text-center mb-12 px-4 mt-4">
-        <h2 className="text-2xl sm:text-3xl font-medium tracking-tight text-gray-900 mb-1.5">
+      <motion.div 
+        initial={{ opacity: 0, y: 15 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true }}
+        transition={{ duration: 0.6 }}
+        className="text-center mb-16 px-4"
+      >
+        <h2 className="text-2xl sm:text-3xl font-medium tracking-tight text-gray-900 mb-2">
           Güvenilir Kurumsal Çözüm Ortaklarımız.
         </h2>
-        <p className="text-[17px] sm:text-[19px] text-gray-500 font-normal tracking-tight">
-          Alanında öncü yerel işletmelerden, saygın kurumsal markalara.
+        <p className="text-[17px] sm:text-[19px] text-gray-500 font-normal tracking-tight max-w-2xl mx-auto">
+          Alanında öncü yerel işletmelerden, saygın kurumsal markalara kadar İstanbul'un güvenini paylaşıyoruz.
         </p>
-      </div>
+      </motion.div>
       
-      {/* Marquee Container */}
-      <div className="relative flex w-full max-w-[100vw] overflow-hidden group">
-        
-        {/* Left/Right Fade Masks for elegance */}
-        <div className="absolute left-0 top-0 bottom-0 w-16 sm:w-32 bg-gradient-to-r from-white to-transparent z-10 pointer-events-none" />
-        <div className="absolute right-0 top-0 bottom-0 w-16 sm:w-32 bg-gradient-to-l from-white to-transparent z-10 pointer-events-none" />
-
-        {/* Scrolling Track 1 */}
-        <div className="animate-marquee flex whitespace-nowrap min-w-full items-center justify-around pl-4">
+      {/* Static Responsive Grid */}
+      <div className="container mx-auto px-6">
+        <div className="flex flex-wrap justify-center items-center gap-x-12 gap-y-10 sm:gap-x-20 sm:gap-y-16">
           {defaultLogos.map((logo, index) => (
-            <div 
-              key={`marquee-1-${index}`} 
-              className="flex items-center justify-center mx-6 sm:mx-12 w-28 sm:w-40 h-10 sm:h-12 relative opacity-40 grayscale hover:grayscale-0 hover:opacity-100 transition duration-500 cursor-pointer"
+            <motion.div 
+              key={`${logo.alt}-${index}`}
+              initial={{ opacity: 0, scale: 0.95 }}
+              whileInView={{ opacity: 1, scale: 1 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.4, delay: index * 0.1 }}
+              whileHover={{ scale: 1.05, opacity: 1 }}
+              className="flex items-center justify-center w-32 sm:w-44 h-12 relative opacity-40 grayscale hover:grayscale-0 transition-all duration-500 cursor-pointer"
             >
               <Image 
                 src={logo.src} 
@@ -50,39 +51,9 @@ export default function HeroSubBar() {
                 fill
                 className="object-contain"
               />
-            </div>
+            </motion.div>
           ))}
         </div>
-        
-        {/* Scrolling Track 2 (Duplicate for infinite seamless loop) */}
-        <div className="animate-marquee flex whitespace-nowrap min-w-full items-center justify-around pl-4" aria-hidden="true">
-          {defaultLogos.map((logo, index) => (
-            <div 
-              key={`marquee-2-${index}`} 
-              className="flex items-center justify-center mx-6 sm:mx-12 w-28 sm:w-40 h-10 sm:h-12 relative opacity-40 grayscale hover:grayscale-0 hover:opacity-100 transition duration-500 cursor-pointer"
-            >
-              <Image 
-                src={logo.src} 
-                alt={logo.alt}
-                fill
-                className="object-contain"
-              />
-            </div>
-          ))}
-        </div>
-
-        <style dangerouslySetInnerHTML={{__html: `
-          @keyframes marquee {
-            0% { transform: translateX(0%); }
-            100% { transform: translateX(-100%); }
-          }
-          .animate-marquee {
-            animation: marquee 35s linear infinite;
-          }
-          .group:hover .animate-marquee {
-            animation-play-state: paused;
-          }
-        `}} />
       </div>
     </div>
   );

@@ -31,7 +31,7 @@ export default function Footer() {
               />
             </div>
             <p className={styles.footerDesc}>
-              15 yıllık tecrübe ile İstanbul&apos;da İslami usullere uygun kurbanlık
+              16 yıllık tecrübe ile İstanbul&apos;da İslami usullere uygun kurbanlık
               satış, kesim ve teslimat hizmeti sunuyoruz.
             </p>
             <div className={styles.footerSocials}>

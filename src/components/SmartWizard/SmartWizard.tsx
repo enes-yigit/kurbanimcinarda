@@ -1,18 +1,18 @@
 "use client";
 
 import { useState } from "react";
-import { 
-  Gift, 
-  UserPlus, 
-  Users, 
-  User, 
-  Users2, 
-  Wallet, 
-  Home, 
-  Heart, 
-  UsersRound, 
-  Package, 
-  Truck, 
+import {
+  Gift,
+  UserPlus,
+  Users,
+  User,
+  Users2,
+  Wallet,
+  Home,
+  Heart,
+  UsersRound,
+  Package,
+  Truck,
   Factory,
   ArrowLeft,
   CheckCircle2
@@ -43,15 +43,15 @@ const steps: Step[] = [
   {
     question: "Kayıt modeliniz hangisi?",
     options: [
-      { 
-        icon: <User className="w-6 h-6 text-orange-500" />, 
-        title: "Hissedar olarak katılacağım", 
-        desc: "Bireysel hisse kaydı" 
+      {
+        icon: <User className="w-6 h-6 text-orange-500" />,
+        title: "Hissedar olarak katılacağım",
+        desc: "Bireysel hisse kaydı"
       },
-      { 
-        icon: <Users2 className="w-6 h-6 text-orange-500" />, 
-        title: "7 Kişilik grubumuz hazır", 
-        desc: "Grup olarak kayıt", 
+      {
+        icon: <Users2 className="w-6 h-6 text-orange-500" />,
+        title: "7 Kişilik grubumuz hazır",
+        desc: "Grup olarak kayıt",
         extra: "ÖZEL SEÇİM",
         extraColor: "orange"
       },
@@ -60,42 +60,42 @@ const steps: Step[] = [
   {
     question: "Kemikli Et Verimi Beklentiniz",
     options: [
-      { 
-        icon: <Wallet className="w-6 h-6 text-gray-600" />, 
-        title: "Grup 01 (25-30 kg)", 
-        desc: "Bütçe dostu ve ekonomik" 
+      {
+        icon: <Wallet className="w-6 h-6 text-gray-600" />,
+        title: "1. Grup",
+        desc: "Bütçe dostu ve ekonomik"
       },
-      { 
-        icon: <Home className="w-6 h-6 text-gray-600" />, 
-        title: "Grup 02 (30-35 kg)", 
-        desc: "İdeal dengeli seçim" 
+      {
+        icon: <Home className="w-6 h-6 text-gray-600" />,
+        title: "2. Grup",
+        desc: "İdeal dengeli seçim"
       },
-      { 
-        icon: <Heart className="w-6 h-6 text-orange-500" />, 
-        title: "Grup 03 (35-40 kg)", 
+      {
+        icon: <Heart className="w-6 h-6 text-orange-500" />,
+        title: "3. Grup",
         desc: "Bereketli ve doyurucu",
         extra: "POPÜLER",
         extraColor: "orange"
       },
-      { 
-        icon: <UsersRound className="w-6 h-6 text-gray-600" />, 
-        title: "Grup 04 (40+ kg)", 
-        desc: "Geniş aileler için bereketi bol" 
+      {
+        icon: <UsersRound className="w-6 h-6 text-gray-600" />,
+        title: "4. Grup",
+        desc: "Geniş aileler için bereketi bol"
       },
     ],
   },
   {
     question: "Kurban nasıl işlensin?",
     options: [
-      { 
-        icon: <Package className="w-6 h-6 text-gray-600" />, 
-        title: "Geleneksel Paket", 
-        desc: "Bayram 1. günü, parçalanmış sıcak et teslimi" 
+      {
+        icon: <Package className="w-6 h-6 text-gray-600" />,
+        title: "Geleneksel Paket",
+        desc: "Bayram 1. günü, parçalanmış sıcak et teslimi"
       },
-      { 
-        icon: <CheckCircle2 className="w-6 h-6 text-emerald-500" />, 
-        title: "Özel Kasaplık İşlemi", 
-        desc: "Kıyma, kuşbaşı, değerli et paketle (+5.güne özel)", 
+      {
+        icon: <CheckCircle2 className="w-6 h-6 text-emerald-500" />,
+        title: "Özel Kasaplık İşlemi",
+        desc: "Kıyma, kuşbaşı, değerli et paketle (+5.güne özel)",
         extra: "+5.000 ₺",
         extraColor: "green"
       },
@@ -104,15 +104,15 @@ const steps: Step[] = [
   {
     question: "Teslimat tercihi?",
     options: [
-      { 
-        icon: <Truck className="w-6 h-6 text-gray-600" />, 
-        title: "Adresime Gelsin", 
-        desc: "Özel işlem sonrası iklimlendirilmiş araçlarla sevkiyat" 
+      {
+        icon: <Truck className="w-6 h-6 text-gray-600" />,
+        title: "Adresime Gelsin",
+        desc: "Özel işlem sonrası iklimlendirilmiş araçlarla sevkiyat"
       },
-      { 
-        icon: <Factory className="w-6 h-6 text-gray-600" />, 
-        title: "Tesisten Alırım", 
-        desc: "Randevu saatinizde Çınardağ tesisimizden paket teslimi" 
+      {
+        icon: <Factory className="w-6 h-6 text-gray-600" />,
+        title: "Tesisten Alırım",
+        desc: "Randevu saatinizde Çınardağ tesisimizden paket teslimi"
       },
     ],
   },
@@ -121,12 +121,12 @@ const steps: Step[] = [
 const animals = [
   {
     name: "Büyükbaş",
-    image: "/wizard/buyukbas.png",
+    image: "/wizard/buyukbas-removebg-preview.png",
     popular: true,
   },
   {
     name: "Küçükbaş",
-    image: "/wizard/kucukbas.png",
+    image: "/wizard/kucukbas-removebg-preview.png",
     popular: false,
   },
 ];
@@ -224,7 +224,7 @@ export default function SmartWizard() {
   return (
     <section className="bg-white py-24 px-4 font-sans text-gray-900 border-t border-gray-100" id="akilli-asistan">
       <div className="max-w-[50rem] mx-auto">
-        
+
         {/* New Professional Header & Top Deals */}
         <div className="flex flex-col items-center mb-12 max-w-3xl mx-auto text-center">
           {/* Top Chips / Deals */}
@@ -252,9 +252,9 @@ export default function SmartWizard() {
         </div>
 
         {/* Wizard Track */}
-        <div className="flex flex-col items-center mb-10 max-w-2xl mx-auto px-2"> 
+        <div className="flex flex-col items-center mb-10 max-w-2xl mx-auto px-2">
           <div className="w-full flex items-center justify-between mb-3">
-            <button 
+            <button
               onClick={goBack}
               disabled={currentStep === 0}
               className={cn(
@@ -268,10 +268,10 @@ export default function SmartWizard() {
               Adım <span className="text-gray-900 mx-0.5 text-sm">{currentStep + 1}</span> / {totalSteps}
             </div>
           </div>
-          
+
           {/* Progress Bar */}
           <div className="w-full h-[6px] bg-gray-100 rounded-full overflow-hidden shadow-inner flex">
-            <motion.div 
+            <motion.div
               className="h-full bg-gradient-to-r from-orange-400 to-orange-500 rounded-full"
               initial={{ width: 0 }}
               animate={{ width: `${progress}%` }}
@@ -344,7 +344,7 @@ export default function SmartWizard() {
                             transition={{ duration: 0.4 }}
                           />
                         )}
-                        
+
                         <div className="relative w-40 h-40 sm:w-48 sm:h-48 mb-6 mt-2">
                           {animal.popular && (
                             <div className="absolute -top-3 -right-6 z-20">
@@ -363,7 +363,7 @@ export default function SmartWizard() {
                             isSelected ? "bg-orange-400/20 scale-[1.4]" : "bg-gray-200/40 scale-[1.2] group-hover:bg-orange-300/20 group-hover:scale-[1.4]"
                           )} />
                         </div>
-                        
+
                         <div className="text-[1.75rem] font-extrabold text-gray-900 mb-3 relative z-10 tracking-tight">{animal.name}</div>
                         <div className={cn(
                           "mt-2 px-8 py-2.5 rounded-full text-[11px] font-black tracking-widest relative z-10 transition-all duration-300 uppercase select-none",
@@ -403,30 +403,30 @@ export default function SmartWizard() {
                           </div>
                           <p className="text-[15px] font-medium text-gray-500 leading-snug pr-2">{opt.desc}</p>
                         </div>
-                        
+
                         {opt.extra && (
                           <div className="shrink-0 ml-3 hidden sm:flex items-center">
                             <span className={cn(
                               "px-3 py-1.5 rounded-xl text-[10px] font-extrabold tracking-widest uppercase border",
                               opt.extraColor === "orange" ? "bg-orange-50 text-orange-600 border-orange-200" :
-                              opt.extraColor === "green" ? "bg-green-50 text-emerald-600 border-emerald-200" :
-                              opt.extraColor === "blue" ? "bg-blue-50 text-blue-600 border-blue-200" :
-                              "bg-gray-50 text-gray-500 border-gray-200"
+                                opt.extraColor === "green" ? "bg-green-50 text-emerald-600 border-emerald-200" :
+                                  opt.extraColor === "blue" ? "bg-blue-50 text-blue-600 border-blue-200" :
+                                    "bg-gray-50 text-gray-500 border-gray-200"
                             )}>
                               {opt.extra}
                             </span>
                           </div>
                         )}
-                        
+
                         {/* Mobile Extra block */}
                         {opt.extra && (
                           <div className="sm:hidden absolute top-4 right-4">
                             <span className={cn(
                               "px-2.5 py-1 rounded-lg text-[9px] font-bold tracking-widest uppercase border",
                               opt.extraColor === "orange" ? "bg-orange-50 text-orange-600 border-orange-200" :
-                              opt.extraColor === "green" ? "bg-green-50 text-emerald-600 border-emerald-200" :
-                              opt.extraColor === "blue" ? "bg-blue-50 text-blue-600 border-blue-200" :
-                              "bg-gray-50 text-gray-500 border-gray-200"
+                                opt.extraColor === "green" ? "bg-green-50 text-emerald-600 border-emerald-200" :
+                                  opt.extraColor === "blue" ? "bg-blue-50 text-blue-600 border-blue-200" :
+                                    "bg-gray-50 text-gray-500 border-gray-200"
                             )}>
                               {opt.extra}
                             </span>
@@ -443,7 +443,7 @@ export default function SmartWizard() {
 
         {/* Finish / Nav Controls */}
         {isLastStep && (
-          <motion.div 
+          <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.2, duration: 0.4 }}

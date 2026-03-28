@@ -21,7 +21,7 @@ type PlanType = {
 
 const buyukbasPlans: PlanType[] = [
   {
-    name: "Grup 01",
+    name: "1. Grup",
     minPrice: 30000,
     maxPrice: 35000,
     buttonText: "Hemen Yaz",
@@ -32,10 +32,10 @@ const buyukbasPlans: PlanType[] = [
       "7 Kefeli Terazi ile Hak Dağıtımı",
       "Randevulu Teslimat",
     ],
-    waMessage: "Merhaba, Büyükbaş Grup 01 (30k-35k) hakkında bilgi almak istiyorum."
+    waMessage: "Merhaba, Büyükbaş 1. Grup hakkında bilgi almak istiyorum."
   },
   {
-    name: "Grup 02",
+    name: "2. Grup",
     minPrice: 35000,
     maxPrice: 40000,
     buttonText: "Hemen Yaz",
@@ -46,10 +46,10 @@ const buyukbasPlans: PlanType[] = [
       "7 Kefeli Terazi ile Hak Dağıtımı",
       "Randevulu Teslimat",
     ],
-    waMessage: "Merhaba, Büyükbaş Grup 02 (35k-40k) hakkında bilgi almak istiyorum."
+    waMessage: "Merhaba, Büyükbaş 2. Grup hakkında bilgi almak istiyorum."
   },
   {
-    name: "Grup 03",
+    name: "3. Grup",
     minPrice: 40000,
     maxPrice: 45000,
     popular: true,
@@ -61,10 +61,10 @@ const buyukbasPlans: PlanType[] = [
       "7 Kefeli Terazi ile Hak Dağıtımı",
       "Öncelikli Teslimat",
     ],
-    waMessage: "Merhaba, Büyükbaş Grup 03 (40k-45k) hakkında bilgi almak istiyorum."
+    waMessage: "Merhaba, Büyükbaş 3. Grup hakkında bilgi almak istiyorum."
   },
   {
-    name: "Grup 04",
+    name: "4. Grup",
     minPrice: 45000,
     maxPrice: null,
     buttonText: "Hemen Yaz",
@@ -75,13 +75,13 @@ const buyukbasPlans: PlanType[] = [
       "7 Kefeli Terazi ile Hak Dağıtımı",
       "Öncelikli Teslimat",
     ],
-    waMessage: "Merhaba, Büyükbaş Grup 04 (45k+) hakkında bilgi almak istiyorum."
+    waMessage: "Merhaba, Büyükbaş 4. Grup hakkında bilgi almak istiyorum."
   }
 ];
 
 const kucukbasPlans: PlanType[] = [
   {
-    name: "Grup 01",
+    name: "1. Grup",
     minPrice: 19000,
     maxPrice: 22000,
     buttonText: "Hemen Yaz",
@@ -91,10 +91,10 @@ const kucukbasPlans: PlanType[] = [
       "İslami Usullere Uygun Kesim",
       "Randevulu Teslimat",
     ],
-    waMessage: "Merhaba, Küçükbaş Grup 01 (19k-22k) hakkında bilgi almak istiyorum."
+    waMessage: "Merhaba, Küçükbaş 1. Grup hakkında bilgi almak istiyorum."
   },
   {
-    name: "Grup 02",
+    name: "2. Grup",
     minPrice: 22000,
     maxPrice: 25000,
     buttonText: "Hemen Yaz",
@@ -104,10 +104,10 @@ const kucukbasPlans: PlanType[] = [
       "İslami Usullere Uygun Kesim",
       "Randevulu Teslimat",
     ],
-    waMessage: "Merhaba, Küçükbaş Grup 02 (22k-25k) hakkında bilgi almak istiyorum."
+    waMessage: "Merhaba, Küçükbaş 2. Grup hakkında bilgi almak istiyorum."
   },
   {
-    name: "Grup 03",
+    name: "3. Grup",
     minPrice: 25000,
     maxPrice: 28000,
     popular: true,
@@ -118,10 +118,10 @@ const kucukbasPlans: PlanType[] = [
       "İslami Usullere Uygun Kesim",
       "Öncelikli Teslimat",
     ],
-    waMessage: "Merhaba, Küçükbaş Grup 03 (25k-28k) hakkında bilgi almak istiyorum."
+    waMessage: "Merhaba, Küçükbaş 3. Grup hakkında bilgi almak istiyorum."
   },
   {
-    name: "Grup 04",
+    name: "4. Grup",
     minPrice: 28000,
     maxPrice: null,
     buttonText: "Hemen Yaz",
@@ -131,7 +131,7 @@ const kucukbasPlans: PlanType[] = [
       "İslami Usullere Uygun Kesim",
       "Öncelikli Teslimat",
     ],
-    waMessage: "Merhaba, Küçükbaş Grup 04 (28k+) hakkında bilgi almak istiyorum."
+    waMessage: "Merhaba, Küçükbaş 4. Grup hakkında bilgi almak istiyorum."
   }
 ];
 
@@ -155,7 +155,7 @@ const AnimalSwitch = ({
         <button
           onClick={() => handleSwitch(false)}
           className={cn(
-            "relative z-10 cursor-pointer h-12 rounded-xl sm:px-8 px-4 sm:py-2 py-1 font-semibold transition-colors sm:text-lg text-base flex-1 sm:flex-none",
+            "relative z-10 cursor-pointer h-11 sm:h-12 rounded-xl px-2 sm:px-8 py-1 sm:py-2 font-bold transition-colors text-[13px] sm:text-lg flex-1 whitespace-nowrap",
             !isKucukbas ? "text-white" : "text-gray-500 hover:text-gray-900"
           )}
         >
@@ -172,7 +172,7 @@ const AnimalSwitch = ({
         <button
           onClick={() => handleSwitch(true)}
           className={cn(
-            "relative z-10 cursor-pointer h-12 flex-shrink-0 rounded-xl sm:px-8 px-4 sm:py-2 py-1 font-semibold transition-colors sm:text-lg text-base flex-1 sm:flex-none",
+            "relative z-10 cursor-pointer h-11 sm:h-12 flex-shrink-0 rounded-xl px-2 sm:px-8 py-1 sm:py-2 font-bold transition-colors text-[13px] sm:text-lg flex-1 whitespace-nowrap",
             isKucukbas ? "text-white" : "text-gray-500 hover:text-gray-900"
           )}
         >
@@ -205,7 +205,7 @@ const DeliverySwitch = ({
         <button
           onClick={() => onChange(false)}
           className={cn(
-            "relative z-10 cursor-pointer sm:h-11 h-10 rounded-lg sm:px-5 px-3 py-1.5 font-semibold transition-colors text-sm flex-1 sm:flex-none",
+            "relative z-10 cursor-pointer sm:h-11 h-10 rounded-lg px-2 sm:px-5 py-1.5 font-bold transition-colors text-[12px] sm:text-sm flex-1 whitespace-nowrap",
             !isExtra ? "text-gray-900" : "text-gray-500 hover:text-gray-700"
           )}
         >
@@ -222,7 +222,7 @@ const DeliverySwitch = ({
         <button
           onClick={() => onChange(true)}
           className={cn(
-            "relative z-10 cursor-pointer sm:h-11 h-10 rounded-lg sm:px-5 px-3 py-1.5 font-semibold transition-colors text-sm flex-1 sm:flex-none",
+            "relative z-10 cursor-pointer sm:h-11 h-10 rounded-lg px-2 sm:px-5 py-1.5 font-bold transition-colors text-[12px] sm:text-sm flex-1 whitespace-nowrap",
             isExtra ? "text-orange-700" : "text-gray-500 hover:text-gray-700"
           )}
         >
@@ -234,9 +234,9 @@ const DeliverySwitch = ({
             />
           )}
           <span className="relative flex items-center justify-center gap-1.5 whitespace-nowrap">
-            5. Gün Özel Teslim
+            5. Gün / Özel Teslim
             <span className={cn(
-                "rounded-md px-1.5 py-0.5 text-[10px] font-bold tracking-tight inline-block",
+                "rounded-md px-1 sm:px-1.5 py-0.5 text-[9px] sm:text-[10px] font-bold tracking-tight hidden sm:inline-block",
                 isExtra ? "bg-orange-100 text-orange-600" : "bg-gray-200 text-gray-400"
               )}>
               +5.000 ₺

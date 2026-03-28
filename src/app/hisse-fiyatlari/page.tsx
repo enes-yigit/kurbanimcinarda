@@ -15,48 +15,48 @@ export default function HisseFiyatlariPage() {
   const hisseData = [
     {
       type: "Dana (1/7 Hisse)",
-      group: "Ekonomik Grup",
-      weight: "25 - 30 kg",
+      group: "1. Grup",
+      price: "30.000 ₺ - 35.000 ₺",
       statusTitle: "Ön Kayıt Açık",
       statusNote: "Kapora İle Sıranı Ayırt",
-      btnText: "Erken Rezervasyon Yap",
+      btnText: "Hemen Yaz",
       btnType: "accent",
       link: "https://wa.me/902129099495"
     },
     {
       type: "Dana (1/7 Hisse)",
-      group: "Mini Aile Grubu",
-      weight: "30 - 35 kg",
+      group: "2. Grup",
+      price: "35.000 ₺ - 40.000 ₺",
       statusTitle: "Ön Kayıt Açık",
       statusNote: "Kapora İle Sıranı Ayırt",
-      btnText: "Erken Rezervasyon Yap",
+      btnText: "Hemen Yaz",
       btnType: "accent",
       link: "https://wa.me/902129099495"
     },
     {
       type: "Tosun (1/7 Hisse)",
-      group: "Çekirdek Aile Grubu",
-      weight: "35 - 40 kg",
+      group: "3. Grup",
+      price: "40.000 ₺ - 45.000 ₺",
       statusTitle: "Ön Kayıt Açık",
       statusNote: "Kapora İle Sıranı Ayırt",
-      btnText: "Erken Rezervasyon Yap",
+      btnText: "Hemen Yaz",
       btnType: "accent",
       link: "https://wa.me/902129099495"
     },
     {
       type: "Tosun (1/7 Hisse)",
-      group: "Geniş Aile Grubu",
-      weight: "40+ kg",
+      group: "4. Grup",
+      price: "45.000 ₺+",
       statusTitle: "Ön Kayıt Açık",
       statusNote: "Kapora İle Sıranı Ayırt",
-      btnText: "Erken Rezervasyon Yap",
+      btnText: "Hemen Yaz",
       btnType: "accent",
       link: "https://wa.me/902129099495"
     },
     {
       type: "Özel Seçim Tosun",
-      group: "Tosun ve Kilogram Serbest Seçim",
-      weight: "Serbest Seçim",
+      group: "Tosun Serbest Seçim",
+      price: "Serbest Seçim",
       statusTitle: "Ön Kayıt Açık",
       statusNote: "Güzergah ve Teslimat Onaylı",
       btnText: "Bize Danışın",
@@ -147,8 +147,8 @@ export default function HisseFiyatlariPage() {
           <div className={styles.listContainer}>
             <div className={styles.listHeaderRow}>
               <div>Hayvan Türü</div>
-              <div>Tahmini Et (Karkas)</div>
               <div>Hisse Fiyatı</div>
+              <div>Durumu</div>
               <div>Aksiyon</div>
             </div>
             
@@ -159,7 +159,7 @@ export default function HisseFiyatlariPage() {
                     <span className={styles.animalName}>{item.type}</span>
                     <span className={styles.animalGroup}>{item.group}</span>
                   </div>
-                  <div className={styles.cellWeight}>{item.weight}</div>
+                  <div className={styles.cellWeight}>{item.price}</div>
                   <div className={styles.cellStatus}>
                     <span className={styles.statusOpen}>{item.statusTitle}</span>
                     <span className={styles.statusNote}>{item.statusNote}</span>

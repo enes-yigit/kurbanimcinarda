@@ -1,143 +1,310 @@
 "use client";
 
-import { useState, useEffect } from "react";
-import Link from "next/link";
-import styles from "./Hero.module.css";
-import {
-  Truck,
-  ShieldCheck,
-  Scale,
-  Video,
-  Sun,
-  CheckSquare,
-  Beef
-} from "lucide-react";
+import { motion } from 'framer-motion';
+import { Button } from '@/components/ui/button';
+import { Truck, Scale, ShieldCheck, CheckCircle2 } from 'lucide-react';
+import Image from 'next/image';
 
-const slides = [
-  {
-    id: 1,
-    image: "/banner_image/section_1.png",
-    preTitle: "İSTANBUL'UN EN KÖKLÜ ADRESİ",
-    title1: "İstanbul",
-    title2: "Kurbanlık Satış ve Kesim",
-    subtitle: "2026 kurban kayıtlarımız başlamıştır. Modern tesislerimizde, aynı güven ve aynı huzurla ibadetinizi yerine getirmeniz için hizmetinizdeyiz.",
+// ─── Animation Variants ──────────────────────────────────────────────────────
+
+const fadeUp = {
+  hidden: { opacity: 0, y: 28 },
+  visible: (i = 0) => ({
+    opacity: 1,
+    y: 0,
+    transition: { duration: 0.6, delay: i * 0.12, ease: [0.22, 1, 0.36, 1] },
+  }),
+};
+
+const fadeIn = {
+  hidden: { opacity: 0, scale: 0.94 },
+  visible: (i = 0) => ({
+    opacity: 1,
+    scale: 1,
+    transition: { duration: 0.7, delay: i * 0.15, ease: [0.22, 1, 0.36, 1] },
+  }),
+};
+
+const float = {
+  animate: {
+    y: [0, -10, 0],
+    transition: { duration: 4, repeat: Infinity, ease: 'easeInOut' },
   },
-  {
-    id: 2,
-    image: "/banner_image/frigoarac.png",
-    preTitle: "KESİNTİSİZ SOĞUK ZİNCİR",
-    title1: "Frigolu Araçlarla",
-    title2: "Evinize Kadar Teslimat",
-    subtitle: "Bayramın 1. günü, İstanbul'un her iki yakasına da hisse paylarınızı soğuk zincir bozulmadan özel kapılarımızda dondurarak teslim ediyoruz.",
+};
+
+const floatSlow = {
+  animate: {
+    y: [0, -6, 0],
+    transition: { duration: 5, repeat: Infinity, ease: 'easeInOut', delay: 1 },
   },
-  {
-    id: 3,
-    image: "/banner_image/paket.png",
-    preTitle: "PROFESYONEL EKİP",
-    title1: "Özel Kasaplık",
-    title2: "Hizmeti Sizi Bekliyor",
-    subtitle: "Kurbanlık etlerinizi istediğiniz ölçülerde; kuşbaşı, kıyma, kavurmalık olarak ayırıp vakumlu paketlerde ailenize sunuyoruz.",
-  }
-];
+};
 
-const pills = [
-  { icon: <Truck size={16} />, text: "1. GÜN RANDEVULU TESLİMAT" },
-  { icon: <CheckSquare size={16} />, text: "E-DEVLET KÜPE KONTROL" },
-  { icon: <ShieldCheck size={16} />, text: "KAPAK ATMA GARANTİSİ" },
-  { icon: <Scale size={16} />, text: "7 KEFELİ HASSAS TARTI" },
-  { icon: <Beef size={16} />, text: "YERLİ BESİ" },
-  { icon: <Video size={16} />, text: "CANLI YAYIN" },
-  { icon: <Sun size={16} />, text: "TAM İBADET" },
-];
+// ─── Feature Badge ────────────────────────────────────────────────────────────
 
-export default function Hero() {
-  const [currentSlide, setCurrentSlide] = useState(0);
+interface FeatureBadgeProps {
+  icon: React.ReactNode;
+  title: string;
+  subtitle: string;
+  accent?: string;
+}
 
-  useEffect(() => {
-    const timer = setInterval(() => {
-      setCurrentSlide((prev) => (prev + 1) % slides.length);
-    }, 8000); // Change slide every 8s
-    return () => clearInterval(timer);
-  }, []);
+function FeatureBadge({ icon, title, subtitle, accent = 'orange' }: FeatureBadgeProps) {
+  const accentMap: Record<string, string> = {
+    orange: 'bg-orange-50 text-orange-500 ring-orange-100',
+    green:  'bg-green-50  text-green-600  ring-green-100',
+    blue:   'bg-blue-50   text-blue-600   ring-blue-100',
+  };
+  const cls = accentMap[accent] ?? accentMap.orange;
 
   return (
-    <section className={styles.hero} id="hero">
-      {/* Slides */}
-      {slides.map((slide, index) => (
-        <div
-          key={slide.id}
-          className={`${styles.slide} ${index === currentSlide ? styles.slideActive : ""
-            }`}
-        >
-          <img src={slide.image} alt="Çınar Kurban Banner" className={styles.slideImage} />
-          <div className={styles.overlay} />
-        </div>
-      ))}
-
-      {/* Content strictly over slides */}
-      <div className={styles.contentWrapper}>
-        <div className="container">
-          <div className={styles.heroContent}>
-
-            {/* Slide Text */}
-            <div className={styles.heroBadge}>
-              <div className={styles.heroBadgeDot} />
-              {slides[currentSlide].preTitle}
-            </div>
-
-            <h1>
-              <span className={styles.heroTitle1}>{slides[currentSlide].title1}</span>
-              <span className={styles.heroTitle2}>{slides[currentSlide].title2}</span>
-            </h1>
-
-            <p className={styles.heroSubtitle}>
-              {slides[currentSlide].subtitle}
-            </p>
-
-            {/* Actions */}
-            <div className={styles.actionBtns}>
-              <a
-                href="https://wa.me/902129099495"
-                target="_blank"
-                rel="noopener noreferrer"
-                className={styles.btnWhatsapp}
-              >
-                <div className={styles.whatsappIcon}>
-                  <svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor">
-                    <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z" />
-                  </svg>
-                </div>
-                Bilgi Al & Kayıt
-              </a>
-            </div>
-
-            {/* Pills - Always showing same over slides */}
-            <div className={styles.pillsContainer}>
-              <div className={styles.pillsGrid}>
-                {pills.map((pill, i) => (
-                  <div key={i} className={styles.pillItem}>
-                    <span className={styles.pillIcon}>{pill.icon}</span>
-                    <span className={styles.pillText}>{pill.text}</span>
-                  </div>
-                ))}
-              </div>
-            </div>
-
-          </div>
-        </div>
+    <div className="flex items-center gap-3.5 group">
+      {/* Icon bubble */}
+      <div
+        className={`flex-shrink-0 flex h-11 w-11 items-center justify-center rounded-2xl ring-1 shadow-sm transition-transform duration-300 group-hover:scale-110 ${cls}`}
+      >
+        {icon}
       </div>
 
-      {/* Manual Slide Controls */}
-      <div className={styles.sliderControls}>
-        {slides.map((_, index) => (
-          <button
-            key={index}
-            className={`${styles.dot} ${index === currentSlide ? styles.dotActive : ""
-              }`}
-            onClick={() => setCurrentSlide(index)}
-            aria-label={`Slide ${index + 1}`}
-          />
-        ))}
+      {/* Text */}
+      <div className="flex flex-col leading-tight">
+        <span className="text-[17px] font-bold text-gray-900 tracking-tight">{title}</span>
+        <span className="text-[12px] font-medium text-gray-400 mt-0.5 tracking-wide">{subtitle}</span>
+      </div>
+    </div>
+  );
+}
+
+// ─── Hero ─────────────────────────────────────────────────────────────────────
+
+export default function Hero() {
+  return (
+    <section className="relative w-full overflow-hidden bg-[#fafafa] pt-32 pb-16 sm:pt-48 sm:pb-28">
+
+      {/* ── Subtle background blobs ── */}
+      <div className="pointer-events-none absolute inset-0 -z-10">
+        <div className="absolute -top-40 right-0 h-[500px] w-[500px] rounded-full bg-orange-100/40 blur-[120px]" />
+        <div className="absolute bottom-0 left-1/3 h-[400px] w-[400px] rounded-full bg-amber-50/60 blur-[100px]" />
+      </div>
+
+      <div className="max-w-[85rem] px-5 mx-auto grid grid-cols-1 items-center gap-16 lg:grid-cols-2 lg:gap-6">
+
+        {/* ══════════════════════════════════════════
+            LEFT — Text content
+        ══════════════════════════════════════════ */}
+        <div className="flex flex-col items-center text-center lg:items-start lg:text-left z-10">
+
+          {/* Eyebrow pill */}
+          <motion.div
+            custom={0} variants={fadeUp} initial="hidden" animate="visible"
+            className="inline-flex items-center gap-2 px-4 py-1.5 bg-white border border-gray-200 text-gray-600 rounded-full text-[11px] font-bold tracking-[0.15em] uppercase mb-7 shadow-sm"
+          >
+            <span className="inline-block h-2 w-2 rounded-full bg-orange-400 animate-pulse" />
+            İstanbul'un En Köklü Adresi
+          </motion.div>
+
+          {/* Heading */}
+          <motion.h1
+            custom={1} variants={fadeUp} initial="hidden" animate="visible"
+            className="text-[2.6rem] sm:text-[3.25rem] lg:text-[3.6rem] font-extrabold tracking-tight text-gray-900 leading-[1.08]"
+          >
+            Aileniz İçin{' '}
+            <span className="relative whitespace-nowrap">
+              <span className="relative z-10">En Kaliteli</span>
+              {/* underline accent */}
+              <svg
+                className="absolute -bottom-1 left-0 w-full"
+                viewBox="0 0 220 10"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+                aria-hidden="true"
+              >
+                <path
+                  d="M2 7 C40 3, 130 3, 218 7"
+                  stroke="#f97316"
+                  strokeWidth="3.5"
+                  strokeLinecap="round"
+                />
+              </svg>
+            </span>
+            {' '}Seçim
+          </motion.h1>
+
+          {/* Subtitle */}
+          <motion.p
+            custom={2} variants={fadeUp} initial="hidden" animate="visible"
+            className="mt-6 max-w-md text-[16.5px] sm:text-[17.5px] text-gray-500 font-medium leading-relaxed"
+          >
+            2026 kurban kayıtlarımız başlamıştır. Modern tesislerimizde, aynı güven ve huzurla ibadetinizi yerine getirmeniz için hizmetinizdeyiz.
+          </motion.p>
+
+          {/* CTA Buttons */}
+          <motion.div
+            custom={3} variants={fadeUp} initial="hidden" animate="visible"
+            className="mt-9 flex flex-wrap justify-center gap-3 lg:justify-start w-full sm:w-auto"
+          >
+            <Button
+              size="lg"
+              onClick={() => window.open('https://wa.me/902129099495', '_blank')}
+              className="px-7 py-6 text-[15px] font-bold tracking-wide rounded-2xl bg-orange-500 hover:bg-orange-600 text-white shadow-lg shadow-orange-500/25 transition-all duration-200 hover:-translate-y-0.5 w-full sm:w-auto"
+            >
+              Kayıt Ol &amp; Bilgi Al
+            </Button>
+            <Button
+              size="lg"
+              variant="outline"
+              onClick={() => document.getElementById('akilli-asistan')?.scrollIntoView({ behavior: 'smooth' })}
+              className="px-7 py-6 text-[15px] font-bold tracking-wide rounded-2xl border-gray-200 text-gray-700 hover:bg-gray-50 hover:border-gray-300 transition-all duration-200 hover:-translate-y-0.5 w-full sm:w-auto"
+            >
+              Paketleri İncele
+            </Button>
+          </motion.div>
+
+          {/* ── Feature badges ─────────────────────── */}
+          <motion.div
+            custom={4} variants={fadeUp} initial="hidden" animate="visible"
+            className="mt-12 w-full"
+          >
+            {/* Divider */}
+            <div className="flex items-center gap-3 mb-7">
+              <div className="h-px flex-1 bg-gray-200" />
+              <span className="text-[11px] font-bold tracking-[0.18em] uppercase text-gray-400">
+                Neden Biz?
+              </span>
+              <div className="h-px flex-1 bg-gray-200" />
+            </div>
+
+            <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 lg:gap-5">
+
+              {/* Badge 1 */}
+              <motion.div
+                custom={0} variants={fadeUp} initial="hidden" animate="visible"
+                className="flex items-start gap-3.5 rounded-2xl bg-white border border-gray-100 shadow-sm px-4 py-4 hover:shadow-md hover:-translate-y-0.5 transition-all duration-200"
+              >
+                <div className="flex-shrink-0 flex h-10 w-10 items-center justify-center rounded-xl bg-orange-50 text-orange-500 ring-1 ring-orange-100 mt-0.5">
+                  <Truck className="h-5 w-5" />
+                </div>
+                <div>
+                  <p className="text-[15px] font-extrabold text-gray-900 leading-tight">1. Gün Teslimat</p>
+                  <p className="text-[12px] text-gray-400 font-medium mt-1 leading-snug">Randevulu &amp; soğuk zincirli</p>
+                </div>
+              </motion.div>
+
+              {/* Badge 2 */}
+              <motion.div
+                custom={1} variants={fadeUp} initial="hidden" animate="visible"
+                className="flex items-start gap-3.5 rounded-2xl bg-white border border-gray-100 shadow-sm px-4 py-4 hover:shadow-md hover:-translate-y-0.5 transition-all duration-200"
+              >
+                <div className="flex-shrink-0 flex h-10 w-10 items-center justify-center rounded-xl bg-blue-50 text-blue-600 ring-1 ring-blue-100 mt-0.5">
+                  <Scale className="h-5 w-5" />
+                </div>
+                <div>
+                  <p className="text-[15px] font-extrabold text-gray-900 leading-tight">7 Kefeli Tartı</p>
+                  <p className="text-[12px] text-gray-400 font-medium mt-1 leading-snug">Hassas &amp; sertifikalı ölçüm</p>
+                </div>
+              </motion.div>
+
+              {/* Badge 3 */}
+              <motion.div
+                custom={2} variants={fadeUp} initial="hidden" animate="visible"
+                className="flex items-start gap-3.5 rounded-2xl bg-white border border-gray-100 shadow-sm px-4 py-4 hover:shadow-md hover:-translate-y-0.5 transition-all duration-200"
+              >
+                <div className="flex-shrink-0 flex h-10 w-10 items-center justify-center rounded-xl bg-green-50 text-green-600 ring-1 ring-green-100 mt-0.5">
+                  <ShieldCheck className="h-5 w-5" />
+                </div>
+                <div>
+                  <p className="text-[15px] font-extrabold text-gray-900 leading-tight">Kapak Garantisi</p>
+                  <p className="text-[12px] text-gray-400 font-medium mt-1 leading-snug">Hiçbir parça atılmaz</p>
+                </div>
+              </motion.div>
+
+            </div>
+          </motion.div>
+
+        </div>
+
+        {/* ══════════════════════════════════════════
+            RIGHT — Image collage
+        ══════════════════════════════════════════ */}
+        <div className="relative min-h-[460px] sm:min-h-[580px] w-full mt-8 lg:mt-0">
+
+          {/* ── Main image (top-right, large) ── */}
+          <motion.div
+            custom={0} variants={fadeIn} initial="hidden" animate="visible"
+            className="absolute right-0 top-0 w-[55%] sm:w-[58%]"
+          >
+            <motion.div
+              variants={float} animate="animate"
+              className="rounded-[2rem] sm:rounded-[2.8rem] overflow-hidden shadow-2xl border-[3px] border-white ring-1 ring-black/5"
+            >
+              <Image
+                src="/banner_image/section_1.png"
+                alt="Modern tesis ve hayvanlar"
+                width={560}
+                height={380}
+                className="w-full h-full object-cover"
+                priority
+              />
+            </motion.div>
+
+            {/* Floating trust badge on top of main image */}
+            <motion.div
+              custom={2} variants={fadeUp} initial="hidden" animate="visible"
+              className="absolute -bottom-4 -left-6 sm:-left-8 bg-white rounded-2xl shadow-xl border border-gray-100/80 px-4 py-3 flex items-center gap-2.5 z-30"
+            >
+              <div className="flex h-8 w-8 items-center justify-center rounded-xl bg-green-50 text-green-500">
+                <CheckCircle2 className="h-4.5 w-4.5 w-5 h-5" />
+              </div>
+              <div className="leading-tight">
+                <p className="text-[13px] font-bold text-gray-800">30+ Yıllık Tecrübe</p>
+                <p className="text-[11px] text-gray-400 font-medium">İstanbul'un tercihi</p>
+              </div>
+            </motion.div>
+          </motion.div>
+
+          {/* ── Secondary image (bottom-left) ── */}
+          <motion.div
+            custom={1} variants={fadeIn} initial="hidden" animate="visible"
+            className="absolute left-0 bottom-0 w-[48%] sm:w-[50%]"
+          >
+            <motion.div
+              variants={floatSlow} animate="animate"
+              className="rounded-[2rem] sm:rounded-[2.8rem] overflow-hidden shadow-xl border-[3px] border-white ring-1 ring-black/5"
+            >
+              <Image
+                src="/banner_image/paket.png"
+                alt="Özenle hazırlanmış paketler"
+                width={440}
+                height={320}
+                className="w-full h-full object-cover"
+              />
+            </motion.div>
+          </motion.div>
+
+          {/* ── Small accent image (mid-right, peeking) ── */}
+          <motion.div
+            custom={2} variants={fadeIn} initial="hidden" animate="visible"
+            className="absolute right-[-6%] sm:right-[-4%] top-[46%] w-[30%] sm:w-[32%] z-20"
+          >
+            <motion.div
+              variants={float} animate="animate"
+              className="rounded-[1.5rem] sm:rounded-[2rem] overflow-hidden shadow-2xl border-[3px] border-white ring-1 ring-black/5"
+              style={{ animationDelay: '1.5s' }}
+            >
+              <Image
+                src="/banner_image/terazi.png"
+                alt="Hassas tartı"
+                width={240}
+                height={200}
+                className="w-full h-full object-cover"
+              />
+            </motion.div>
+          </motion.div>
+
+          {/* ── Decorative blobs behind images ── */}
+          <div className="absolute top-1/4 right-1/4 h-40 w-40 rounded-full bg-orange-200/25 blur-3xl -z-10" />
+          <div className="absolute bottom-1/4 left-1/4 h-32 w-32 rounded-full bg-amber-100/40 blur-3xl -z-10" />
+        </div>
+
       </div>
     </section>
   );

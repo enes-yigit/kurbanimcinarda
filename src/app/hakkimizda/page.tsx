@@ -15,7 +15,7 @@ export default function HakkimizdaPage() {
         <div className={styles.contentWrapper}>
           <h2>Çınar Kurban - Hikayemiz</h2>
           <p>
-            Anadolu'nun bereketli meralarından özenle seçilen yerli besi danalarımızı, İslami usullere tam riayet ederek, 15 yılı aşkın profesyonel tesis deneyimiyle hisse sahiplerine sunuyoruz. Bizim için kurbanlık sadece bir ticaret değil; dini bir emanet, hassas bir ibadettir.
+            Anadolu'nun bereketli meralarından özenle seçilen yerli besi danalarımızı, İslami usullere tam riayet ederek, 16 yılı aşkın profesyonel tesis deneyimiyle hisse sahiplerine sunuyoruz. Bizim için kurbanlık sadece bir ticaret değil; dini bir emanet, hassas bir ibadettir.
           </p>
           <p>
             Bağcılar'da bulunan modern tesisimizde, veteriner hekim gözetiminden geçirilen kurbanlıklarımız, sağlık ve hijyen standartlarına %100 uyarak kesilir. 

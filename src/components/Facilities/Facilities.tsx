@@ -65,7 +65,7 @@ export default function Facilities() {
             <div className={styles.locText}>
               <span className={styles.locLabel}>AÇIK ADRES</span>
               <span className={styles.locAddress}>
-                Merkez Mahallesi Ebubekir caddesi no: 5 Bağcılar/İstanbul
+                Çınar Mah., 843. Sok., No: 4A, Bağcılar / İstanbul
               </span>
             </div>
           </div>

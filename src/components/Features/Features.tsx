@@ -28,8 +28,8 @@ const features = [
   },
   {
     icon: "🛡️",
-    title: "15 Yıllık Güvence",
-    desc: "15 yılı aşkın tecrübemiz ve binlerce mutlu müşterimizle İstanbul'un güvenilir kurban hizmet markas.",
+    title: "16 Yıllık Güvence",
+    desc: "16 yılı aşkın tecrübemiz ve binlerce mutlu müşterimizle İstanbul'un güvenilir kurban hizmet markası.",
   },
 ];
 
