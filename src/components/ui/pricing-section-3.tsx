@@ -166,8 +166,8 @@ const AnimalSwitch = ({
               transition={{ type: "spring", stiffness: 500, damping: 30 }}
             />
           )}
-          <span className="relative tracking-wide">
-            Hisseli <span className="hidden sm:inline">Kurban</span>
+          <span className="relative tracking-wide whitespace-normal leading-tight text-center text-[12px] sm:text-inherit">
+            Hisseli Kurban
           </span>
         </button>
 
@@ -185,8 +185,8 @@ const AnimalSwitch = ({
               transition={{ type: "spring", stiffness: 500, damping: 30 }}
             />
           )}
-          <span className="relative tracking-wide">
-            Küçükbaş <span className="hidden sm:inline">Kurban</span>
+          <span className="relative tracking-wide whitespace-normal leading-tight text-center text-[12px] sm:text-inherit">
+            Küçükbaş Kurban
           </span>
         </button>
       </div>
@@ -241,12 +241,6 @@ const DeliverySwitch = ({
           )}
           <span className="relative z-10 flex flex-col sm:flex-row items-center justify-center gap-0.5 sm:gap-1.5 leading-[1.15] text-center">
             <span>5. Gün / Özel Teslim</span>
-            <span className={cn(
-                "rounded-md px-1.5 sm:px-1.5 py-0.5 text-[8.5px] sm:text-[10px] font-bold tracking-tight inline-block",
-                isExtra ? "bg-orange-100 text-orange-600" : "bg-gray-200 text-gray-400"
-              )}>
-              +5.000 ₺
-            </span>
           </span>
         </button>
       </div>

@@ -95,9 +95,7 @@ const steps: Step[] = [
       {
         icon: <CheckCircle2 className="w-6 h-6 text-emerald-500" />,
         title: "Özel Kasaplık İşlemi",
-        desc: "Kıyma, kuşbaşı, değerli et paketle (+5.güne özel)",
-        extra: "+5.000 ₺",
-        extraColor: "green"
+        desc: "Kıyma, kuşbaşı, değerli et paketle (+5.güne özel)"
       },
     ],
   },
@@ -282,7 +280,7 @@ export default function SmartWizard() {
         </div>
 
         {/* Dynamic Step Content */}
-        <div className="relative flex items-start justify-center overflow-visible min-h-[350px] sm:min-h-[500px] max-w-3xl mx-auto">
+        <div className="relative flex items-start justify-center overflow-visible min-h-[470px] sm:min-h-[500px] max-w-3xl mx-auto">
           <AnimatePresence mode="popLayout" custom={direction}>
             <motion.div
               key={currentStep}
@@ -398,41 +396,25 @@ export default function SmartWizard() {
                         )}>
                           {opt.icon}
                         </div>
-                        <div className="flex-1 text-left relative z-10">
-                          <div className={cn("text-xl sm:text-[1.4rem] font-bold transition-colors mb-1.5 leading-tight tracking-tight", isSelected ? "text-orange-950" : "text-gray-900")}>
-                            {opt.title}
+                        <div className="flex-1 text-left relative z-10 w-full">
+                          <div className="flex flex-col sm:flex-row sm:items-center gap-1 sm:gap-3 mb-1.5">
+                            <div className={cn("text-[1.15rem] sm:text-[1.4rem] font-bold transition-colors leading-tight tracking-tight", isSelected ? "text-orange-950" : "text-gray-900")}>
+                              {opt.title}
+                            </div>
+                            {opt.extra && (
+                              <span className={cn(
+                                "inline-flex w-fit px-2.5 sm:px-3 py-1 sm:py-1.5 rounded-lg sm:rounded-xl text-[9px] sm:text-[10px] font-extrabold tracking-widest uppercase border",
+                                opt.extraColor === "orange" ? "bg-orange-50 text-orange-600 border-orange-200" :
+                                  opt.extraColor === "green" ? "bg-green-50 text-emerald-600 border-emerald-200" :
+                                    opt.extraColor === "blue" ? "bg-blue-50 text-blue-600 border-blue-200" :
+                                      "bg-gray-50 text-gray-500 border-gray-200"
+                              )}>
+                                {opt.extra}
+                              </span>
+                            )}
                           </div>
-                          <p className="text-[15px] font-medium text-gray-500 leading-snug pr-2">{opt.desc}</p>
+                          <p className="text-[13px] sm:text-[15px] font-medium text-gray-500 leading-snug pr-2">{opt.desc}</p>
                         </div>
-
-                        {opt.extra && (
-                          <div className="shrink-0 ml-3 hidden sm:flex items-center">
-                            <span className={cn(
-                              "px-3 py-1.5 rounded-xl text-[10px] font-extrabold tracking-widest uppercase border",
-                              opt.extraColor === "orange" ? "bg-orange-50 text-orange-600 border-orange-200" :
-                                opt.extraColor === "green" ? "bg-green-50 text-emerald-600 border-emerald-200" :
-                                  opt.extraColor === "blue" ? "bg-blue-50 text-blue-600 border-blue-200" :
-                                    "bg-gray-50 text-gray-500 border-gray-200"
-                            )}>
-                              {opt.extra}
-                            </span>
-                          </div>
-                        )}
-
-                        {/* Mobile Extra block */}
-                        {opt.extra && (
-                          <div className="sm:hidden absolute top-4 right-4">
-                            <span className={cn(
-                              "px-2.5 py-1 rounded-lg text-[9px] font-bold tracking-widest uppercase border",
-                              opt.extraColor === "orange" ? "bg-orange-50 text-orange-600 border-orange-200" :
-                                opt.extraColor === "green" ? "bg-green-50 text-emerald-600 border-emerald-200" :
-                                  opt.extraColor === "blue" ? "bg-blue-50 text-blue-600 border-blue-200" :
-                                    "bg-gray-50 text-gray-500 border-gray-200"
-                            )}>
-                              {opt.extra}
-                            </span>
-                          </div>
-                        )}
                       </div>
                     );
                   })}
