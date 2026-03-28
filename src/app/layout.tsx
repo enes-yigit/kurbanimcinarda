@@ -54,8 +54,8 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="tr">
-      <body className={`${inter.variable} ${outfit.variable} overflow-x-hidden`} suppressHydrationWarning>
+    <html lang="tr" data-scroll-behavior="smooth">
+      <body className={`${inter.variable} ${outfit.variable}`} suppressHydrationWarning>
         <AnnouncementBar />
         <Navbar />
         {children}
