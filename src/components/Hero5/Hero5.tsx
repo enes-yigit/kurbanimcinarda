@@ -1,9 +1,10 @@
 "use client";
 
-import { motion } from 'framer-motion';
+import { motion, LayoutGroup } from 'framer-motion';
 import { ArrowDown, CheckCircle2, Phone, ShieldCheck, Scale, Truck, Gift } from 'lucide-react';
 import { Inter, Outfit } from 'next/font/google';
 import Image from 'next/image';
+import { TextRotate } from '@/components/ui/text-rotate';
 
 const outfit = Outfit({ subsets: ['latin'] });
 const inter = Inter({ subsets: ['latin'] });
@@ -49,15 +50,38 @@ export default function Hero5() {
         </motion.div>
 
         {/* Title */}
-        <motion.h1
-          initial={{ opacity: 0, y: 30 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.7, delay: 0.1 }}
-          className={`${outfit.className} text-4xl sm:text-6xl md:text-7xl lg:text-[5rem] font-bold text-white leading-[1.05] tracking-tight max-w-4xl drop-shadow-lg`}
-        >
-          Aileniz İçin <br />
-          <span className="text-orange-500">En Kaliteli</span> Seçim
-        </motion.h1>
+        <LayoutGroup>
+          <motion.h1 
+            layout
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.7, delay: 0.1 }}
+            className={`${outfit.className} flex flex-col items-center text-4xl sm:text-6xl md:text-7xl lg:text-[5rem] font-bold text-white leading-[1.1] tracking-tight max-w-4xl drop-shadow-lg`}
+          >
+            <motion.span layout>Aileniz İçin</motion.span>
+            <motion.div layout className="flex flex-wrap items-center justify-center gap-x-2 sm:gap-x-4 mt-1 sm:mt-2">
+              <TextRotate
+                texts={[
+                  "En Kaliteli",
+                  "En Hijyenik",
+                  "En Güvenilir",
+                  "En Sağlıklı",
+                  "En Hızlı"
+                ]}
+                mainClassName="text-orange-500 overflow-hidden"
+                staggerFrom="last"
+                initial={{ y: "100%" }}
+                animate={{ y: 0 }}
+                exit={{ y: "-120%" }}
+                staggerDuration={0.025}
+                splitLevelClassName="overflow-hidden pb-1 sm:pb-2"
+                transition={{ type: "spring", damping: 30, stiffness: 400 }}
+                rotationInterval={3000}
+              />
+              <motion.span layout>Seçim</motion.span>
+            </motion.div>
+          </motion.h1>
+        </LayoutGroup>
 
         {/* Subtitle */}
         <motion.p
