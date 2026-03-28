@@ -133,9 +133,9 @@ export default function Footer() {
             <p className={`${inter.className} text-white text-xs font-medium`}>
               © {currentYear} Çınar Kurban — Çınar İstanbul. Tüm hakları saklıdır.
             </p>
-            <a href="https://morekod.com/" target="_blank" rel="noopener noreferrer" className={`${inter.className} text-white text-[11px] mt-3 font-medium inline-flex items-center gap-2 hover:opacity-80 transition-opacity`}>
-              <img src="/logos/morekod_logo.png" alt="MoreKod" className="h-4 w-auto opacity-90" />
-              <span>tarafından geliştirildi.</span>
+            <a href="https://morekod.com/" target="_blank" rel="noopener noreferrer" className={`mt-4 flex flex-col items-center justify-center hover:opacity-80 transition-opacity`}>
+              {/* Translate the image slightly to the right to counteract the massive transparent space on its right side */}
+              <img src="/logos/morekod_logo.png" alt="MoreKod" className="h-[14px] sm:h-4 w-auto opacity-90 translate-x-10 sm:translate-x-12 hover:scale-105 transition-transform duration-300" />
             </a>
           </div>
 
