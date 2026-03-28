@@ -158,7 +158,8 @@ export default function SmartWizard() {
   const [selections, setSelections] = useState<Record<number, number>>({});
 
   const totalSteps = steps.length;
-  const progress = Math.round(((currentStep) / (totalSteps - 1)) * 100);
+  // Make progress start at current step ratio rather than 0%
+  const progress = Math.round(((currentStep + 1) / totalSteps) * 100);
   const isLastStep = currentStep === totalSteps - 1;
 
   const handleSelect = (optionIndex: number) => {
@@ -222,7 +223,7 @@ export default function SmartWizard() {
   };
 
   return (
-    <section className="bg-white py-24 px-4 font-sans text-gray-900 border-t border-gray-100" id="akilli-asistan">
+    <section className="bg-white py-12 sm:py-24 px-4 font-sans text-gray-900 border-t border-gray-100" id="akilli-asistan">
       <div className="max-w-[50rem] mx-auto">
 
         {/* New Professional Header & Top Deals */}
@@ -281,7 +282,7 @@ export default function SmartWizard() {
         </div>
 
         {/* Dynamic Step Content */}
-        <div className="relative flex items-start justify-center overflow-visible min-h-[500px] max-w-3xl mx-auto">
+        <div className="relative flex items-start justify-center overflow-visible min-h-[350px] sm:min-h-[500px] max-w-3xl mx-auto">
           <AnimatePresence mode="popLayout" custom={direction}>
             <motion.div
               key={currentStep}
@@ -321,14 +322,14 @@ export default function SmartWizard() {
 
               {currentStep === 0 ? (
                 /* Enhanced Animal selection UI */
-                <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 sm:gap-8 mt-6 px-1 max-w-2xl mx-auto">
+                <div className="grid grid-cols-2 sm:grid-cols-2 gap-3 sm:gap-8 mt-6 px-1 max-w-2xl mx-auto">
                   {animals.map((animal, i) => {
                     const isSelected = selections[0] === i;
                     return (
                       <div
                         key={i}
                         className={cn(
-                          "relative p-8 rounded-[2rem] cursor-pointer transition-all duration-500 flex flex-col items-center bg-white border-2 overflow-hidden group w-full hover:-translate-y-1",
+                          "relative p-4 sm:p-8 rounded-3xl sm:rounded-[2rem] cursor-pointer transition-all duration-500 flex flex-col items-center bg-white border-2 overflow-hidden group w-full hover:-translate-y-1",
                           isSelected
                             ? "border-orange-500 shadow-[0_20px_40px_rgba(234,88,12,0.15)] ring-4 ring-orange-100/50 z-10 scale-[1.03]"
                             : "border-gray-100/80 hover:border-orange-200 shadow-sm hover:shadow-xl"
@@ -345,10 +346,10 @@ export default function SmartWizard() {
                           />
                         )}
 
-                        <div className="relative w-40 h-40 sm:w-48 sm:h-48 mb-6 mt-2">
+                        <div className="relative w-28 h-28 sm:w-48 sm:h-48 mb-4 sm:mb-6 mt-1 sm:mt-2">
                           {animal.popular && (
-                            <div className="absolute -top-3 -right-6 z-20">
-                              <span className="bg-gradient-to-r from-orange-500 to-orange-400 text-white px-3 py-1.5 rounded-full text-[10px] font-extrabold tracking-widest uppercase shadow-lg shadow-orange-500/30 border border-orange-400/50">
+                            <div className="absolute -top-2 -right-2 sm:-top-3 sm:-right-6 z-20">
+                              <span className="bg-gradient-to-r from-orange-500 to-orange-400 text-white px-2 sm:px-3 py-1 sm:py-1.5 rounded-full text-[8px] sm:text-[10px] font-extrabold tracking-widest uppercase shadow-lg shadow-orange-500/30 border border-orange-400/50 whitespace-nowrap">
                                 Çok Tercih Edilen
                               </span>
                             </div>
@@ -359,14 +360,14 @@ export default function SmartWizard() {
                             className="w-full h-full object-contain relative z-10 group-hover:scale-110 transition-transform duration-700 drop-shadow-xl"
                           />
                           <div className={cn(
-                            "absolute inset-0 rounded-full blur-[30px] -z-0 transition-all duration-700",
+                            "absolute inset-0 rounded-full blur-[20px] sm:blur-[30px] -z-0 transition-all duration-700",
                             isSelected ? "bg-orange-400/20 scale-[1.4]" : "bg-gray-200/40 scale-[1.2] group-hover:bg-orange-300/20 group-hover:scale-[1.4]"
                           )} />
                         </div>
 
-                        <div className="text-[1.75rem] font-extrabold text-gray-900 mb-3 relative z-10 tracking-tight">{animal.name}</div>
+                        <div className="text-lg sm:text-[1.75rem] font-extrabold text-gray-900 mb-2 sm:mb-3 relative z-10 tracking-tight">{animal.name}</div>
                         <div className={cn(
-                          "mt-2 px-8 py-2.5 rounded-full text-[11px] font-black tracking-widest relative z-10 transition-all duration-300 uppercase select-none",
+                          "mt-1 sm:mt-2 px-3 sm:px-8 py-1.5 sm:py-2.5 rounded-full text-[9px] sm:text-[11px] font-black tracking-widest relative z-10 transition-all duration-300 uppercase select-none whitespace-nowrap",
                           isSelected ? "bg-orange-500 text-white shadow-lg shadow-orange-500/30" : "bg-gray-100/80 text-gray-500 group-hover:bg-orange-100 group-hover:text-orange-600"
                         )}>
                           SEÇMEK İÇİN TIKLA
