@@ -166,7 +166,7 @@ const AnimalSwitch = ({
               transition={{ type: "spring", stiffness: 500, damping: 30 }}
             />
           )}
-          <span className="relative tracking-wide whitespace-normal leading-tight text-center text-[12px] sm:text-inherit">
+          <span className="relative tracking-wide whitespace-normal sm:whitespace-nowrap leading-tight text-center text-[12px] sm:text-inherit flex flex-col sm:block justify-center h-full">
             Hisseli Kurban
           </span>
         </button>
@@ -185,7 +185,7 @@ const AnimalSwitch = ({
               transition={{ type: "spring", stiffness: 500, damping: 30 }}
             />
           )}
-          <span className="relative tracking-wide whitespace-normal leading-tight text-center text-[12px] sm:text-inherit">
+          <span className="relative tracking-wide whitespace-normal sm:whitespace-nowrap leading-tight text-center text-[12px] sm:text-inherit flex flex-col sm:block justify-center h-full">
             Küçükbaş Kurban
           </span>
         </button>
@@ -209,7 +209,7 @@ const DeliverySwitch = ({
         <button
           onClick={() => onChange(false)}
           className={cn(
-            "relative z-10 cursor-pointer sm:h-11 h-auto min-h-[44px] rounded-lg px-2 sm:px-5 py-1.5 font-bold transition-colors text-[10px] sm:text-sm flex-1 whitespace-normal flex items-center justify-center",
+            "relative z-10 cursor-pointer sm:h-11 h-auto min-h-[44px] rounded-lg px-2 sm:px-5 py-1.5 font-bold transition-colors text-[10px] sm:text-sm flex-1 whitespace-normal sm:whitespace-nowrap flex items-center justify-center",
             !isExtra ? "text-gray-900" : "text-gray-500 hover:text-gray-700"
           )}
         >
@@ -228,7 +228,7 @@ const DeliverySwitch = ({
         <button
           onClick={() => onChange(true)}
           className={cn(
-            "relative z-10 cursor-pointer sm:h-11 h-auto min-h-[44px] rounded-lg px-1 sm:px-5 py-1.5 font-bold transition-colors text-[10px] sm:text-sm flex-1 whitespace-normal flex items-center justify-center",
+            "relative z-10 cursor-pointer sm:h-11 h-auto min-h-[44px] rounded-lg px-1 sm:px-5 py-1.5 font-bold transition-colors text-[10px] sm:text-sm flex-1 whitespace-normal sm:whitespace-nowrap flex items-center justify-center",
             isExtra ? "text-orange-700" : "text-gray-500 hover:text-gray-700"
           )}
         >
