@@ -1,12 +1,15 @@
-import styles from "./page.module.css";
+"use client";
+
+import React from "react";
+import { motion } from "framer-motion";
 import Link from "next/link";
+import { Outfit, Inter } from "next/font/google";
 import { 
   CheckCircle2, 
   UtensilsCrossed, 
   Beef, 
   PackageCheck, 
   Truck, 
-  CheckCircle,
   ShieldCheck,
   Droplets,
   Search,
@@ -14,234 +17,280 @@ import {
   Users,
   Video,
   MapPin,
-  Box
+  Box,
+  ChefHat
 } from "lucide-react";
+
+const outfit = Outfit({ subsets: ["latin"] });
+const inter = Inter({ subsets: ["latin"] });
 
 export default function OzelIslemPage() {
   return (
-    <main className={styles.pageContainer}>
+    <main className="min-h-screen bg-gray-50 flex flex-col overflow-hidden">
       
-      {/* 1. Hero Section with Video */}
-      <section className={styles.heroSection}>
-        <video 
-          autoPlay 
-          loop 
-          muted 
-          playsInline 
-          className={styles.videoBackground}
-        >
-          <source src="/video.mp4" type="video/mp4" />
-        </video>
-        <div className={styles.heroOverlay}></div>
-        <div className={styles.heroFadeBottom}></div>
+      {/* ── 1. CINEMATIC HERO SECTION (WITH VIDEO) ── */}
+      <section className="relative w-full h-[80vh] min-h-[600px] flex items-center justify-center overflow-hidden">
+        {/* Background Video */}
+        <div className="absolute inset-0 w-full h-full z-0 overflow-hidden bg-black">
+          <video 
+            autoPlay 
+            loop 
+            muted 
+            playsInline 
+            className="w-full h-full object-cover opacity-60 transform scale-105"
+          >
+            <source src="/video.mp4" type="video/mp4" />
+          </video>
+        </div>
 
-        <div className={styles.heroContent}>
-          <span className={styles.heroSub}>İş Merkezimizde Özel Kasaplık</span>
-          <h1 className={styles.heroTitle}>
-            Özel Kasaplık & Et İşleme Hizmeti
-          </h1>
-          <p className={styles.heroDesc}>
-            Kurbanınızı dilerseniz bütün halde, dilerseniz kuşbaşı/kıyma gibi işlemden geçirilmiş olarak evinize... Rahat bir bayram deneyimi.
-          </p>
-          <Link href="https://wa.me/902129099495" target="_blank" className={styles.heroBtn}>
-            <CheckCircle2 size={24} /> Vekalet İçin Yazın
-          </Link>
+        {/* Dark Gradient Overlays for Readability and Premium Feel */}
+        <div className="absolute inset-0 bg-gradient-to-b from-black/90 via-black/40 to-[#0c1a12] z-0"></div>
+
+        <div className="container relative z-10 px-4 sm:px-6 lg:px-8 max-w-5xl mx-auto text-center mt-20">
+          <motion.div
+             initial={{ opacity: 0, scale: 0.9 }}
+             animate={{ opacity: 1, scale: 1 }}
+             transition={{ duration: 0.8, ease: "easeOut" }}
+             className="inline-flex justify-center items-center gap-2 px-5 py-2 rounded-full bg-white/10 border border-white/20 text-white font-extrabold text-[12px] uppercase tracking-widest mb-6 backdrop-blur-md"
+           >
+             <ChefHat size={16} className="text-orange-400" />
+             VİP Kasaplık Modülü
+           </motion.div>
+
+           <motion.h1 
+             initial={{ opacity: 0, y: 30 }}
+             animate={{ opacity: 1, y: 0 }}
+             transition={{ duration: 0.8, delay: 0.1 }}
+             className={`${outfit.className} text-[3rem] sm:text-5xl md:text-[5.5rem] font-extrabold tracking-tight text-white leading-[1.05] mb-6 drop-shadow-2xl`}
+           >
+             Özel İşleme & <br className="hidden md:block"/> 
+             <span className="text-transparent bg-clip-text bg-gradient-to-r from-orange-400 to-orange-600">Profesyonel Kasaplık</span>
+           </motion.h1>
+
+           <motion.p 
+             initial={{ opacity: 0, y: 30 }}
+             animate={{ opacity: 1, y: 0 }}
+             transition={{ duration: 0.8, delay: 0.2 }}
+             className={`${inter.className} text-gray-300 text-[16px] sm:text-[1.25rem] leading-relaxed max-w-3xl mx-auto font-medium`}>
+             Siz evinizde bayramın tadını çıkarırken, kurbanınız usta ellerde dinlendirilsin, işlensin, vakumlansın ve kapınıza kadar teslim edilsin.
+           </motion.p>
+           
+           <motion.div 
+             initial={{ opacity: 0, y: 30 }}
+             animate={{ opacity: 1, y: 0 }}
+             transition={{ duration: 0.8, delay: 0.3 }}
+             className="mt-10 flex flex-col sm:flex-row items-center justify-center gap-4"
+           >
+             <Link href="https://wa.me/902129099495" target="_blank" className="w-full sm:w-auto flex items-center justify-center gap-2 px-8 py-4 bg-orange-500 hover:bg-orange-600 text-white rounded-full font-bold transition-all active:scale-95 shadow-lg shadow-orange-500/30">
+               <CheckCircle2 size={20} />
+               Hemen Vekalet Verin
+             </Link>
+           </motion.div>
         </div>
       </section>
 
-      <div className={styles.heroOverlapText}>Profesyonel kasaplık hizmetimizle</div>
-
-      {/* 2. Neler Yapıyoruz? */}
-      <section className={styles.section}>
-        <div className="container">
-          <h2 className={styles.sectionTitle}>Neler Yapıyoruz?</h2>
+      {/* ── 2. NELER YAPILIYOR? (Premium Bento Grid) ── */}
+      <section className="py-24 relative z-20 bg-white" id="hizmet-icerigi">
+        <div className="container max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           
-          <div className={styles.nelerRow}>
-            {/* Sol Taraf Liste */}
-            <div className={styles.nelerLeft}>
-              <p>Özel hisseniz için kestiğimiz kurbanınızı isteğinize göre tamamen parçalanmış, kemiksiz ve kıymalık/kuşbaşılık olacak şekilde ayarlıyoruz.</p>
-              
-              <div className={styles.checkList}>
-                <div className={styles.checkItem}>
-                  <div className={styles.checkItemIcon}><CheckCircle size={16} /></div>
-                  <div className={styles.checkItemContent}>
-                    <h4>Profesyonel İşleme</h4>
-                    <p>Etleriniz usta kasaplarımızın tezgahında dikkatle işlenir.</p>
+          <div className="text-center mb-16">
+            <h2 className={`${outfit.className} text-[2.5rem] sm:text-[3.5rem] font-extrabold text-gray-900 leading-tight`}>
+              Tesislerimizde <span className="text-orange-500">Neler Yapıyoruz?</span>
+            </h2>
+            <p className={`${inter.className} mt-4 text-gray-500 text-lg max-w-2xl mx-auto`}>
+              Kurbanınızı tamamen sizin arzunuza göre parçalanmış, kemiğinden sıyrılmış, kıymalık ve kuşbaşılık olarak hazırlıyoruz.
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 sm:gap-8">
+            
+            {/* Sol: Adımlar (Vertical Flow) - 5 Cols */}
+            <motion.div 
+              initial={{ opacity: 0, x: -30 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.8 }}
+              viewport={{ once: true }}
+              className="lg:col-span-5 bg-gray-50 p-8 sm:p-10 rounded-[2.5rem] border border-gray-100 flex flex-col justify-center"
+            >
+              <h3 className={`${outfit.className} text-2xl font-bold text-gray-900 mb-8`}>Operasyon Şeması</h3>
+              <div className="flex flex-col gap-8 relative">
+                <div className="absolute left-6 top-10 bottom-10 w-0.5 bg-gray-200 z-0 hidden sm:block"></div>
+                
+                {[
+                  { title: "Profesyonel İşleme", desc: "Etleriniz usta kasaplarımızın tezgahında dikkatle sıyrılır ve işlenir." },
+                  { title: "Vakumlu Paketleme", desc: "Uzun süreli saklama garantisiyle, gıda uyumlu hijyenik poşetleme." },
+                  { title: "İslami Hassasiyet", desc: "Kan akıtma ve karkas dinlendirme sürecine harfiyen riayet." },
+                  { title: "Soğuk Zincir", desc: "Adresinize özel frigofrik araçlarımızla kapınıza bozulmadan teslim." }
+                ].map((item, idx) => (
+                  <div key={idx} className="flex gap-5 relative z-10 group">
+                    <div className="w-12 h-12 rounded-full bg-white border-2 border-orange-500 flex items-center justify-center shrink-0 shadow-sm group-hover:scale-110 transition-transform">
+                      <CheckCircle2 size={20} className="text-orange-500" />
+                    </div>
+                    <div>
+                      <h4 className={`${outfit.className} text-lg font-bold text-gray-900`}>{item.title}</h4>
+                      <p className={`${inter.className} text-sm text-gray-500 mt-1 leading-relaxed`}>{item.desc}</p>
+                    </div>
                   </div>
-                </div>
-                <div className={styles.checkItem}>
-                  <div className={styles.checkItemIcon}><CheckCircle size={16} /></div>
-                  <div className={styles.checkItemContent}>
-                    <h4>Vakumlu Paketleme</h4>
-                    <p>Uzun süreli saklama garantisiyle gıda uyumlu poşetlerde koruma.</p>
+                ))}
+              </div>
+            </motion.div>
+
+            {/* Sağ: Görsel Bento Box - 7 Cols */}
+            <motion.div 
+              initial={{ opacity: 0, x: 30 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.8, delay: 0.2 }}
+              viewport={{ once: true }}
+              className="lg:col-span-7 grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-6"
+            >
+               <div className="bg-[#0c1a12] rounded-[2rem] p-8 sm:p-10 flex flex-col justify-between text-white aspect-square shadow-xl group hover:-translate-y-2 transition-transform">
+                  <div className="p-4 bg-white/10 w-fit rounded-2xl mb-8">
+                    <Beef size={40} className="text-orange-400" />
                   </div>
-                </div>
-                <div className={styles.checkItem}>
-                  <div className={styles.checkItemIcon}><CheckCircle size={16} /></div>
-                  <div className={styles.checkItemContent}>
-                    <h4>İslami Kurallara Uygun</h4>
-                    <p>Kan akıtma ve dinlendirme sürecine harfiyen riayet edilmesi.</p>
+                  <div>
+                    <h4 className={`${outfit.className} text-2xl font-bold mb-2`}>Et Dinlendirme</h4>
+                    <p className="text-gray-400 text-sm font-medium mb-4">Sıcak karkas et işlem görmez. Kesimden sonra şoklanarak dinlendirilir.</p>
                   </div>
-                </div>
-                <div className={styles.checkItem}>
-                  <div className={styles.checkItemIcon}><CheckCircle size={16} /></div>
-                  <div className={styles.checkItemContent}>
-                    <h4>Ücretli Teslimat</h4>
-                    <p>Adresinize özel frigofrik araçlarımızla kapınıza teslim hizmeti (ek ücrete tabidir).</p>
+               </div>
+
+               <div className="bg-orange-50 border border-orange-100 rounded-[2rem] p-8 sm:p-10 flex flex-col justify-between aspect-square group hover:-translate-y-2 transition-transform">
+                  <div className="p-4 bg-orange-500 text-white w-fit rounded-2xl mb-8">
+                    <UtensilsCrossed size={40} />
                   </div>
+                  <div>
+                    <h4 className={`${outfit.className} text-2xl text-gray-900 font-bold mb-2`}>Kıyma & Kuşbaşı</h4>
+                    <p className="text-gray-600 text-sm font-medium">Hisseniz tamamen talebinize uygun pratik paketlerle hazırlanır.</p>
+                  </div>
+               </div>
+
+               <div className="bg-white border border-gray-100 rounded-[2rem] p-8 sm:p-10 flex flex-col justify-between aspect-square shadow-sm sm:col-span-2 group hover:-translate-y-2 transition-transform">
+                 <div className="flex justify-between items-start">
+                    <div className="p-4 bg-gray-900 text-white w-fit rounded-2xl mb-8">
+                      <PackageCheck size={32} />
+                    </div>
+                    <div className="inline-flex items-center gap-1.5 px-3 py-1 bg-green-100 text-green-700 font-bold text-[11px] rounded-full uppercase tracking-wider">
+                      İki Tur Çekim
+                    </div>
+                 </div>
+                 <div>
+                   <h4 className={`${outfit.className} text-3xl font-bold text-gray-900 mb-2`}>Lokum Kıvamında</h4>
+                   <p className="text-gray-500 text-sm sm:text-base font-medium max-w-md">Sinirlerinden arındırılmış, dinlenmiş kurban etinden çift çekim muazzam kıyma garantisi.</p>
+                 </div>
+               </div>
+            </motion.div>
+
+          </div>
+        </div>
+      </section>
+
+      {/* ── 3. NEDEN ÖZEL KASAPLIK? (Minimal Icon Grid) ── */}
+      <section className="py-24 bg-gray-50 border-t border-gray-200">
+        <div className="container max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+          <h2 className={`${outfit.className} text-[2.5rem] sm:text-[3rem] font-extrabold text-gray-900 mb-16`}>
+            Neden <span className="text-orange-500">Bizi Seçmelisiniz?</span>
+          </h2>
+          
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-x-8 gap-y-12">
+            {[
+              { icon: ShieldCheck, title: "İslami Hassasiyet", text: "Vekaletiniz İslami usullere tam yetkin Diyanet/Kasaplar Odası onaylı ekibimizle yerine getirilir." },
+              { icon: Stethoscope, title: "Veteriner Kontrolü", text: "Tüm kurbanlıklar veteriner hekimlerimizce kesim öncesi ve sonrası sıkı denetime tabi tutulur." },
+              { icon: Droplets, title: "Eksiksiz Hijyen", text: "Etin havayla ve bakteriyle temasını kesen, paslanmaz tezgahlı üst düzey hijyenik tesisler." },
+              { icon: Users, title: "Profesyonel Kadro", text: "Özel kasaplık hizmetinde tecrübeli karkas sıyırma ve doğrama ustalarıyla çalışıyoruz." },
+              { icon: Search, title: "Şeffaf Süreç", text: "Kimin hissesine hangi hayvanın ne zaman girdiği tamamen kayıt ve barkod altındadır." },
+              { icon: Video, title: "Video Kaydı", text: "Kesim esnasında vekalet okunurken çekilen videolarınız adınıza özel olarak gönderilir." }
+            ].map((feature, i) => (
+              <motion.div 
+                key={i}
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.5, delay: i * 0.1 }}
+                viewport={{ once: true }}
+                className="flex flex-col items-center text-center group"
+              >
+                <div className="w-16 h-16 bg-white rounded-2xl shadow-sm border border-gray-100 flex items-center justify-center text-gray-900 mb-5 group-hover:bg-orange-500 group-hover:text-white transition-colors duration-300">
+                  <feature.icon size={28} strokeWidth={1.5} />
                 </div>
-              </div>
-            </div>
-
-            {/* Sağ Taraf Kutucuklar */}
-            <div className={styles.nelerRight}>
-              <div className={`${styles.nTile} ${styles.nTileWhite}`}>
-                <UtensilsCrossed size={40} color="var(--color-accent)" />
-                Kıyma & Kuşbaşı
-              </div>
-              <div className={`${styles.nTile} ${styles.nTileDark}`}>
-                <Beef size={40} color="var(--color-accent)" />
-                Et Dinlendirme
-                <span style={{fontSize: '11px', fontWeight: '500', opacity: 0.7}}>Sıcak karkas işlem görmez</span>
-              </div>
-              <div className={`${styles.nTile} ${styles.nTileBlue}`}>
-                <PackageCheck size={40} />
-                Lokum Kıvamında Kıyma
-                <span style={{fontSize: '11px', fontWeight: '500', opacity: 0.9}}>İki tur özel çekim</span>
-              </div>
-              <div className={`${styles.nTile} ${styles.nTileWhite}`}>
-                <Truck size={40} color="#2563eb" />
-                Adrese Teslimat
-              </div>
-            </div>
+                <h4 className={`${outfit.className} text-xl font-bold text-gray-900 mb-2`}>{feature.title}</h4>
+                <p className={`${inter.className} text-[15px] text-gray-500 max-w-[280px]`}>{feature.text}</p>
+              </motion.div>
+            ))}
           </div>
         </div>
       </section>
 
-      {/* 3. Neden Özel Kasaplık? */}
-      <section className={styles.section}>
-        <div className="container" style={{maxWidth: '1000px'}}>
-          <h2 className={styles.sectionTitle}>Neden Özel Kasaplık?</h2>
+      {/* ── 4. TESLİMAT & HİSSE DETAYI (Compact Info Cards) ── */}
+      <section className="py-20 sm:py-32 bg-white">
+        <div className="container max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
           
-          <div className={styles.nedenGrid}>
-            <div className={styles.nedenItem}>
-              <ShieldCheck size={28} className={styles.nedenItemIcon} />
-              <div className={styles.nedenItemContent}>
-                <h4>İslami Hassasiyet</h4>
-                <p>Kurban vekaletiniz İslami usullere tam yetkin Kasaplar Birliği Onaylı kasaplarımızla yerine getirilir.</p>
-              </div>
-            </div>
-            <div className={styles.nedenItem}>
-              <Stethoscope size={28} className={styles.nedenItemIcon} />
-              <div className={styles.nedenItemContent}>
-                <h4>Veteriner Kontrolü</h4>
-                <p>Tüm hayvanlarımız veteriner hekimlerimiz tarafından kesim öncesi ve sonrası kontrol edilir.</p>
-              </div>
-            </div>
-            <div className={styles.nedenItem}>
-              <Droplets size={28} className={styles.nedenItemIcon} />
-              <div className={styles.nedenItemContent}>
-                <h4>Hijyen Şartları</h4>
-                <p>Etin ziyan olmaması ve mikrobakteriyel arınma için en üst düzey hijyen kuralları.</p>
-              </div>
-            </div>
-            <div className={styles.nedenItem}>
-              <Users size={28} className={styles.nedenItemIcon} />
-              <div className={styles.nedenItemContent}>
-                <h4>Profesyonel Ekip</h4>
-                <p>Tecrübeli kadromuzla hiçbir teknik detayı göz ardı etmiyoruz.</p>
-              </div>
-            </div>
-            <div className={styles.nedenItem}>
-              <Search size={28} className={styles.nedenItemIcon} />
-              <div className={styles.nedenItemContent}>
-                <h4>Şeffaf Süreç</h4>
-                <p>Sahipliği tamamen netleşmiş, helal akretidasyonuna sahip tesisler kullanıyoruz.</p>
-              </div>
-            </div>
-            <div className={styles.nedenItem}>
-              <Video size={28} className={styles.nedenItemIcon} />
-              <div className={styles.nedenItemContent}>
-                <h4>Video Kaydı</h4>
-                <p>Vekaletin okunduğu kesim sürecini anlık veya randevu dahilinde talep edebiliyorsunuz.</p>
-              </div>
-            </div>
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 sm:gap-10">
+             
+             {/* Kutu 1: Soğuk Zincir */}
+             <div className="bg-[#0c1a12] rounded-[2.5rem] p-8 sm:p-12 border border-gray-800 relative overflow-hidden flex flex-col justify-between">
+                <div className="absolute right-0 top-0 w-64 h-64 bg-orange-500/10 blur-[80px] rounded-full" />
+                
+                <div>
+                  <div className="flex items-center gap-3 mb-8">
+                    <div className="p-3 bg-white/10 rounded-xl"><Truck size={24} className="text-orange-400" /></div>
+                    <h3 className={`${outfit.className} text-2xl font-bold text-white`}>Teslimat Süreci</h3>
+                  </div>
+                  <p className="text-gray-400 text-[15px] leading-relaxed mb-6">Özel kasaplık hizmeti için dinlendirilmesi gereken karkas etin işlenmesi bir zaman gerektirir. Bu sebeple teslimatlar ortalama <strong className="text-white">Bayramın 3. veya 4. Günü</strong> gerçekleşmektedir.</p>
+                </div>
+
+                <div className="mt-8 p-5 bg-white/5 border border-white/10 rounded-2xl">
+                   <h5 className="text-white font-bold text-sm mb-1 uppercase tracking-wider text-orange-400">Hizmet Garantisi</h5>
+                   <p className="text-gray-400 text-sm">İstanbul genelinde frigorifik (soğutuculu) özel filomuzla etiniz zincir kırılmadan getirilir.</p>
+                </div>
+             </div>
+
+             {/* Kutu 2: Paketleme Tipi */}
+             <div className="bg-orange-50 rounded-[2.5rem] p-8 sm:p-12 border border-orange-100 flex flex-col justify-between">
+                <div>
+                  <div className="flex items-center gap-3 mb-8">
+                    <div className="p-3 bg-orange-500 rounded-xl text-white"><Box size={24} /></div>
+                    <h3 className={`${outfit.className} text-2xl font-bold text-gray-900`}>Paketleme Türü</h3>
+                  </div>
+                  <h4 className={`${outfit.className} text-xl sm:text-2xl font-bold text-orange-600 mb-4`}>Gıda Uyumu Vakumlu Poşetleme</h4>
+                  <p className="text-gray-600 text-[15px] leading-relaxed">Etin havayla temasını kestiği için hijyen, renk koruması ve dondurucu istiflemesine en uygun paketleme çözümüdür.</p>
+                </div>
+                
+                <div className="mt-8 flex gap-3">
+                  <span className="px-4 py-2 bg-white rounded-full text-xs font-bold text-gray-500 uppercase tracking-widest border border-gray-200 shadow-sm">Büyükbaş Ayrı</span>
+                  <span className="px-4 py-2 bg-white rounded-full text-xs font-bold text-gray-500 uppercase tracking-widest border border-gray-200 shadow-sm">Özel Seçim Ayrı</span>
+                </div>
+             </div>
+
           </div>
         </div>
       </section>
 
-      {/* 4. Teslimat & Soğuk Zincir */}
-      <section className={styles.section} style={{paddingBottom: '0'}}>
-        <div className="container">
-          <h2 className={styles.sectionTitle}>Teslimat & Soğuk Zincir</h2>
-          
-          <div className={styles.deliveryTop}>
-            <div className={styles.deliveryCard}>
-              <div className={styles.deliveryCardHead}>
-                <MapPin size={24} color="var(--color-accent)" /> 
-                <span>Teslimat Süreci</span>
-              </div>
-              <p>Özel İşlem İçin: <span className={styles.dlHighlight}>Bayramın 3. veya 4. Günü</span></p>
-              <br/>
-              <p>Özel kasaplık hizmeti için dinlendirilmesi gereken karkas etin işlenmesi zaman gerektirir.</p>
-            </div>
-            <div className={styles.deliveryCard}>
-              <div className={styles.deliveryCardHead}>
-                <Box size={24} color="#2563eb" /> 
-                <span>Paketleme Türü</span>
-              </div>
-              <p className={styles.dlHighlight} style={{color: '#2563eb'}}>Gıda Uyumu Vakumlu Poşetleme (Opsiyonel)</p>
-              <br/>
-              <p>Hijyen ve dondurucu istiflemeye en uygun ve steril saklama aracıdır.</p>
-            </div>
-          </div>
-
-          <div className={styles.deliveryBottomBanner}>
-            <h4>Hizmet Garantisi</h4>
-            <p style={{margin: 0, fontWeight: 500, fontSize: '0.9rem'}}>İstanbul'un tüm merkezi noktalarına frigrofik kapalı kasa (soğutuculu) dev araçlarla teslimatımızı gerçekleştiriyoruz.</p>
-          </div>
-        </div>
-      </section>
-
-      {/* 5. Hisse ve İşleme Detayı */}
-      <section className={styles.section}>
-        <div className="container">
-          <h2 className={styles.sectionTitle}>Hisse ve İşleme Detayı</h2>
-          
-          <div className={styles.hisseGrid}>
-            <div className={styles.hisseCard}>
-              <div className={styles.hisseIconLabel}>1/7</div>
-              <h4>Hisseye Özel</h4>
-              <p>Kendi hissenizi pay etme derdi olmadan hazır tam ölçü.</p>
-            </div>
-            <div className={styles.hisseCard}>
-              <div className={styles.hisseIconLabel} style={{color: 'var(--color-primary)'}}>Dana</div>
-              <h4>Büyükbaşlara</h4>
-              <p>Siz sadece evinizde kaliteyi test etmekle ilgilenin.</p>
-            </div>
-            <div className={styles.hisseCard}>
-              <div className={styles.hisseIconLabel} style={{color: '#2563eb'}}>Özel Seçim</div>
-              <h4>Serbest Format</h4>
-              <p>Tercih edeceğiniz randevu teslimine istinaden özenli işçilik.</p>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* 6. Deep Blue CTA Section */}
-      <section className="container">
-        <div className={styles.ctaBanner}>
-          <h2>"Kurbanınızı ev konforunda, paketlenmiş ve yemeye hazır karşılayın."</h2>
-          <p>Alanında uzman kasaplarımız, bayram telaşına yorulmadan kurbanınızı itinayla işlesin. Erken kayıt fırsatıyla yerinizi ayırmayı unutmayın.</p>
-          
-          <div className={styles.ctaBtns}>
-            <Link href="https://wa.me/902129099495" target="_blank" className={styles.btnSolid}>
-              <CheckCircle2 size={20} /> Bilgi & Rezervasyon
-            </Link>
-            <Link href="tel:+902129099495" className={styles.btnOutline}>
-              Bizi Arayın
-            </Link>
-          </div>
+      {/* ── 5. DEEP BLUE (ORANGE/DARK) CTA ── */}
+      <section className="pb-24 pt-4 px-4">
+        <div className="container max-w-6xl mx-auto">
+          <motion.div 
+            initial={{ opacity: 0, y: 40 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8 }}
+            viewport={{ once: true }}
+            className="bg-gray-900 rounded-[3rem] p-10 sm:p-16 text-center shadow-2xl relative overflow-hidden"
+          >
+             <div className="absolute inset-0 bg-gradient-to-tr from-orange-500/20 to-transparent pointer-events-none" />
+             
+             <h2 className={`${outfit.className} text-3xl sm:text-4xl md:text-5xl font-extrabold text-white leading-tight mb-6 relative z-10 max-w-3xl mx-auto`}>
+               Kurbanınızı Ev Konforunda, İşlenmiş Karşılayın.
+             </h2>
+             <p className={`${inter.className} text-gray-400 text-[16px] sm:text-[1.1rem] leading-relaxed max-w-2xl mx-auto mb-10 relative z-10`}>
+               Alanında uzman kasaplarımız yorulmadan kurbanınızı itinayla işlesin, sıyırsın ve paketlesin. Kalan zamanda bayramın tadını ailenizle çıkarın.
+             </p>
+             
+             <div className="flex flex-col sm:flex-row items-center justify-center gap-4 relative z-10">
+               <Link href="https://wa.me/902129099495" target="_blank" className="w-full sm:w-auto px-8 py-4 rounded-full bg-orange-500 hover:bg-orange-600 text-white font-bold transition-transform active:scale-95 shadow-lg flex justify-center items-center gap-2">
+                 <CheckCircle2 size={20} /> Bilgi & Rezervasyon
+               </Link>
+               <Link href="tel:+902129099495" className="w-full sm:w-auto px-8 py-4 rounded-full bg-white/10 hover:bg-white/20 text-white border border-white/20 font-bold transition-all flex justify-center items-center">
+                 Bizi Arayın
+               </Link>
+             </div>
+          </motion.div>
         </div>
       </section>
 
