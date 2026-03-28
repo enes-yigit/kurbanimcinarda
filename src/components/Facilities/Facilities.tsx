@@ -90,7 +90,7 @@ export default function Facilities() {
 
         {/* ── INTERACTIVE ACCORDION GALLERY ── */}
         <div className="w-full flex justify-center">
-          <div className="flex w-full max-w-[1000px] h-[350px] sm:h-[450px] items-stretch relative rounded-3xl gap-2 sm:gap-4 touch-pan-x">
+          <div className="flex w-full max-w-[1000px] h-[350px] sm:h-[450px] items-stretch relative rounded-3xl gap-2 sm:gap-4">
             {options.map((option, index) => (
               <div
                 key={index}
