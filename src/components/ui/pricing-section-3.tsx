@@ -209,40 +209,40 @@ const DeliverySwitch = ({
         <button
           onClick={() => onChange(false)}
           className={cn(
-            "relative z-10 cursor-pointer sm:h-11 h-10 rounded-lg px-2 sm:px-5 py-1.5 font-bold transition-colors text-[12px] sm:text-sm flex-1 whitespace-nowrap flex items-center justify-center gap-1",
+            "relative z-10 cursor-pointer sm:h-11 h-auto min-h-[44px] rounded-lg px-2 sm:px-5 py-1.5 font-bold transition-colors text-[10px] sm:text-sm flex-1 whitespace-normal flex items-center justify-center",
             !isExtra ? "text-gray-900" : "text-gray-500 hover:text-gray-700"
           )}
         >
           {!isExtra && (
             <motion.span
               layoutId="delivery-switch"
-              className="absolute top-0 left-0 sm:h-11 h-10 w-full rounded-lg shadow-sm bg-white border border-gray-200"
+              className="absolute top-0 left-0 h-full sm:h-11 w-full rounded-lg shadow-sm bg-white border border-gray-200"
               transition={{ type: "spring", stiffness: 500, damping: 30 }}
             />
           )}
-          <span className="relative">
-            <span className="hidden sm:inline">Geleneksel </span>1. Gün Teslim<span className="hidden sm:inline">at</span>
+          <span className="relative z-10 text-center leading-[1.15]">
+            Geleneksel<br className="sm:hidden" /> 1. Gün Teslimat
           </span>
         </button>
 
         <button
           onClick={() => onChange(true)}
           className={cn(
-            "relative z-10 cursor-pointer sm:h-11 h-10 rounded-lg px-2 sm:px-5 py-1.5 font-bold transition-colors text-[12px] sm:text-sm flex-1 whitespace-nowrap flex items-center justify-center gap-1",
+            "relative z-10 cursor-pointer sm:h-11 h-auto min-h-[44px] rounded-lg px-1 sm:px-5 py-1.5 font-bold transition-colors text-[10px] sm:text-sm flex-1 whitespace-normal flex items-center justify-center",
             isExtra ? "text-orange-700" : "text-gray-500 hover:text-gray-700"
           )}
         >
           {isExtra && (
             <motion.span
               layoutId="delivery-switch"
-              className="absolute top-0 left-0 sm:h-11 h-10 w-full rounded-lg shadow-sm bg-white border border-gray-200"
+              className="absolute top-0 left-0 h-full sm:h-11 w-full rounded-lg shadow-sm bg-white border border-gray-200"
               transition={{ type: "spring", stiffness: 500, damping: 30 }}
             />
           )}
-          <span className="relative flex items-center justify-center gap-1 sm:gap-1.5 whitespace-nowrap">
-            5. Gün <span className="hidden sm:inline">/ Özel </span>
+          <span className="relative z-10 flex flex-col sm:flex-row items-center justify-center gap-0.5 sm:gap-1.5 leading-[1.15] text-center">
+            <span>5. Gün / Özel Teslim</span>
             <span className={cn(
-                "rounded-md px-1 sm:px-1.5 py-0.5 text-[9px] sm:text-[10px] font-bold tracking-tight inline-block",
+                "rounded-md px-1.5 sm:px-1.5 py-0.5 text-[8.5px] sm:text-[10px] font-bold tracking-tight inline-block",
                 isExtra ? "bg-orange-100 text-orange-600" : "bg-gray-200 text-gray-400"
               )}>
               +5.000 ₺
@@ -281,18 +281,18 @@ export default function PricingSection() {
 
   return (
     <div
-      className="px-4 py-24 max-w-[85rem] mx-auto relative bg-white"
+      className="px-4 py-10 sm:py-24 max-w-[85rem] mx-auto relative bg-white"
       ref={pricingRef}
     >
-      <article className="text-left mb-10 space-y-4 w-full px-2">
-        <div className="max-w-2xl">
+      <article className="text-center sm:text-left mb-10 space-y-4 w-full px-2">
+        <div className="max-w-2xl mx-auto sm:mx-0">
           <h2 className="md:text-5xl text-4xl capitalize font-bold text-gray-900 mb-6 tracking-tight">
             <VerticalCutReveal
               splitBy="words"
               staggerDuration={0.15}
               staggerFrom="first"
               reverse={true}
-              containerClassName="justify-start"
+              containerClassName="justify-center sm:justify-start"
               transition={{
                 type: "spring",
                 stiffness: 250,
