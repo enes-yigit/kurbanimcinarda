@@ -14,22 +14,23 @@ export default function Hero5() {
   };
 
   return (
-    <section className="relative w-full min-h-[100dvh] flex flex-col justify-center md:items-center pt-[140px] md:pt-[160px] pb-16 overflow-hidden">
+    <section className="relative w-full min-h-[100dvh] flex flex-col justify-center md:items-center pt-[170px] sm:pt-[190px] md:pt-[200px] pb-16 overflow-hidden">
       
       {/* ── IMAGE BACKGROUND (Replaced Video) ── */}
-      <div className="absolute inset-0 w-full h-full z-0">
+      <div className="absolute inset-0 w-full h-full z-0 overflow-hidden">
         <Image 
           src="/banner_image/section_1.png" 
           alt="Çınar Kurban Tesisleri" 
           fill 
           priority
-          className="object-cover object-center"
+          className="object-cover object-[70%_center] sm:object-center blur-[4px] sm:blur-none scale-110 sm:scale-100 transition-all duration-700"
         />
       </div>
 
       {/* ── OVERLAYS ── */}
-      <div className="absolute inset-0 bg-black/60 z-0"></div>
-      <div className="absolute inset-0 bg-gradient-to-t from-[#fafafa] via-transparent to-black/30 z-0"></div>
+      {/* Brand-color rich dark overlay for mobile, elegant black for desktop */}
+      <div className="absolute inset-0 bg-[#0c1a12]/85 sm:bg-black/60 z-0 mix-blend-multiply sm:mix-blend-normal"></div>
+      <div className="absolute inset-0 bg-gradient-to-t from-[#fafafa] via-transparent to-black/50 z-0"></div>
 
       {/* ── CONTENT ── */}
       <div className="relative z-10 container mx-auto px-4 flex flex-col items-center text-center">
