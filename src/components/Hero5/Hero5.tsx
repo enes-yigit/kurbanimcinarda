@@ -19,11 +19,11 @@ export default function Hero5() {
       {/* ── IMAGE BACKGROUND (Replaced Video) ── */}
       <div className="absolute inset-0 w-full h-full z-0 overflow-hidden">
         <Image 
-          src="/banner_image/section_1.png" 
-          alt="Çınar Kurban Tesisleri" 
+          src="/banner_image/produced_bg_cinematic.png" 
+          alt="Çınar Kurban Özel Üretim Tesisleri" 
           fill 
           priority
-          className="object-cover object-[70%_center] sm:object-center blur-[4px] sm:blur-none scale-110 sm:scale-100 transition-all duration-700"
+          className="object-cover object-center scale-105 sm:scale-100 transition-all duration-700"
         />
       </div>
 
