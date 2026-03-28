@@ -133,7 +133,7 @@ export default function Facilities() {
                 <div className="absolute left-0 right-0 bottom-4 sm:bottom-6 flex items-center justify-start h-12 z-2 pointer-events-none px-3 sm:px-5 gap-3 sm:gap-4 w-full">
                   
                   <div className={`min-w-[40px] sm:min-w-[48px] max-w-[40px] sm:max-w-[48px] h-[40px] sm:h-[48px] flex items-center justify-center rounded-full backdrop-blur-md shadow-lg border transition-all duration-500 ease-in-out ${activeIndex === index ? 'bg-orange-500 border-orange-400 scale-100' : 'bg-black/80 border-white/10 scale-90'}`}>
-                    {React.cloneElement(option.icon as React.ReactElement, { size: activeIndex === index ? 24 : 18 })}
+                    {React.cloneElement(option.icon as React.ReactElement<{ size: number }>, { size: activeIndex === index ? 24 : 18 })}
                   </div>
                   
                   <div className="text-white whitespace-pre relative overflow-hidden flex-1">
