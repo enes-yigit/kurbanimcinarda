@@ -280,8 +280,8 @@ export default function SmartWizard() {
         </div>
 
         {/* Dynamic Step Content */}
-        <div className="relative flex items-start justify-center overflow-visible min-h-[470px] sm:min-h-[500px] max-w-3xl mx-auto">
-          <AnimatePresence mode="popLayout" custom={direction}>
+        <div className="relative flex flex-col justify-start max-w-3xl mx-auto overflow-hidden">
+          <AnimatePresence mode="wait" custom={direction}>
             <motion.div
               key={currentStep}
               custom={direction}
@@ -294,7 +294,7 @@ export default function SmartWizard() {
                 opacity: { duration: 0.2 },
                 filter: { duration: 0.2 }
               }}
-              className="w-full absolute top-0"
+              className="w-full relative pb-4"
             >
               {/* Animated Title */}
               {currentStep > 0 && (
