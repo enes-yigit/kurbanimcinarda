@@ -29,9 +29,9 @@
    =================================== */
 
 /* ── Horizontal overflow prevention (outside @layer for max specificity) ── */
-html,
 body {
   overflow-x: clip;
+  overflow-y: auto;
 }
 
 /* ===== CSS Custom Properties ===== */
