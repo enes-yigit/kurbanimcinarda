@@ -28,7 +28,7 @@ const INK = '#1C1A18';
 const MUTED = '#8A8580';
 
 const stagger = { visible: { transition: { staggerChildren: 0.11 } } };
-const fadeUp = {
+const fadeUp: any = {
   hidden: { opacity: 0, y: 22 },
   visible: { opacity: 1, y: 0, transition: { duration: 0.72, ease: [0.22, 1, 0.36, 1] as any } },
 };

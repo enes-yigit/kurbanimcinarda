@@ -7,7 +7,7 @@ import Image from 'next/image';
 
 // ─── Animation Variants ──────────────────────────────────────────────────────
 
-const fadeUp = {
+const fadeUp: any = {
   hidden: { opacity: 0, y: 28 },
   visible: (i = 0) => ({
     opacity: 1,
@@ -16,7 +16,7 @@ const fadeUp = {
   }),
 };
 
-const fadeIn = {
+const fadeIn: any = {
   hidden: { opacity: 0, scale: 0.94 },
   visible: (i = 0) => ({
     opacity: 1,
@@ -25,14 +25,14 @@ const fadeIn = {
   }),
 };
 
-const float = {
+const float: any = {
   animate: {
     y: [0, -10, 0],
     transition: { duration: 4, repeat: Infinity, ease: 'easeInOut' },
   },
 };
 
-const floatSlow = {
+const floatSlow: any = {
   animate: {
     y: [0, -6, 0],
     transition: { duration: 5, repeat: Infinity, ease: 'easeInOut', delay: 1 },
