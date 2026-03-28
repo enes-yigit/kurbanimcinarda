@@ -1,9 +1,19 @@
 "use client";
 
-import { useState } from "react";
-import styles from "./page.module.css";
-import { Plus } from "lucide-react";
+import React from "react";
+import { motion } from "framer-motion";
+import { Outfit, Inter } from "next/font/google";
 import Link from "next/link";
+import { HelpCircle, MessagesSquare } from "lucide-react";
+import {
+  Accordion,
+  AccordionContent,
+  AccordionItem,
+  AccordionTrigger,
+} from "@/components/ui/accordion";
+
+const outfit = Outfit({ subsets: ["latin"] });
+const inter = Inter({ subsets: ["latin"] });
 
 interface FAQItem {
   id: number;
@@ -90,66 +100,85 @@ const faqs: FAQItem[] = [
 ];
 
 export default function FAQPage() {
-  const [openId, setOpenId] = useState<number | null>(null);
-
-  const toggleAccordion = (id: number) => {
-    setOpenId(openId === id ? null : id);
-  };
-
   return (
-    <main className={styles.pageContainer}>
-        <div className="container">
-          <div className={styles.header}>
-            <h1 className={styles.title}>Sıkça Sorulan Sorular</h1>
-            <p className={styles.description}>
-              Kurbanlık hisse alımından, kesim sürecine, etlerin dağıtımından vekalet işlemlerine kadar 
-              tüm konulara dair detaylı bilgiye aşağıdan ulaşabilirsiniz. Aklınıza takılan diğer sorular 
-              için bizimle iletişime geçmekten çekinmeyin.
-            </p>
-          </div>
+    <main className="min-h-screen bg-gray-50 pt-32 sm:pt-40 pb-24 relative overflow-hidden">
+        {/* Background Decorative Blur */}
+        <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[1000px] h-[400px] opacity-20 bg-gradient-to-br from-orange-400 to-transparent blur-[120px] pointer-events-none rounded-full" />
 
-          <div className={styles.faqWrapper}>
-            {faqs.map((faq) => {
-              const isOpen = openId === faq.id;
-              return (
-                <div
-                  key={faq.id}
-                  className={`${styles.accordionItem} ${isOpen ? styles.accordionItemActive : ""}`}
-                >
-                  <button
-                    className={styles.accordionButton}
-                    onClick={() => toggleAccordion(faq.id)}
-                    aria-expanded={isOpen}
-                  >
-                    <span>{faq.question}</span>
-                    <div className={styles.icon}>
-                      <Plus />
-                    </div>
-                  </button>
-                  {isOpen && (
-                    <div className={styles.accordionContent}>
-                      {faq.answer}
-                    </div>
-                  )}
-                </div>
-              );
-            })}
-          </div>
+        <div className="container z-10 mx-auto px-4 sm:px-6 lg:px-8 max-w-4xl relative">
+          
+          {/* ── HEADER ── */}
+          <motion.div
+             initial={{ opacity: 0, y: 30 }}
+             animate={{ opacity: 1, y: 0 }}
+             transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
+             className="flex flex-col items-center justify-center text-center mb-16 sm:mb-20"
+           >
+             <div className="inline-flex justify-center items-center gap-2 px-3.5 py-1.5 rounded-full bg-orange-100/80 border border-orange-200 text-orange-600 font-extrabold text-[11px] uppercase tracking-widest mb-6 shadow-sm">
+               <HelpCircle size={14} className="text-orange-500" />
+               Aklınıza Takılanlar
+             </div>
+   
+             <h1 className={`${outfit.className} text-[2.5rem] sm:text-5xl md:text-[4rem] font-extrabold tracking-tight text-gray-900 leading-[1.1]`}>
+               Sıkça Sorulan <span className="text-orange-500">Sorular</span>
+             </h1>
+             <p className={`${inter.className} mt-6 text-gray-500 text-[16px] sm:text-[1.15rem] leading-[1.6] font-medium max-w-2xl mx-auto`}>
+               Kurbanlık hisse alımından kesim sürecine, et dağıtımından vekalet işlemlerine kadar aklınıza takılan tüm soruların cevaplarını burada derledik.
+             </p>
+          </motion.div>
 
-          <div className={styles.bottomAction}>
-            <h3 className={styles.bottomText}>Aradığınız cevabı bulamadınız mı?</h3>
-            <p className={styles.bottomSubtext}>
-              Bize WhatsApp üzerinden sormak istediğiniz her şeyi iletebilirsiniz. Ekibimiz en kısa sürede dönüş yapacaktır.
-            </p>
-            <Link 
-              href="https://wa.me/905555555555" 
-              target="_blank" 
-              rel="noopener noreferrer" 
-              className={`btn btn--lg ${styles.btnAccent}`}
-            >
-              WhatsApp'tan Ulaşın
-            </Link>
-          </div>
+          {/* ── ACCORDION LIST ── */}
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 0.2, ease: [0.16, 1, 0.3, 1] }}
+            className="bg-white rounded-[2rem] sm:rounded-[2.5rem] shadow-xl shadow-gray-200/50 p-6 sm:p-10 md:p-14 border border-gray-100"
+          >
+            <Accordion type="single" collapsible className="w-full">
+              {faqs.map((faq) => (
+                <AccordionItem key={faq.id} value={`item-${faq.id}`}>
+                  <AccordionTrigger className={`${outfit.className} text-[17px] sm:text-[19px] text-gray-900 group hover:no-underline`}>
+                    <span className="group-hover:text-orange-600 transition-colors mr-4 text-left leading-tight py-1">{faq.question}</span>
+                  </AccordionTrigger>
+                  <AccordionContent className={`${inter.className} text-[15px] sm:text-[16px] text-gray-600 font-medium leading-[1.7] pt-2 pb-6 pr-4 sm:pr-10`}>
+                    {faq.answer}
+                  </AccordionContent>
+                </AccordionItem>
+              ))}
+            </Accordion>
+          </motion.div>
+
+          {/* ── BOTTOM ACTION ── */}
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 0.3, ease: [0.16, 1, 0.3, 1] }}
+            viewport={{ once: true }}
+            className="mt-16 sm:mt-24 p-8 sm:p-12 bg-[#0c1a12] rounded-[2rem] sm:rounded-[3rem] text-center relative overflow-hidden flex flex-col items-center shadow-2xl"
+          >
+             <div className="absolute top-0 right-0 w-[400px] h-[400px] opacity-20 bg-gradient-to-br from-orange-400 to-transparent blur-[100px] rounded-full translate-x-1/2 -translate-y-1/2 pointer-events-none" />
+             
+             <div className="bg-orange-500/10 p-4 rounded-full mb-6">
+               <MessagesSquare size={32} className="text-orange-500" />
+             </div>
+             
+             <h3 className={`${outfit.className} text-3xl sm:text-4xl font-bold text-white mb-4 leading-tight`}>
+               Cevabınızı Bulamadınız mı?
+             </h3>
+             <p className={`${inter.className} text-gray-400 text-[16px] sm:text-[1.1rem] leading-relaxed max-w-xl mx-auto mb-10`}>
+               Çınar Kurban Destek Ekibi günün her saati size yardımcı olmak için hazır. WhatsApp üzerinden bizimle iletişime geçin, anında yanıtlayalım.
+             </p>
+             
+             <Link 
+               href="https://wa.me/902129099495" 
+               target="_blank" 
+               rel="noopener noreferrer" 
+               className="inline-flex items-center justify-center bg-orange-500 hover:bg-orange-600 text-white rounded-full px-10 py-5 text-[16px] font-bold tracking-wide transition-all active:scale-95 shadow-lg shadow-orange-500/25"
+             >
+               WhatsApp Destek İste
+             </Link>
+          </motion.div>
+
         </div>
       </main>
   );
