@@ -24,7 +24,7 @@ const faqs = [
   {
     id: 2,
     question: "Vekalet işlemleri nasıl yürütülüyor?",
-    answer: "Vekaletiniz, kurban kesiminden önce dini kurallara uygun olarak görevli personelimiz veya hocamız tarafından alınmakta ve videoya çekilerek size ulaştırılmaktadır. Kasaplarımız tekbirlerle isminizi okuyarak kesimi gerçekleştirir.",
+    answer: "Vekaletiniz, kurban kesiminden önce dini kurallara uygun olarak görevli personelimiz veya hocamız tarafından alınmaktadır. Kasaplarımız tekbirlerle isminizi okuyarak kesimi gerçekleştirir.",
   },
   {
     id: 3,

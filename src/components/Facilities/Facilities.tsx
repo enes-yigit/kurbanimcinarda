@@ -79,10 +79,10 @@ export default function Facilities() {
            </div>
  
            <h2 className={`${outfit.className} text-[2.5rem] sm:text-5xl md:text-[3.5rem] font-extrabold tracking-tight text-white leading-[1.1]`}>
-             İstanbul Kurban Kesim <span className="text-orange-500">Tesislerimiz</span>
+             İstanbul Kurban Kesim <span className="text-orange-500">Tesisimiz</span>
            </h2>
            <p className={`${inter.className} mt-6 text-gray-400 text-[16px] sm:text-[1.15rem] leading-[1.6] font-medium max-w-2xl mx-auto`}>
-             Sadece dijitalde değil, Bağcılar merkezli ofisimizde ve modern tesislerimizde her zaman yanınızdayız. Tüm İstanbul'a profesyonel hizmet veriyoruz.
+             Sadece dijitalde değil, Bağcılar merkezli ofisimizde ve modern tesisimizde her zaman yanınızdayız. Tüm İstanbul'a profesyonel hizmet veriyoruz.
            </p>
          </motion.div>
 
@@ -169,14 +169,14 @@ export default function Facilities() {
             <div>
               <div className="text-[12px] font-extrabold tracking-widest text-gray-400 uppercase mb-1">Açık Adresimiz</div>
               <div className={`${outfit.className} text-xl sm:text-2xl font-bold text-white leading-tight`}>
-                Çınar Mah., 843. Sok., No: 4A
+                Çınar Mah., 843. Sk., Büşra Apt. No: 4B
               </div>
               <div className="text-gray-400 font-medium mt-1">Bağcılar / İstanbul</div>
             </div>
           </div>
           
           <Link 
-            href="https://maps.google.com/?q=Çınar+Mahallesi+843.+Sokak+No:4A+Bağcılar+İstanbul" 
+            href="https://maps.google.com/?q=Çınar+Mah.,+843.+Sk.,+Büşra+Apt.+No:4B,+34200+Bağcılar/İstanbul" 
             target="_blank" 
             rel="noopener noreferrer"
             className="w-full md:w-auto flex items-center justify-center gap-3 px-8 py-5 bg-orange-500 hover:bg-orange-600 text-white rounded-2xl text-[15px] font-bold shadow-xl shadow-orange-500/25 active:scale-95 transition-all group shrink-0"

@@ -40,7 +40,7 @@ export default function IletisimPage() {
                className="inline-flex justify-center items-center gap-2 px-5 py-2 rounded-full bg-orange-500/20 border border-orange-500/30 text-orange-400 font-extrabold text-[12px] uppercase tracking-widest mb-6 backdrop-blur-md"
              >
                <Building size={16} />
-               Tesislerimize Bekliyoruz
+               Tesisimize Bekliyoruz
              </motion.div>
    
              <motion.h1 
@@ -111,7 +111,7 @@ export default function IletisimPage() {
                     </div>
                     <div>
                       <h3 className={`${outfit.className} text-lg font-bold text-gray-900`}>Merkez Tesis & Ofis</h3>
-                      <p className={`${inter.className} text-gray-600 mt-1 leading-relaxed`}>Çınar Mah., 843. Sok., No: 4A <br/> Bağcılar / İstanbul</p>
+                      <p className={`${inter.className} text-gray-600 mt-1 leading-relaxed`}>Çınar Mah., 843. Sk., Büşra Apt. No: 4B <br/> 34200 Bağcılar / İstanbul</p>
                     </div>
                   </div>
 

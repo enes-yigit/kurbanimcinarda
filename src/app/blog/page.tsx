@@ -135,7 +135,7 @@ export default function BlogPage() {
                       </p>
                       
                       <div className="flex items-center justify-between border-t border-gray-100 pt-6 mt-auto">
-                        <span className={`${inter.className} text-[13px] font-bold text-gray-500`}>Yazar: {post.author}</span>
+                        <span className={`${inter.className} text-[13px] font-bold text-gray-500`}>Çınar Kurban</span>
                         <div className="w-10 h-10 rounded-full bg-gray-50 text-gray-900 flex items-center justify-center group-hover:bg-orange-500 group-hover:text-white transition-colors">
                           <MoveRight size={18} />
                         </div>

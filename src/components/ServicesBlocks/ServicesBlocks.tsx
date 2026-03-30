@@ -57,7 +57,7 @@ export default function ServicesBlocks() {
                 <strong>İstanbul kurban pazarı</strong>nda 16 yılı aşkın süredir faaliyet gösteren ailemiz, İstanbul'un en köklü ve güvenilir kurbanlık satış merkezidir. On binlerce ailenin kurban ibadetini şeffaf koşullarda yerine getirmesine vesile olduk. Tüm büyükbaş kurbanlıklarımız <strong>kapak atma garantili</strong>, %100 Yerli Besi Erkek Danaları olup, Anadolu pazarlarından özenle seçilir.
               </p>
               <p>
-                <strong>Hisseli kurban</strong> modelimizde bir büyükbaş, İslami kurallara uygun olarak en fazla 7 kişi arasında paylaştırılır. Her hisse sahibi için ayrı ayrı vekalet alınır ve kesim anında isim zikredilerek ibadet yerine getirilir. Tesiste bizzat kesim izlenebileceği gibi, <strong>4K canlı yayın</strong> üzerinden uzaktan takip de mümkündür.
+                <strong>Hisseli kurban</strong> modelimizde bir büyükbaş, İslami kurallara uygun olarak en fazla 7 kişi arasında paylaştırılır. Her hisse sahibi için ayrı ayrı vekalet alınır ve kesim anında isim zikredilerek ibadet yerine getirilir. Tesiste bizzat kesim izlenebilir.
               </p>
               <p>
                 <strong>Bağcılar kurbanlık, Esenler kurbanlık, Güngören kurban hissesi, Bahçelievler kurban kesimi, Zeytinburnu kurbanlık, Fatih kurban hissesi, Bakırköy kurbanlık</strong> veya <strong>Avcılar kurban kesimi</strong> arıyorsanız, Bağcılar'daki merkezi konumumuzdan tüm İstanbul'a hizmet vermekteyiz. Erken kayıt dönemimizde indirimli fiyatlardan yararlanmak için hemen WhatsApp hattımızdan bilgi alabilirsiniz.

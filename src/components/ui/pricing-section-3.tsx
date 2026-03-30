@@ -229,17 +229,17 @@ const DeliverySwitch = ({
           onClick={() => onChange(true)}
           className={cn(
             "relative z-10 cursor-pointer sm:h-11 h-auto min-h-[44px] rounded-lg px-1 sm:px-5 py-1.5 font-bold transition-colors text-[10px] sm:text-sm flex-1 whitespace-normal sm:whitespace-nowrap flex items-center justify-center",
-            isExtra ? "text-orange-700" : "text-gray-500 hover:text-gray-700"
+            isExtra ? "text-white" : "text-orange-500 hover:text-orange-600"
           )}
         >
           {isExtra && (
             <motion.span
               layoutId="delivery-switch"
-              className="absolute top-0 left-0 h-full sm:h-11 w-full rounded-lg shadow-sm bg-white border border-gray-200"
+              className="absolute top-0 left-0 h-full sm:h-11 w-full rounded-lg shadow-md bg-gradient-to-b from-orange-400 to-orange-600 shadow-orange-500/30"
               transition={{ type: "spring", stiffness: 500, damping: 30 }}
             />
           )}
-          <span className="relative z-10 flex flex-col sm:flex-row items-center justify-center gap-0.5 sm:gap-1.5 leading-[1.15] text-center">
+          <span className="relative z-10 flex flex-col sm:flex-row items-center justify-center gap-0.5 sm:gap-1.5 leading-[1.15] text-center font-bold">
             <span>5. Gün / Özel Teslim</span>
           </span>
         </button>
@@ -255,6 +255,11 @@ export default function PricingSection() {
   const pricingRef = useRef<HTMLDivElement>(null);
   
   const activePlans = isKucukbas ? kucukbasPlans : buyukbasPlans;
+
+  const handleAnimalSwitch = (value: boolean) => {
+    setIsKucukbas(value);
+    if (value) setIsExtraDelivery(false);
+  };
 
   const revealVariants = {
     visible: (i: number) => ({
@@ -316,8 +321,8 @@ export default function PricingSection() {
           customVariants={revealVariants}
           className="pt-4 flex flex-col xl:flex-row xl:items-center xl:justify-between items-start gap-4 w-full"
         >
-          <AnimalSwitch onSwitch={setIsKucukbas} />
-          <DeliverySwitch isExtra={isExtraDelivery} onChange={setIsExtraDelivery} />
+          <AnimalSwitch onSwitch={handleAnimalSwitch} />
+          {!isKucukbas && <DeliverySwitch isExtra={isExtraDelivery} onChange={setIsExtraDelivery} />}
         </TimelineContent>
       </article>
 
@@ -411,7 +416,7 @@ export default function PricingSection() {
                       {plan.includes[0]}
                     </h4>
                     <ul className="space-y-3.5 pt-1">
-                      {plan.includes.slice(1).map((feature, featureIndex) => (
+                      {plan.includes.slice(1).filter(f => !(f === "Randevulu Teslimat" && !isExtraDelivery)).map((feature, featureIndex) => (
                         <li key={featureIndex} className="flex items-start">
                           <span className="h-5 w-5 bg-orange-50/50 border border-orange-200 rounded-full flex items-center justify-center shrink-0 mt-[2px] mr-3">
                             <CheckCheck className="h-3 w-3 text-orange-600" />

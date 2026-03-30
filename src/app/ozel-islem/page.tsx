@@ -12,10 +12,8 @@ import {
   Truck, 
   ShieldCheck,
   Droplets,
-  Search,
   Stethoscope,
   Users,
-  Video,
   MapPin,
   Box,
   ChefHat
@@ -95,7 +93,7 @@ export default function OzelIslemPage() {
           
           <div className="text-center mb-16 relative z-10">
             <h2 className={`${outfit.className} text-[2.5rem] sm:text-[3.5rem] font-extrabold text-gray-900 leading-tight`}>
-              Tesislerimizde <span className="text-orange-500">Neler Yapıyoruz?</span>
+              Tesisimizde <span className="text-orange-500">Neler Yapıyoruz?</span>
             </h2>
             <p className={`${inter.className} mt-4 text-gray-500 text-lg max-w-2xl mx-auto`}>
               Kurbanınızı tamamen sizin arzunuza göre parçalanmış, kemiğinden sıyrılmış, kıymalık ve kuşbaşılık olarak hazırlıyoruz.
@@ -207,9 +205,7 @@ export default function OzelIslemPage() {
               { icon: ShieldCheck, title: "İslami Hassasiyet", text: "Vekaletiniz İslami usullere tam yetkin Diyanet/Kasaplar Odası onaylı ekibimizle yerine getirilir." },
               { icon: Stethoscope, title: "Veteriner Kontrolü", text: "Tüm kurbanlıklar veteriner hekimlerimizce kesim öncesi ve sonrası sıkı denetime tabi tutulur." },
               { icon: Droplets, title: "Eksiksiz Hijyen", text: "Etin havayla ve bakteriyle temasını kesen, paslanmaz tezgahlı üst düzey hijyenik tesisler." },
-              { icon: Users, title: "Profesyonel Kadro", text: "Özel kasaplık hizmetinde tecrübeli karkas sıyırma ve doğrama ustalarıyla çalışıyoruz." },
-              { icon: Search, title: "Şeffaf Süreç", text: "Kimin hissesine hangi hayvanın ne zaman girdiği tamamen kayıt ve barkod altındadır." },
-              { icon: Video, title: "Video Kaydı", text: "Kesim esnasında vekalet okunurken çekilen videolarınız adınıza özel olarak gönderilir." }
+              { icon: Users, title: "Profesyonel Kadro", text: "Özel kasaplık hizmetinde tecrübeli karkas sıyırma ve doğrama ustalarıyla çalışıyoruz." }
             ].map((feature, i) => (
               <motion.div 
                 key={i}

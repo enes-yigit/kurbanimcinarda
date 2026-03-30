@@ -66,7 +66,7 @@ export default function BlogPostPage() {
               <Calendar size={14} /> {post.date}
             </span>
             <span style={{ display: 'inline-flex', alignItems: 'center', gap: '4px' }}>
-              <User size={14} /> {post.author}
+              <User size={14} /> Çınar Kurban
             </span>
             <span style={{ display: 'inline-flex', alignItems: 'center', gap: '4px' }}>
               <Clock size={14} /> {post.readTime}

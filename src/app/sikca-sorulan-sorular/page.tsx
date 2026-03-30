@@ -30,7 +30,7 @@ const faqs: FAQItem[] = [
   {
     id: 2,
     question: "Vekalet işlemleri nasıl yürütülüyor?",
-    answer: "Vekaletiniz, kurban kesiminden önce dini kurallara uygun olarak görevli personelimiz veya hocamız tarafından alınmakta ve videoya çekilerek size ulaştırılmaktadır. Kasaplarımız tekbirlerle isminizi okuyarak kesimi gerçekleştirir."
+    answer: "Vekaletiniz, kurban kesiminden önce dini kurallara uygun olarak görevli personelimiz veya hocamız tarafından alınmaktadır. Kasaplarımız tekbirlerle isminizi okuyarak kesimi gerçekleştirir."
   },
   {
     id: 3,
@@ -70,7 +70,7 @@ const faqs: FAQItem[] = [
   {
     id: 10,
     question: "Kesim anında orada bulunmak zorunda mıyım?",
-    answer: "Hayır, vekalet vererek kesim işlemlerini uzaktan da gönül rahatlığıyla gerçekleştirebilirsiniz. Kesime katılamayan hissedarlarımız için kesim videoları taraflarına ulaştırılmaktadır."
+    answer: "Hayır, vekalet vererek kesim işlemlerini uzaktan da gönül rahatlığıyla gerçekleştirebilirsiniz."
   },
   {
     id: 11,

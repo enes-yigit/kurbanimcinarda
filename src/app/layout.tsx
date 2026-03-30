@@ -27,6 +27,14 @@ export const metadata: Metadata = {
     siteName: "Çınar Kurban",
     locale: "tr_TR",
     type: "website",
+    images: [
+      {
+        url: "https://www.cinarkurban.com/logo.png",
+        width: 1200,
+        height: 1200,
+        alt: "Çınar Kurban",
+      },
+    ],
   },
   icons: {
     icon: "/logo_white.png",
