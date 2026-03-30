@@ -137,7 +137,7 @@ export default function IletisimPage() {
                 </h3>
 
                 <iframe 
-                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3010.5186290130673!2d28.84755107662584!3d41.02102191834167!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x14caa447df839ccf%3A0xc3f837920ab7183!2sMerkez%2C%20Ebubekir%20Cd.%20No%3A5%2C%2034200%20Ba%C4%9Fc%C4%B1lar%2F%C4%B0stanbul!5e0!3m2!1str!2str!4v1711516244192!5m2!1str!2str" 
+                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3009.5912249039143!2d28.861975400000002!3d41.0341983!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x14cabbb1aa7a9f17%3A0xa4530a26710e3cb8!2zw4fEsW5hciBLdXJiYW4!5e0!3m2!1str!2str!4v1774896050279!5m2!1str!2str"
                   className="w-full h-full rounded-[1.5rem] grayscale-[20%] contrast-[1.1]"
                   allowFullScreen={true} 
                   loading="lazy" 
