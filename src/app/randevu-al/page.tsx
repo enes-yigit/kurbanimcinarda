@@ -157,11 +157,18 @@ export default function RandevuAlPage() {
                   <label className="text-sm font-bold text-gray-700">Hisse Türü *</label>
                   <select name="hisseType" required className="p-4 bg-gray-50 border border-gray-200 rounded-2xl focus:outline-none focus:ring-2 focus:ring-orange-500/50 focus:bg-white transition-all font-medium appearance-none" value={formData.hisseType} onChange={handleChange}>
                     <option value="" disabled>Seçiniz...</option>
-                    <option value="Dana (1/7 Hisse) - Ekonomik">Dana (1/7 Hisse) - Ekonomik (25-30kg)</option>
-                    <option value="Dana (1/7 Hisse) - Orta">Dana (1/7 Hisse) - Orta (30-35kg)</option>
-                    <option value="Tosun (1/7 Hisse) - Büyük">Tosun (1/7 Hisse) - Çekirdek Aile (35-40kg)</option>
-                    <option value="Tosun (1/7 Hisse) - Dev">Tosun (1/7 Hisse) - Geniş Aile (40+ kg)</option>
-                    <option value="Özel Seçim Tosun">Özel Seçim Tosun</option>
+                    <optgroup label="Hisseli Kurban (Büyükbaş)">
+                      <option value="Büyükbaş 1. Grup">Büyükbaş 1. Grup</option>
+                      <option value="Büyükbaş 2. Grup">Büyükbaş 2. Grup</option>
+                      <option value="Büyükbaş 3. Grup">Büyükbaş 3. Grup</option>
+                      <option value="Büyükbaş 4. Grup">Büyükbaş 4. Grup</option>
+                    </optgroup>
+                    <optgroup label="Küçükbaş Kurban">
+                      <option value="Küçükbaş 1. Grup">Küçükbaş 1. Grup</option>
+                      <option value="Küçükbaş 2. Grup">Küçükbaş 2. Grup</option>
+                      <option value="Küçükbaş 3. Grup">Küçükbaş 3. Grup</option>
+                      <option value="Küçükbaş 4. Grup">Küçükbaş 4. Grup</option>
+                    </optgroup>
                   </select>
                 </div>
 
