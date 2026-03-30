@@ -204,12 +204,12 @@ export default function SmartWizard() {
 
     return `Merhaba, Özel Rezervasyon ekranı üzerinden kurban kaydı yapmak istiyorum.
 
-📋 *Tercihlerim:*
-🐄 *Kurban Türü:* ${animalType}
-👥 *Kayıt Modeli:* ${registrationModel}
-⚖️ *Et Verimi:* ${meatYield}
-🥩 *İşleme:* ${processing}
-🚚 *Teslimat:* ${delivery}`;
+*Tercihlerim:*
+*Kurban Türü:* ${animalType}
+*Kayıt Modeli:* ${registrationModel}
+*Et Verimi:* ${meatYield}
+*İşleme:* ${processing}
+*Teslimat:* ${delivery}`;
   };
 
   const handleFinish = () => {
