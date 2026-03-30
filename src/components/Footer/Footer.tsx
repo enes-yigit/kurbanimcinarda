@@ -29,10 +29,10 @@ export default function Footer() {
       {/* ── MAIN FOOTER CONTENT ── */}
       <div className="bg-[#0c1a12] pt-16 pb-10">
         <div className="container max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-3 sm:grid-cols-2 lg:grid-cols-12 gap-y-10 gap-x-4 sm:gap-12 lg:gap-8 mb-16">
+          <div className="grid grid-cols-2 lg:grid-cols-12 gap-y-10 gap-x-4 sm:gap-12 lg:gap-8 mb-16">
 
             {/* Brand & Social (5 cols) */}
-            <div className="col-span-3 sm:col-span-2 lg:col-span-5 flex flex-col items-start gap-6">
+            <div className="col-span-2 lg:col-span-5 flex flex-col items-start gap-6">
               <Link href="/" className="inline-block">
                 <img
                   src="/logo_white.png"
@@ -78,7 +78,7 @@ export default function Footer() {
             </div>
 
             {/* Quick Links */}
-            <div className="col-span-1 sm:col-span-1 lg:col-span-2 lg:col-start-7">
+            <div className="col-span-1 lg:col-span-2 lg:col-start-7">
               <h4 className="text-[#d4c6b1] font-bold mb-4 uppercase tracking-wider text-[13px]">Hızlı Linkler</h4>
               <ul className={`${inter.className} font-medium text-[14px] space-y-3`}>
                 {quickLinks.map((link) => (
@@ -90,7 +90,7 @@ export default function Footer() {
             </div>
 
             {/* Company */}
-            <div className="col-span-1 sm:col-span-1 lg:col-span-2 lg:col-start-9">
+            <div className="col-span-1 lg:col-span-2 lg:col-start-9">
               <h4 className="text-[#d4c6b1] font-bold mb-4 uppercase tracking-wider text-[13px]">Kurumsal</h4>
               <ul className={`${inter.className} font-medium text-[14px] space-y-3`}>
                 {companyLinks.map((link) => (
@@ -102,7 +102,7 @@ export default function Footer() {
             </div>
 
             {/* Contact */}
-            <div className="col-span-1 sm:col-span-2 lg:col-span-3 lg:col-start-11">
+            <div className="col-span-2 lg:col-span-3 lg:col-start-11">
               <h4 className="text-[#d4c6b1] font-bold mb-4 uppercase tracking-wider text-[13px]">İletişim</h4>
               <ul className={`${inter.className} font-medium text-[14px] space-y-3`}>
                 <li>
