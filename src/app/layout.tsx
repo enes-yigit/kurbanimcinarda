@@ -40,6 +40,9 @@ export const metadata: Metadata = {
     icon: "/logos/cinarlogonew.png",
     apple: "/logos/cinarlogonew.png",
   },
+  verification: {
+    google: "5Q1H-Lzj3UxsSCFwc4prkqxlHtJcwx3nTNKkdqoJJ3k",
+  },
 };
 
 import { Inter, Outfit } from "next/font/google";
