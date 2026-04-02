@@ -43,7 +43,7 @@ export default function Hero5() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
-          className="inline-flex items-center gap-2 px-4 py-2 bg-white/10 backdrop-blur-md border border-white/20 text-white rounded-full text-xs font-bold tracking-[0.15em] uppercase mb-8"
+          className="hidden sm:inline-flex items-center gap-2 px-4 py-2 bg-white/10 backdrop-blur-md border border-white/20 text-white rounded-full text-xs font-bold tracking-[0.15em] uppercase mb-8"
         >
           <span className="h-2 w-2 rounded-full bg-orange-500 animate-pulse inline-block" />
           İstanbul'un Kurbanlık Adresi
