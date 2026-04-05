@@ -176,7 +176,7 @@ export default function Facilities() {
           </div>
           
           <Link 
-            href="https://maps.google.com/?q=Çınar+Mah.,+843.+Sk.,+Büşra+Apt.+No:4B,+34200+Bağcılar/İstanbul" 
+            href="https://www.google.com/maps/place/%C3%87%C4%B1nar+Kurban/@41.0341983,28.8619754,17z/data=!3m1!4b1!4m6!3m5!1s0x14cabbb1aa7a9f17:0xa4530a26710e3cb8!8m2!3d41.0341983!4d28.8619754!16s%2Fg%2F11xl06wsk_" 
             target="_blank" 
             rel="noopener noreferrer"
             className="w-full md:w-auto flex items-center justify-center gap-3 px-8 py-5 bg-orange-500 hover:bg-orange-600 text-white rounded-2xl text-[15px] font-bold shadow-xl shadow-orange-500/25 active:scale-95 transition-all group shrink-0"

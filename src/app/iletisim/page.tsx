@@ -146,7 +146,7 @@ export default function IletisimPage() {
 
                 <div className="absolute bottom-6 left-6 right-6 z-10 flex flex-col sm:flex-row gap-3">
                   <Link 
-                    href="https://goo.gl/maps/YOUR_NEW_LINK" 
+                    href="https://www.google.com/maps/place/%C3%87%C4%B1nar+Kurban/@41.0341983,28.8619754,17z/data=!3m1!4b1!4m6!3m5!1s0x14cabbb1aa7a9f17:0xa4530a26710e3cb8!8m2!3d41.0341983!4d28.8619754!16s%2Fg%2F11xl06wsk_" 
                     target="_blank" 
                     className="flex-1 bg-[#0c1a12] hover:bg-black text-white px-6 py-4 rounded-full font-bold shadow-xl flex items-center justify-center gap-2 transition-all active:scale-95"
                   >
