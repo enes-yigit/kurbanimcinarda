@@ -37,8 +37,12 @@ export const metadata: Metadata = {
     ],
   },
   icons: {
-    icon: "/logos/cinarlogonew.png",
+    icon: [
+      { url: "/favicon.ico" },
+      { url: "/logos/cinarlogonew.png", type: "image/png" },
+    ],
     apple: "/logos/cinarlogonew.png",
+    shortcut: "/favicon.ico",
   },
   verification: {
     google: "5Q1H-Lzj3UxsSCFwc4prkqxlHtJcwx3nTNKkdqoJJ3k",
